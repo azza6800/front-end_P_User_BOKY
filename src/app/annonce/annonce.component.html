@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="landing page starter kit">
+  <meta name="keywords" content="bootstrap 5, saas, landing page">
+  <meta name="author" content="asaduzzaman">
+  <title>Placewise - Online Booking HTML Template</title>
+  
+</head>
+
+<body >
+ 
+  
+  <!-- Header -->
+  <app-header2></app-header2>
+  <!-- /Header -->
+  <!-- Banner -->
+  <div class="section-space--sm bg-neutral-900">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6">
+          <h1 class="d4 clr-neutral-0 mb-3"> User Booking </h1>
+          <ul class="list list-row list-arrow align-items-center">
+            <li>
+              <a href="#" class="link d-inline-block clr-neutral-0 :clr-tertiary-300"> Account </a>
+            </li>
+            <li>
+              <a href="#" class="link d-inline-block clr-tertiary-300"> User Booking </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="text-md-end">
+            <a href="#" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-neutral-700 :bg-primary-300">
+              <span class="material-symbols-outlined mat-icon clr-neutral-0"> logout </span>
+              <span class="d-inline-block clr-neutral-0 fw-semibold"> Logout </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Banner -->
+  <!-- Dashboard -->
+  <div class="section-space--sm pt-0 position-relative z-1">
+    <span class="w-100 h-30 position-absolute start-0 end-0 top-0 z-n1 bg-neutral-900"></span>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5 col-lg-4 col-xl-3">
+          <div class="p-6 rounded-4 bg-neutral-0 box-shadow">
+            <div class="w-30 h-30 border border-primary-100 rounded-circle bg-neutral-0 p-6 d-grid place-content-center position-relative mx-auto mb-6">
+              <img src="assets/img/team-1.jpg" alt="image" class="w-24 h-24 object-fit-cover rounded-circle">
+              <div class="w-8 h-8 d-grid place-content-center rounded-circle border border-2 border-neutral bg-primary-300 position-absolute end-0 bottom-0">
+                <span class="material-symbols-outlined mat-icon clr-neutral-0"> check </span>
+              </div>
+            </div>
+            <div class="text-center mb-10">
+              <h4 class="clr-neutral-500"> Savannah Nguyen </h4>
+              <p class="mb-0 clr-neutral-500"> info@example.com </p>
+            </div>
+            <div class="mb-10">
+              <span class="d-block clr-neutral-400 fs-12 mb-4"> Account </span>
+              <ul class="list gap-3">
+                <li>
+                  <a href="personal-info.html" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300">
+                    <span class="material-symbols-outlined mat-icon fs-20"> account_circle </span>
+                    <span class="d-block fw-medium"> Profil </span>
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="user-notification.html" class="link d-flex align-items-center justify-content-between gap-2 clr-neutral-500 :clr-primary-300">
+                    <span class="d-flex align-items-center gap-2">
+                      <span class="material-symbols-outlined mat-icon fs-20"> notifications </span>
+                      <span class="d-block fw-medium"> Notifications </span>
+                    </span>
+                    <span class="d-grid place-content-center w-6 h-6 rounded-circle bg-secondary-500 clr-neutral-0 fs-14"> 1 </span>
+                  </a>
+                </li>
+               
+                <li>
+                  <a href="user-chat.html" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300">
+                    <span class="material-symbols-outlined mat-icon fs-20"> chat </span>
+                    <span class="d-block fw-medium"> Chat </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          
+           
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-8 col-xl-9">
+          <ul class="list gap-6">
+            <li>
+              <div class="p-6 p-xl-10 rounded-4 bg-neutral-0 shadow-3">
+                <h3 class="mb-0 flex-grow-1"> My Bookings </h3>
+                <div class="hr-line my-6"></div>
+                <div class="row g-4">
+                  <div class="col-12">
+                    <div class="list-group border border-neutral-40 rounded-4 booking-tab">
+                      <a class="link booking-tab__btn active" data-bs-toggle="list" href="#upcoming">
+                        <span class="material-symbols-outlined mat-icon fs-20"> local_mall </span>
+                        <span class="d-inline-block"> Upcoming Booking </span>
+                      </a>
+                      <a class="link booking-tab__btn" data-bs-toggle="list" href="#canceled">
+                        <span class="material-symbols-outlined mat-icon fs-20"> close </span>
+                        <span class="d-inline-block"> Canceled Booking </span>
+                      </a>
+                      <a class="link booking-tab__btn" data-bs-toggle="list" href="#completed">
+                        <span class="material-symbols-outlined mat-icon fs-20"> task_alt </span>
+                        <span class="d-inline-block"> Completed Booking </span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="tab-content">
+                      <div class="tab-pane fade show active" id="upcoming">
+                        <ul class="list gap-4">
+                          <li>
+                            <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+                              <div class="accordion property-accordion">
+                                <div class="accordion-item">
+                                  <h3 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#addProperty" aria-expanded="true"> Add Properties </button>
+                                  </h3>
+                                  <div id="addProperty" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                      <div class="pt-6">
+                                        <p class="mb-4 fs-20 fw-medium">Type de hébergement :</p>
+                                        <ul class="list list-row gap-6 flex-wrap">
+                                          <li>
+                                            <div class="d-flex align-items-center gap-2">
+                                              <input class="custom-radio custom-radio--primary-300" type="radio" name="property-type" id="general-settings">
+                                              <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="general-settings"> General </label>
+                                            </div>
+                                          </li>
+                                          <li>
+                                            <div class="d-flex align-items-center gap-2">
+                                              <input class="custom-radio custom-radio--primary-300" type="radio" name="property-type" id="featured-settings">
+                                              <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="featured-settings"> Featured </label>
+                                            </div>
+                                          </li>
+                                        </ul>
+                      
+                                        <div class="pt-6">
+                                          <p class="mb-4 fs-20 fw-medium">Nombre de voyageurs :</p>
+                                          <select class="form-select form-select-lg fs-16">
+                                            <option selected>4</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                          </select>
+                                          <p class="mt-6 mb-4 fs-20 fw-medium">Nombre de chambres :</p>
+                                          <select class="form-select form-select-lg fs-16">
+                                            <option selected>3</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                          </select>
+                                          <p class="mt-6 mb-4 fs-20 fw-medium">Nombre de lits :</p>
+                                          <select class="form-select form-select-lg fs-16">
+                                            <option selected>1</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                          </select>
+                                          <p class="mt-6 mb-4 fs-20 fw-medium">Nombre de salles :</p>
+                                          <select class="form-select form-select-lg fs-16">
+                                            <option selected>8</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                          </select>
+                                        </div>
+                      
+                                        <p class="mt-6 mb-4 fs-20 fw-medium">Description :</p>
+                                        <textarea rows="5" class="form-control" placeholder="Description.."></textarea>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <div class="d-flex justify-content-end mt-4">
+                          <button class="btn btn-primary" id="btnNext">Suivant</button>
+                        </div>
+                      </div>
+                      
+                      
+                      <div class="tab-pane fade" id="canceled">
+                        <ul class="list gap-4">
+                          <li>
+                              <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+                                <div class="accordion property-accordion">
+                                  <div class="accordion-item">
+                                    <h3 class="accordion-header">
+                                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#amenities-facility" aria-expanded="true"> Equipement Details </button>
+                                    </h3>
+                                    <div id="amenities-facility" class="accordion-collapse collapse show">
+                                      <div class="accordion-body">
+                                        <div class="pt-6">
+                                          <p class="mb-4 fs-20 fw-medium"> Beds : </p>
+                                          <div class="row g-4">
+                                            <div class="col-md-6 col-lg-3">
+                                              <ul class="list gap-4">
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="air-condition">
+                                                    <label class="clr-neutral-500" for="air-condition"> Air Conditioning </label>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="barbeque-check">
+                                                    <label class="clr-neutral-500" for="barbeque-check"> Barbeque </label>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="dryer-check">
+                                                    <label class="clr-neutral-500" for="dryer-check"> Dryer </label>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="gym-check">
+                                                    <label class="clr-neutral-500" for="gym-check"> Gym </label>
+                                                  </div>
+                                                </li>
+                                              </ul>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                              <ul class="list gap-4">
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="laundry-check">
+                                                    <label class="clr-neutral-500" for="laundry-check"> Laundry </label>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="lawn-check">
+                                                    <label class="clr-neutral-500" for="lawn-check"> Lawn </label>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="microwave-check">
+                                                    <label class="clr-neutral-500" for="microwave-check"> Microwave </label>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="refrigerator-check">
+                                                    <label class="clr-neutral-500" for="refrigerator-check"> Refrigerator </label>
+                                                  </div>
+                                                </li>
+                                              </ul>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                              <ul class="list gap-4">
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="swimming-pool">
+                                                    <label class="clr-neutral-500" for="swimming-pool"> Swimming Pool </label>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="window-covering">
+                                                    <label class="clr-neutral-500" for="window-covering"> Window Coverings </label>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="outdoor-shower">
+                                                    <label class="clr-neutral-500" for="outdoor-shower"> Outdoor Shower </label>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="washer-check">
+                                                    <label class="clr-neutral-500" for="washer-check"> Washer </label>
+                                                  </div>
+                                                </li>
+                                              </ul>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                              <ul class="list gap-4">
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="wifi-check">
+                                                    <label class="clr-neutral-500" for="wifi-check"> WiFi </label>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="sauna-check">
+                                                    <label class="clr-neutral-500" for="sauna-check"> Sauna </label>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="tv-cable">
+                                                    <label class="clr-neutral-500" for="tv-cable"> TV Cable </label>
+                                                  </div>
+                                                </li>
+                                                <li>
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="internet-check">
+                                                    <label class="clr-neutral-500" for="internet-check"> Internet </label>
+                                                  </div>
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </li>
+                          <li>
+                            <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+                              <div class="accordion property-accordion">
+                                <div class="accordion-item">
+                                  <h3 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#amenities-facility" aria-expanded="true"> Equipement specail </button>
+                                  </h3>
+                                  <div id="amenities-facility" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                      <div class="pt-6">
+                                        <p class="mb-4 fs-20 fw-medium"> Beds : </p>
+                                        <div class="row g-4">
+                                          <div class="col-md-6 col-lg-3">
+                                            <ul class="list gap-4">
+                                              <li>
+                                                <div class="d-flex align-items-center gap-3">
+                                                  <input class="custom-checkbox" type="checkbox" id="air-condition">
+                                                  <label class="clr-neutral-500" for="air-condition"> Piscine </label>
+                                                </div>
+                                              </li>
+                                              <li>
+                                                <div class="d-flex align-items-center gap-3">
+                                                  <input class="custom-checkbox" type="checkbox" id="barbeque-check">
+                                                  <label class="clr-neutral-500" for="barbeque-check">Jacuzzi </label>
+                                                </div>
+                                              </li>
+                                              <li>
+                                                <div class="d-flex align-items-center gap-3">
+                                                  <input class="custom-checkbox" type="checkbox" id="dryer-check">
+                                                  <label class="clr-neutral-500" for="dryer-check"> Patio </label>
+                                                </div>
+                                              </li>
+                                              <li>
+                                                <div class="d-flex align-items-center gap-3">
+                                                  <input class="custom-checkbox" type="checkbox" id="gym-check">
+                                                  <label class="clr-neutral-500" for="gym-check">Barbecue </label>
+                                                </div>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                          <div class="col-md-6 col-lg-3">
+                                            <ul class="list gap-4">
+                                              <li>
+                                                <div class="d-flex align-items-center gap-3">
+                                                  <input class="custom-checkbox" type="checkbox" id="laundry-check">
+                                                  <label class="clr-neutral-500" for="laundry-check"> Espace repas en plein air </label>
+                                                </div>
+                                              </li>
+                                              <li>
+                                                <div class="d-flex align-items-center gap-3">
+                                                  <input class="custom-checkbox" type="checkbox" id="lawn-check">
+                                                  <label class="clr-neutral-500" for="lawn-check"> Billard </label>
+                                                </div>
+                                              </li>
+                                              <li>
+                                                <div class="d-flex align-items-center gap-3">
+                                                  <input class="custom-checkbox" type="checkbox" id="microwave-check">
+                                                  <label class="clr-neutral-500" for="microwave-check"> Piano </label>
+                                                </div>
+                                              </li>
+                                              <li>
+                                                <div class="d-flex align-items-center gap-3">
+                                                  <input class="custom-checkbox" type="checkbox" id="refrigerator-check">
+                                                  <label class="clr-neutral-500" for="refrigerator-check"> Appareils de fitness </label>
+                                                </div>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                          <div class="col-md-6 col-lg-3">
+                                            <ul class="list gap-4">
+                                              <li>
+                                                <div class="d-flex align-items-center gap-3">
+                                                  <input class="custom-checkbox" type="checkbox" id="swimming-pool">
+                                                  <label class="clr-neutral-500" for="swimming-pool"> Accès au lac </label>
+                                                </div>
+                                              </li>
+                                              <li>
+                                                <div class="d-flex align-items-center gap-3">
+                                                  <input class="custom-checkbox" type="checkbox" id="window-covering">
+                                                  <label class="clr-neutral-500" for="window-covering"> Accès à la plage  </label>
+                                                </div>
+                                              </li>
+                                              <li>
+                                                <div class="d-flex align-items-center gap-3">
+                                                  <input class="custom-checkbox" type="checkbox" id="outdoor-shower">
+                                                  <label class="clr-neutral-500" for="outdoor-shower"> Accessible à skis </label>
+                                                </div>
+                                              </li>
+                                              <li>
+                                                <div class="d-flex align-items-center gap-3">
+                                                  <input class="custom-checkbox" type="checkbox" id="washer-check">
+                                                  <label class="clr-neutral-500" for="washer-check"> Douch extérieure </label>
+                                                </div>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                         
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+                        <li>
+                          <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+                            <div class="accordion property-accordion">
+                              <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#amenities-facility" aria-expanded="true"> Equipement de securite </button>
+                                </h3>
+                                <div id="amenities-facility" class="accordion-collapse collapse show">
+                                  <div class="accordion-body">
+                                    <div class="pt-6">
+                                      <p class="mb-4 fs-20 fw-medium"> Beds : </p>
+                                      <div class="row g-4">
+                                        <div class="col-md-6 col-lg-3">
+                                          <ul class="list gap-4">
+                                            <li>
+                                              <div class="d-flex align-items-center gap-3">
+                                                <input class="custom-checkbox" type="checkbox" id="air-condition">
+                                                <label class="clr-neutral-500" for="air-condition"> Détecteur de fumée </label>
+                                              </div>
+                                            </li>
+                                            <li>
+                                              <div class="d-flex align-items-center gap-3">
+                                                <input class="custom-checkbox" type="checkbox" id="barbeque-check">
+                                                <label class="clr-neutral-500" for="barbeque-check">kit de premiers secours </label>
+                                              </div>
+                                            </li>
+                                            <li>
+                                              <div class="d-flex align-items-center gap-3">
+                                                <input class="custom-checkbox" type="checkbox" id="dryer-check">
+                                                <label class="clr-neutral-500" for="dryer-check"> Extincteur</label>
+                                              </div>
+                                            </li>
+                                            
+                                          </ul>
+                                        </div>
+                                       
+                                       
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </li>
+                          <li>
+                            
+                              <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+                                <div class="accordion property-accordion">
+                                  <div class="accordion-item">
+                                    <h3 class="accordion-header">
+                                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#map-location" aria-expanded="true"> Images  </button>
+                                    </h3>
+                                    <div id="map-location" class="accordion-collapse collapse show">
+                                      <div class="accordion-body">
+                                        <div class="pt-6">
+                                          <div class="d-flex align-items-center justify-content-center border-dashed rounded-4 w-100">
+                                            <label for="dropzone-file" class="d-flex flex-column align-items-center justify-content-center w-100 cursor-pointer bg-primary-3p rounded-4">
+                                              <span class="d-flex flex-column align-items-center justify-content-center py-12">
+                                                <span class="material-symbols-outlined mat-icon fs-60 fw-200 clr-neutral-500"> cloud_upload </span>
+                                                <span class="h3 clr-neutral-500 text-center mt-4 mb-3"> Drag & Drop </span>
+                                                <span class="d-block text-center mb-6 clr-neutral-500"> OR </span>
+                                                <span class="d-inline-block py-3 px-6 rounded-pill bg-neutral-600 clr-neutral-0 mb-10"> Select Files </span>
+                                                <span class="d-flex align-items-center justify-content-center flex-wrap gap-5">
+                                                  <span class="d-flex align-items-center gap-2">
+                                                    <span class="material-symbols-outlined mat-icon fw-200 clr-neutral-500 flex-shrink-0"> gpp_maybe </span>
+                                                    <span class="d-block mb-0 clr-neutral-500"> Maximum allowed file size is 9.00 MB </span>
+                                                  </span>
+                                                  <span class="d-flex align-items-center gap-2">
+                                                    <span class="material-symbols-outlined mat-icon fw-200 clr-neutral-500 flex-shrink-0"> gpp_maybe </span>
+                                                    <span class="d-block mb-0 clr-neutral-500"> Maximum 10 files are allowed </span>
+                                                  </span>
+                                                </span>
+                                              </span>
+                                              <input type="file" id="dropzone-file" class="d-none">
+                                            </label>
+                                          </div>
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            
+                          </li>
+                        </ul>
+                        <div class="d-flex justify-content-end mt-4">
+                          <button class="btn btn-primary" id="btnNext">Suivant</button>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="completed">
+                       
+                        <ul class="list gap-4">
+                          <li>
+                            <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+                              <div class="accordion property-accordion">
+                                <div class="accordion-item">
+                                  <h3 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#addProperty" aria-expanded="true">Add Properties</button>
+                                  </h3>
+                                  <div id="addProperty" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                      <div class="pt-6">
+                      
+                                        <p class="mt-6 mb-4 fs-20 fw-medium">Titre :</p>
+                                        <textarea rows="5" class="form-control" placeholder="Titre.."></textarea>
+                      
+                                        <p class="mb-4 fs-20 fw-medium">Réduction au mois :</p>
+                                        <ul class="list list-row gap-6 flex-wrap">
+                                          <li>
+                                            <div class="d-flex align-items-center gap-2">
+                                              <input class="custom-radio custom-radio--primary-300" type="radio" name="property-type" id="general-settings">
+                                              <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="general-settings">Oui</label>
+                                            </div>
+                                          </li>
+                                          <li>
+                                            <div class="d-flex align-items-center gap-2">
+                                              <input class="custom-radio custom-radio--primary-300" type="radio" name="property-type" id="featured-settings">
+                                              <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="featured-settings">Nom</label>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                        <p class="mb-4 fs-20 fw-medium">Réduction au semaine :</p>
+                                        <ul class="list list-row gap-6 flex-wrap">
+                                          <li>
+                                            <div class="d-flex align-items-center gap-2">
+                                              <input class="custom-radio custom-radio--primary-300" type="radio" name="property-type" id="general-settings">
+                                              <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="general-settings">Oui</label>
+                                            </div>
+                                          </li>
+                                          <li>
+                                            <div class="d-flex align-items-center gap-2">
+                                              <input class="custom-radio custom-radio--primary-300" type="radio" name="property-type" id="featured-settings">
+                                              <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="featured-settings">Nom</label>
+                                            </div>
+                                          </li>
+                                        </ul>
+                      
+                                        <p class="mb-4 fs-20 fw-medium">Prix :</p>
+                                        <input type="number" class="form-control mb-4" placeholder="Entrez le prix">
+                      
+                                        <p class="mb-4 fs-20 fw-medium">Pays :</p>
+                                        <input type="text" class="form-control mb-4" placeholder="Entrez le pays">
+                      
+                                        <p class="mb-4 fs-20 fw-medium">État :</p>
+                                        <input type="text" class="form-control mb-4" placeholder="Entrez l'état ">
+                      
+                                        <p class="mb-4 fs-20 fw-medium">Libellé de la voie :</p>
+                                        <input type="text" class="form-control mb-4" placeholder="Entrez le libellé de la voie">
+                      
+                                        <p class="mb-4 fs-20 fw-medium">Code postal :</p>
+                                        <input type="text" class="form-control mb-4" placeholder="Entrez le code postal">
+                      
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <div class="d-flex justify-content-end mt-4">
+                          <button class="btn btn-primary" id="btnNext">Terminer</button>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Dashboard -->
+  <!-- Footer -->
+  <app-footer></app-footer>
+ 
+</body>
+
+
+<!-- Mirrored from pix-placewise.vercel.app/user-booking.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:56:15 GMT -->
+</html>

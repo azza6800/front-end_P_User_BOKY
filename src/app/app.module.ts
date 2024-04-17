@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { Header2Component } from './header2/header2.component';
 import { RegisterComponent } from './register/register.component';
+import { AnnonceComponent } from './annonce/annonce.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RegisterComponent } from './register/register.component';
     FooterComponent,
     ContactComponent,
     Header2Component,
-    RegisterComponent
+    RegisterComponent,
+    AnnonceComponent
   ],
   imports: [
     BrowserModule,
