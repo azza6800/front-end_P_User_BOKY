@@ -14,6 +14,8 @@ import { ContactComponent } from './contact/contact.component';
 import { Header2Component } from './header2/header2.component';
 import { RegisterComponent } from './register/register.component';
 import { AnnonceComponent } from './annonce/annonce.component';
+import { ProfilComponent } from './profil/profil.component';
+import { Header3Component } from './header3/header3.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { AnnonceComponent } from './annonce/annonce.component';
     ContactComponent,
     Header2Component,
     RegisterComponent,
-    AnnonceComponent
+    AnnonceComponent,
+    ProfilComponent,
+    Header3Component
   ],
   imports: [
     BrowserModule,
