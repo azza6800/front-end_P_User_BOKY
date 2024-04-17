@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from pix-placewise.vercel.app/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:56:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="landing page starter kit">
+  <meta name="keywords" content="bootstrap 5, saas, landing page">
+  <meta name="author" content="asaduzzaman">
+  <title>Placewise - Online Booking HTML Template</title>
+  
+</head>
+
+<body>
+    
+  <!-- Header Top  -->
+  <app-header2></app-header2>
+  <!-- /Header Top  -->
+  <!-- Header -->
+  
+  <!-- /Header -->
+  <div class="section-space--sm bg-primary-5p signup-section">
+    <div class="container">
+        <div class="row justify-content-center justify-content-xl-start">
+            <div class="col-lg-10 col-xl-6">
+                <div class="bg-neutral-0 rounded-4 p-6 p-lg-8">
+                    
+                    <form (ngSubmit)="login()"[formGroup]="loginForm">
+                      <h3 class="mb-4"> Bienvenue de retour ! </h3>
+                      <p class="mb-10"> Connectez-vous à votre compte et rejoignez-nous. </p>
+                      <div class="row g-4">
+                        <div class="col-12">
+                          <label for="enter-email" class="fs-20 fw-medium d-block mb-3">Entrez votre adresse e-mail</label>
+                          <input type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="Saisissez votre adresse e-mail" id="enter-email"formControlName="email">
+                        </div>
+                        <div class="col-12">
+                          <label for="enter-password" class="fs-20 fw-medium d-block mb-3">Entrez votre mot de passe</label>
+                          <input type="password" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5 mb-3" placeholder="Saisissez votre mot de passe" id="enter-password"formControlName="mdp">
+                          <a href="signup.html" class="link d-block fs-14 clr-primary-300 :clr-primary-400 text-end">Mot de passe oublié</a>
+                        </div>
+                        <div class="col-12">
+                          <p class="mb-0"> Avez-vous un compte ? <a href="register" class="link fw-semibold clr-primary-300">Signin</a>
+                          </p>
+                        </div>
+                        <div class="col-12">
+                          <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Se connecter</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- Footer -->
+  <div class="bg-neutral-900">
+    <div class="section-space">
+      <div class="container">
+        <div class="row gy-5">
+          <div class="col-md-6 col-xl-3">
+            <a href="index-2.html" class="link d-inline-block mb-6">
+              <img src="assets/img/logo-light.png" alt="image" class="img-fluid">
+            </a>
+            <p class="clr-neutral-30 mb-6"> Real estate can be bought, sold, leased, or rented, and can be a valuable investment opportunity. The value of real estate can be... </p>
+            <ul class="list list-row gap-3 flex-wrap">
+              <li>
+                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle border border-primary clr-neutral-0 :bg-primary-300 :clr-neutral-0">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle border border-primary clr-neutral-0 :bg-primary-300 :clr-neutral-0">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle border border-primary clr-neutral-0 :bg-primary-300 :clr-neutral-0">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle border border-primary clr-neutral-0 :bg-primary-300 :clr-neutral-0">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle border border-primary clr-neutral-0 :bg-primary-300 :clr-neutral-0">
+                  <i class="fab fa-dribbble"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <h4 class="clr-neutral-0 mb-6"> Quick Link </h4>
+            <ul class="list gap-2">
+              <li>
+                <a href="about-us.html" class="link d-inline-block clr-neutral-30 :clr-secondary-300"> About Us </a>
+              </li>
+              <li>
+                <a href="property-grid.html" class="link d-inline-block clr-neutral-30 :clr-secondary-300"> Properties </a>
+              </li>
+              <li>
+                <a href="agent.html" class="link d-inline-block clr-neutral-30 :clr-secondary-300"> Agents </a>
+              </li>
+              <li>
+                <a href="faq.html" class="link d-inline-block clr-neutral-30 :clr-secondary-300"> FAQs </a>
+              </li>
+              <li>
+                <a href="blog-grid.html" class="link d-inline-block clr-neutral-30 :clr-secondary-300"> Blog </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <h4 class="clr-neutral-0 mb-6"> Contact </h4>
+            <ul class="list gap-4">
+              <li>
+                <div class="d-flex align-items-center gap-4">
+                  <div class="w-8 h-8 rounded-circle d-grid place-content-center bg-primary-300 clr-neutral-0 flex-shrink-00">
+                    <span class="material-symbols-outlined mat-icon fw-200"> phone_in_talk </span>
+                  </div>
+                  <p class="mb-0 clr-neutral-30"> (316) 555-0116 </p>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex align-items-center gap-4">
+                  <div class="w-8 h-8 rounded-circle d-grid place-content-center bg-secondary-300 clr-neutral-0 flex-shrink-00">
+                    <span class="material-symbols-outlined mat-icon fw-200"> mark_as_unread </span>
+                  </div>
+                  <p class="mb-0 clr-neutral-30"> example@mail.com </p>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex align-items-center gap-4">
+                  <div class="w-8 h-8 rounded-circle d-grid place-content-center bg-tertiary-300 clr-neutral-0 flex-shrink-00">
+                    <span class="material-symbols-outlined mat-icon fw-200"> distance </span>
+                  </div>
+                  <p class="mb-0 clr-neutral-30"> 31 Brandy Way, Sutton, SM2 6SE </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <h4 class="clr-neutral-0 mb-6"> Newsletter </h4>
+            <p class="mb-6 clr-neutral-30"> Subscribe our newsletter to get our latest update & news </p>
+            <div class="p-2 rounded-pill border border-neutral-200">
+              <form action="#" class="d-flex align-items-center">
+                <input type="text" placeholder="Email address" class="w-100 border-0 bg-transparent clr-neutral-30 px-3 py-2 ::placeholder-neutral-30 :focus-outline-0">
+                <button type="button" class="d-grid place-content-center px-6 py-3 rounded-pill bg-tertiary-300 clr-neutral-0 border-0">
+                  <span class="material-symbols-outlined mat-icon fw-300"> send </span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="py-8 border-top border-primary-500">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-6">
+                <p class="m-0 clr-neutral-0 text-center text-lg-start"> Copyright &copy; 2023 <span class="clr-tertiary-300">Placewise</span>. Designed By <a href="#" class="link clr-secondary-300">Pixelaxis</a>
+                </p>
+              </div>
+              <div class="col-lg-6">
+                <ul class="list list-row align-items-center flex-wrap gap-6 justify-content-center justify-content-lg-end">
+                  <li>
+                    <a href="sign-in.html" class="link clr-neutral-0 :clr-secondary-300"> Sign in </a>
+                  </li>
+                  <li>
+                    <a href="signup.html" class="link clr-neutral-0 :clr-secondary-300"> Sign Up </a>
+                  </li>
+                  <li>
+                    <a href="faq.html" class="link clr-neutral-0 :clr-secondary-300"> FAQ </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Footer -->
+  
+</body>
+
+
+<!-- Mirrored from pix-placewise.vercel.app/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:56:12 GMT -->
+</html>

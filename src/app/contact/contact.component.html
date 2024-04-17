@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="kit de démarrage de page d'atterrissage">
+    <meta name="keywords" content="bootstrap 5, saas, page d'atterrissage">
+    <meta name="author" content="asaduzzaman">
+    <title>Placewise - Modèle HTML de réservation en ligne</title>
+</head>
+
+<body>
+    <!-- preloader -->
+    <!--<div class="preloader">
+    <div class="preloader__img">
+      <img src="assets/img/favicon.png" alt="image">
+    </div>
+  </div>
+  < preloader End -->
+  
+    <!-- En-tête -->
+    <app-header2></app-header2>
+    <!-- /En-tête -->
+
+    <div class="section-space help-section">
+        <div class="section-space--sm-bottom">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-xxl-6">
+                        <div class="text-center">
+                            <h2 class="mt-4 mb-6"> Besoin d'Aide ? </h2>
+                            <p class="mb-0"> Questions, plaintes et commentaires. Nous serons heureux de vous servir </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-xl-4">
+                    <div class="d-flex align-items-center gap-4 bg-neutral-0 rounded-4 p-6 box-shadow">
+                        <div class="d-grid place-content-center w-15 h-15 rounded-circle bg-primary-300 clr-neutral-0 flex-shrink-0">
+                            <span class="material-symbols-outlined mat-icon fs-32"> phone_in_talk </span>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4 class="mb-2"> Appel Gratuit </h4>
+                            <ul class="list">
+                                <li>
+                                    <span class="clr-neutral-500"> 
+                                      +216 21 074 700 </span>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-4">
+                  <div class="d-flex align-items-center gap-4 bg-neutral-0 rounded-4 p-6 box-shadow">
+                      <div class="d-grid place-content-center w-15 h-15 rounded-circle bg-tertiary-300 clr-neutral-700 flex-shrink-0">
+                          <span class="material-symbols-outlined mat-icon fs-32"> distance </span>
+                      </div>
+                      <div class="flex-grow-1">
+                          <h4 class="mb-2"> Notre Localisation </h4>
+                          <ul class="list">
+                            <li>
+                                <span class="clr-neutral-500"> 
+                                  Rue Habib Bourguiba, Immeuble La Jarre, Nabeul, Tunisie</span>
+                            </li>
+                           
+                        </ul>
+                      </div>
+                  </div>
+              </div>
+                <div class="col-md-6 col-xl-4">
+                    <div class="d-flex align-items-center gap-4 bg-neutral-0 rounded-4 p-6 box-shadow">
+                        <div class="d-grid place-content-center w-15 h-15 rounded-circle bg-secondary-300 clr-neutral-700 flex-shrink-0">
+                            <span class="material-symbols-outlined mat-icon fs-32"> mark_as_unread </span>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4 class="mb-2"> Support en Ligne </h4>
+                            <ul class="list">
+                                <li>
+                                    <span class="clr-neutral-500"> 
+                                      support@boky.tn </span>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="section-space pt-4 bg-primary-5p">
+      <div class="container justify-content-center"> <!-- Ajout de la classe justify-content-center -->
+          <div class="row g-4 justify-content-center"> <!-- Ajout de la classe justify-content-center -->
+              <div class="col-lg-6">
+                  <div class="bg-neutral-0 rounded-4 p-6 p-lg-8">
+                      <form  (ngSubmit)="addNewContact()" [formGroup]="ContactForm">
+                          <h3 class="mb-0">Partagez vos idées</h3>
+                          <div class="hr-dashed my-6"></div>
+                          <div class="row g-4">
+                              <div class="col-12">
+                                  <label for="enter-email" class="fs-20 fw-medium d-block mb-3">Email</label>
+                                  <input type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="Entrez votre email" id="enter-email" formControlName="email">
+                                  <div *ngIf="email?.touched && email?.invalid">
+                                    <small class="text-danger" *ngIf="email?.errors?.['required']">Email 
+                                        est obligatoire</small>
+                                  </div>
+                              </div>
+                              <div class="col-12">
+                                  <label class="fs-20 fw-medium d-block mb-3">Numéro de téléphone</label>
+                                  <input type="tel" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="+(216) ** *** ***" id="enter-email" formControlName="telephone">
+                                  
+                              </div>
+                              <div class="col-12">
+                                <label class="fs-20 fw-medium d-block mb-3">Sujet</label>
+                                <input type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="Sujet de votre message" id="enter-email" formControlName="sujet">
+                                
+                            </div>
+                              <div class="col-12">
+                                  <label class="fs-20 fw-medium d-block mb-3">Message</label>
+                                  <textarea id="review-review" rows="5" class="form-control bg-primary-3p border border-neutral-40 rounded-5 py-3 px-5" placeholder="Écrivez votre message" formControlName="msg"></textarea>
+                              </div>
+                              <div class="col-12">
+                                  
+                                  <li class="d-none d-md-block">
+                                    <button type="submit" class="link btn bg-primary-300 :bg-primary-300 clr-neutral-0 :clr-neutral-0 fw-600 py-4 px-8 rounded-pill"> Envoyer le Message </button>
+                                  </li>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+    <!-- /Footer -->
+
+</body>
+
+</html>
