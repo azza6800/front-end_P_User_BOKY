@@ -16,6 +16,7 @@ import { RegisterComponent } from './register/register.component';
 import { AnnonceComponent } from './annonce/annonce.component';
 import { ProfilComponent } from './profil/profil.component';
 import { Header3Component } from './header3/header3.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { Header3Component } from './header3/header3.component';
     RegisterComponent,
     AnnonceComponent,
     ProfilComponent,
-    Header3Component
+    Header3Component,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
