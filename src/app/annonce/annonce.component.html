@@ -140,48 +140,136 @@
                               <div class="accordion property-accordion">
                                 <div class="accordion-item">
                                   <h3 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#addProperty" aria-expanded="true"> Add Properties </button>
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#addProperty" aria-expanded="true"> Choisissez notre Type de hébergement </button>
                                   </h3>
                                   <div id="addProperty" class="accordion-collapse collapse show">
                                     <div class="accordion-body">
                                       <div class="pt-6">
-                                        <p class="mb-4 fs-20 fw-medium">Type de hébergement :</p>
+                                       
+                                        <section class="section-space position-relative z-1">
+                                          
+                                          <div class="container">
+                                              <div class="row g-4">
+                                                  <div class="col-md-0 col-lg-0 col-xl-3">
+                                                      <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
+                                                          <div class="p-8">
+                                                              <span class="material-symbols-outlined fs-60 clr-primary-300 lh-1 transition"> emoji_transportation </span>
+                                                              <h5 class="mt-5 transition"> Appartements </h5>
+                                                          </div>
+                                                          
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-6 col-lg-4 col-xl-3">
+                                                      <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
+                                                          <div class="p-8">
+                                                              <span class="material-symbols-outlined fs-60 clr-secondary-500 lh-1 transition"> home_work </span>
+                                                              <h5 class="mt-5 transition"> Maison d'hotes </h5>
+                                                          </div>
+                                                          
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-6 col-lg-4 col-xl-3">
+                                                      <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
+                                                          <div class="p-8">
+                                                              <span class="material-symbols-outlined fs-60 clr-tertiary-500 lh-1 transition"> add_business </span>
+                                                              <h5 class="mt-5 transition"> Camping car </h5>
+                                                          </div>
+                                                          
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-6 col-lg-4 col-xl-3">
+                                                      <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
+                                                          <div class="p-8">
+                                                              <span class="material-symbols-outlined fs-60 clr-primary-300 lh-1 transition"> apartment </span>
+                                                              <h5 class="mt-5 transition"> Chamber d'hotes </h5>
+                                                          </div>
+                                                          
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-6 col-lg-4 col-xl-3">
+                                                      <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
+                                                          <div class="p-8">
+                                                              <span class="material-symbols-outlined fs-60 clr-primary-300 lh-1 transition"> moving_ministry </span>
+                                                              <h5 class="mt-5 transition"> Cabane </h5>
+                                                          </div>
+                                                          
+                                                      </div>
+                                                  </div>
+                                                  
+                                                  
+                                                  
+                                              </div>
+                                          </div>
+                                      </section>
+                                        <div class="row">
+                                          <div class="row">
+                                            <div class="col-lg-6">
+                                          
+                                          <p class="mt-6 mb-4 fs-20 fw-medium">Nombre de voyageurs </p>
+                                          
+                                          <div class="d-flex align-items-center bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+                                            <div class="flex-grow-1">
+                                              
+                                            </div>
+                                           
+                                              <div class="quantity">
+                                                <button type="button" class="quantity__button quantity__button-down material-symbols-outlined mat-icon clr-primary-300"> do_not_disturb_on </button>
+                                                <input type="text" class="quantity__value" value="0">
+                                                <button type="button" class="quantity__button quantity__button-up material-symbols-outlined mat-icon clr-primary-300"> add_circle </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-lg-6">
                                         
-                                        <div class="pt-6">
-                                          <p class="mb-4 fs-20 fw-medium">Nombre de voyageurs :</p>
-                                          <select class="form-select form-select-lg fs-16">
-                                            <option selected>4</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                          </select>
                                           <p class="mt-6 mb-4 fs-20 fw-medium">Nombre de chambres :</p>
-                                          <select class="form-select form-select-lg fs-16">
-                                            <option selected>3</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                          </select>
-                                          <p class="mt-6 mb-4 fs-20 fw-medium">Nombre de lits :</p>
-                                          <select class="form-select form-select-lg fs-16">
-                                            <option selected>1</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                          </select>
-                                          <p class="mt-6 mb-4 fs-20 fw-medium">Nombre de salles :</p>
-                                          <select class="form-select form-select-lg fs-16">
-                                            <option selected>8</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                          </select>
+                                        
+                                          <div class="d-flex align-items-center bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+                                            <div class="flex-grow-1">
+                                              
+                                            </div>
+                                           
+                                              <div class="quantity">
+                                                <button type="button" class="quantity__button quantity__button-down material-symbols-outlined mat-icon clr-primary-300"> do_not_disturb_on </button>
+                                                <input type="text" class="quantity__value" value="0">
+                                                <button type="button" class="quantity__button quantity__button-up material-symbols-outlined mat-icon clr-primary-300"> add_circle </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          
                                         </div>
+                                        <div class="row">
+                                          <div class="col-lg-6">
+
+                                          <p class="mt-6 mb-4 fs-20 fw-medium">Nombre de lits :</p>
+                                          <div class="d-flex align-items-center bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+                                            <div class="flex-grow-1">
+                                              
+                                            </div>
+                                           
+                                              <div class="quantity">
+                                                <button type="button" class="quantity__button quantity__button-down material-symbols-outlined mat-icon clr-primary-300"> do_not_disturb_on </button>
+                                                <input type="text" class="quantity__value" value="0">
+                                                <button type="button" class="quantity__button quantity__button-up material-symbols-outlined mat-icon clr-primary-300"> add_circle </button>
+                                              </div>
+                                            </div>
+                                          
+                                        </div>
+                                        <div class="col-lg-6">
+                                          <p class="mt-6 mb-4 fs-20 fw-medium">Nombre de salles :</p>
+                                          <div class="d-flex align-items-center bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+                                            <div class="flex-grow-1">
+                                              
+                                            </div>
+                                           
+                                              <div class="quantity">
+                                                <button type="button" class="quantity__button quantity__button-down material-symbols-outlined mat-icon clr-primary-300"> do_not_disturb_on </button>
+                                                <input type="text" class="quantity__value" value="0">
+                                                <button type="button" class="quantity__button quantity__button-up material-symbols-outlined mat-icon clr-primary-300"> add_circle </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
                       
                                         <p class="mt-6 mb-4 fs-20 fw-medium">Description :</p>
                                         <textarea rows="5" class="form-control" placeholder="Description.."></textarea>
@@ -484,44 +572,43 @@
                           </div>
                       </li>
                           <li>
-                            
-                              <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
-                                <div class="accordion property-accordion">
-                                  <div class="accordion-item">
-                                    <h3 class="accordion-header">
-                                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#map-location" aria-expanded="true"> Images  </button>
-                                    </h3>
-                                    <div id="map-location" class="accordion-collapse collapse show">
-                                      <div class="accordion-body">
-                                        <div class="pt-6">
-                                          <div class="d-flex align-items-center justify-content-center border-dashed rounded-4 w-100">
-                                            <label for="dropzone-file" class="d-flex flex-column align-items-center justify-content-center w-100 cursor-pointer bg-primary-3p rounded-4">
-                                              <span class="d-flex flex-column align-items-center justify-content-center py-12">
-                                                <span class="material-symbols-outlined mat-icon fs-60 fw-200 clr-neutral-500"> cloud_upload </span>
-                                                <span class="h3 clr-neutral-500 text-center mt-4 mb-3"> Drag & Drop </span>
-                                                <span class="d-block text-center mb-6 clr-neutral-500"> OR </span>
-                                                <span class="d-inline-block py-3 px-6 rounded-pill bg-neutral-600 clr-neutral-0 mb-10"> Select Files </span>
-                                                <span class="d-flex align-items-center justify-content-center flex-wrap gap-5">
-                                                  <span class="d-flex align-items-center gap-2">
-                                                    <span class="material-symbols-outlined mat-icon fw-200 clr-neutral-500 flex-shrink-0"> gpp_maybe </span>
-                                                    <span class="d-block mb-0 clr-neutral-500"> Maximum allowed file size is 9.00 MB </span>
-                                                  </span>
-                                                  <span class="d-flex align-items-center gap-2">
-                                                    <span class="material-symbols-outlined mat-icon fw-200 clr-neutral-500 flex-shrink-0"> gpp_maybe </span>
-                                                    <span class="d-block mb-0 clr-neutral-500"> Maximum 10 files are allowed </span>
-                                                  </span>
+                            <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+                              <div class="accordion property-accordion">
+                                <div class="accordion-item">
+                                  <h3 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#map-location" aria-expanded="true"> Images </button>
+                                  </h3>
+                                  <div id="map-location" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                      <div class="pt-6">
+                                        <div class="d-flex align-items-center justify-content-center border-dashed rounded-4 w-100">
+                                          <label for="dropzone-file" class="d-flex flex-column align-items-center justify-content-center w-100 cursor-pointer bg-primary-3p rounded-4">
+                                            <span class="d-flex flex-column align-items-center justify-content-center py-12">
+                                              <span class="material-symbols-outlined mat-icon fs-60 fw-200 clr-neutral-500"> cloud_upload </span>
+                                              <span class="h3 clr-neutral-500 text-center mt-4 mb-3"> Drag & Drop </span>
+                                              <span class="d-block text-center mb-6 clr-neutral-500"> OR </span>
+                                              <span class="d-inline-block py-3 px-6 rounded-pill bg-neutral-600 clr-neutral-0 mb-10"> Select une image </span>
+                                              <span class="d-flex align-items-center justify-content-center flex-wrap gap-5">
+                                                <span class="d-flex align-items-center gap-2">
+                                                  <span class="material-symbols-outlined mat-icon fw-200 clr-neutral-500 flex-shrink-0"> gpp_maybe </span>
+                                                  <span class="d-block mb-0 clr-neutral-500"> Maximum allowed file size is 9.00 MB </span>
+                                                </span>
+                                                <span class="d-flex align-items-center gap-2">
+                                                  <span class="material-symbols-outlined mat-icon fw-200 clr-neutral-500 flex-shrink-0"> gpp_maybe </span>
+                                                  <span class="d-block mb-0 clr-neutral-500"> Maximum 10 files are allowed </span>
                                                 </span>
                                               </span>
-                                              <input type="file" id="dropzone-file" class="d-none">
-                                            </label>
-                                          </div>
-                                          
+                                            </span>
+                                            <input type="file" id="dropzone-file" class="d-none">
+                                          </label>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
+                            </div>
+                            
                             
                           </li>
                         </ul>
@@ -543,57 +630,80 @@
                                     <div class="accordion-body">
                                       <div class="pt-6">
                       
-                                        <p class="mt-6 mb-4 fs-20 fw-medium">Titre :</p>
-                                        <textarea rows="5" class="form-control" placeholder="Titre.."></textarea>
-                      
-                                        <p class="mb-4 fs-20 fw-medium">Réduction au mois 20%:</p>
-                                        <ul class="list list-row gap-6 flex-wrap">
-                                          <li>
-                                            <div class="d-flex align-items-center gap-2">
-                                              <input class="custom-radio custom-radio--primary-300" type="radio" name="property-type" id="general-settings">
-                                              <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="general-settings">Oui</label>
+                                        <div class="container mt-6">
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                              <div class="mb-4">
+                                                <label for="titre" class="form-label fs-20 fw-medium">Titre :</label>
+                                                <textarea id="titre" rows="5" class="form-control" placeholder="Entrez le titre..."></textarea>
+                                              </div>
+                                        
+                                              <div class="mb-4">
+                                                <label class="form-label fs-20 fw-medium">Réduction mensuelle 20% :</label>
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="reduction-mensuelle" id="oui-reduction">
+                                                  <label class="form-check-label fs-18 fw-medium" for="oui-reduction">Oui</label>
+                                                </div>
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="reduction-mensuelle" id="non-reduction">
+                                                  <label class="form-check-label fs-18 fw-medium" for="non-reduction">Non</label>
+                                                </div>
+                                              </div>
+                                        
+                                              <div class="mb-4">
+                                                <label class="form-label fs-20 fw-medium">Réduction hebdomadaire 10% :</label>
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="reduction-hebdomadaire" id="oui-reduction-hebdo">
+                                                  <label class="form-check-label fs-18 fw-medium" for="oui-reduction-hebdo">Oui</label>
+                                                </div>
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="reduction-hebdomadaire" id="non-reduction-hebdo">
+                                                  <label class="form-check-label fs-18 fw-medium" for="non-reduction-hebdo">Non</label>
+                                                </div>
+                                              </div>
                                             </div>
-                                          </li>
-                                          <li>
-                                            <div class="d-flex align-items-center gap-2">
-                                              <input class="custom-radio custom-radio--primary-300" type="radio" name="property-type" id="featured-settings">
-                                              <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="featured-settings">Nom</label>
+                                            <div class="col-md-12">
+                                              <div class="mb-4">
+                                                <label for="prix" class="form-label fs-20 fw-medium">Prix :</label>
+                                                <input type="number" id="prix" class="form-control" placeholder="Entrez le prix">
+                                              </div>
+                                              
+                                              <div class="mb-4">
+                                                <label for="pays" class="form-label fs-20 fw-medium">Pays :</label>
+                                                <input type="text" id="pays" class="form-control" placeholder="Entrez le pays">
+                                              </div>
+                                              
+                                              <div class="mb-4">
+                                                <label for="etat" class="form-label fs-20 fw-medium">État :</label>
+                                                <input type="text" id="etat" class="form-control" placeholder="Entrez l'état">
+                                              </div>
+                                              
+                                              <div class="mb-4">
+                                                <label for="libelle-voie" class="form-label fs-20 fw-medium">Libellé de la voie :</label>
+                                                <input type="text" id="libelle-voie" class="form-control" placeholder="Entrez le libellé de la voie">
+                                              </div>
+                                              
+                                              <div class="mb-4">
+                                                <label for="code-postal" class="form-label fs-20 fw-medium">Code postal :</label>
+                                                <input type="text" id="code-postal" class="form-control" placeholder="Entrez le code postal">
+                                              </div>
+                                              
+                                              
                                             </div>
-                                          </li>
-                                        </ul>
-                                        <div>
-                                        <p class="mb-4 fs-20 fw-medium">Réduction au semaine 10% :</p>
-                                        <ul class="list list-row gap-6 flex-wrap">
-                                          <li>
-                                            <div class="d-flex align-items-center gap-2">
-                                              <input class="custom-radio custom-radio--primary-300" type="radio" name="property-type" id="general-settings">
-                                              <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="general-settings">Oui</label>
+                                            <div class="mb-4">
+                                              <label for="heure-depart" class="form-label fs-20 fw-medium">Heure de départ :</label>
+                                              <input type="datetime-local" id="heure-depart" class="form-control" placeholder="Entrez l'heure de départ">
                                             </div>
-                                          </li>
-                                          
-                                          <li>
-                                            <div class="d-flex align-items-center gap-2">
-                                              <input class="custom-radio custom-radio--primary-300" type="radio" name="property-type" id="featured-settings">
-                                              <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="featured-settings">Nom</label>
+                                            
+                                            <div class="mb-4">
+                                              <label for="heure-arrivee" class="form-label fs-20 fw-medium">Heure d'arrivée :</label>
+                                              <input type="datetime-local" id="heure-arrivee" class="form-control" placeholder="Entrez l'heure d'arrivée">
                                             </div>
-                                          </li>
-                                        </ul>
-                                      </div>
-                      
-                                        <p class="mb-4 fs-20 fw-medium">Prix :</p>
-                                        <input type="number" class="form-control mb-4" placeholder="Entrez le prix">
-                      
-                                        <p class="mb-4 fs-20 fw-medium">Pays :</p>
-                                        <input type="text" class="form-control mb-4" placeholder="Entrez le pays">
-                      
-                                        <p class="mb-4 fs-20 fw-medium">État :</p>
-                                        <input type="text" class="form-control mb-4" placeholder="Entrez l'état ">
-                      
-                                        <p class="mb-4 fs-20 fw-medium">Libellé de la voie :</p>
-                                        <input type="text" class="form-control mb-4" placeholder="Entrez le libellé de la voie">
-                      
-                                        <p class="mb-4 fs-20 fw-medium">Code postal :</p>
-                                        <input type="text" class="form-control mb-4" placeholder="Entrez le code postal">
+                                        
+                                            
+                                          </div>
+                                        </div>
+                                        
                       
                                       </div>
                                     </div>
