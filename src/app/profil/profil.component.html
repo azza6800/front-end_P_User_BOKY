@@ -17,7 +17,32 @@
 <body class="bg-primary-3p">
   
   <app-header2></app-header2>
-  <app-header3></app-header3>
+  <div class="section-space--sm bg-neutral-900">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6">
+          <h1 class="d4 clr-neutral-0 mb-3"> Votre Profil </h1>
+          <ul class="list list-row list-arrow align-items-center">
+            <li>
+              <a href="profil" class="link d-inline-block clr-neutral-0 :clr-tertiary-300"> Profil</a>
+            </li>
+            <li>
+              <a href="annonce" class="link d-inline-block clr-tertiary-300"> Publier une annonce </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="text-md-end">
+            <a href="#" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-neutral-700 :bg-primary-300">
+              <span class="material-symbols-outlined mat-icon clr-neutral-0"> logout </span>
+              <span class="d-inline-block clr-neutral-0 fw-semibold"> Déconnection </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- /Banner -->
   <!-- Dashboard -->
   <div class="section-space--sm pt-0 position-relative z-1">
@@ -73,7 +98,7 @@
             <div class="accordion-item user-accordion__item shadow-3">
               <h2 class="accordion-header">
                 <button class="accordion-button :focus-outline-0" type="button" data-bs-toggle="collapse" data-bs-target="#basic-info" aria-expanded="true" aria-controls="basic-info">
-                  <span class="d-block h3 fw-bold mb-0"> Basic Info </span>
+                  <span class="d-block h3 fw-bold mb-0"> Informations de base </span>
                 </button>
               </h2>
               <div id="basic-info" class="accordion-collapse collapse show" data-bs-parent="#user-info">
@@ -116,8 +141,8 @@
                       </div>
                     <div class="col-12">
                       <div class="d-flex align-items-center gap-6 flex-wrap">
-                        <a href="#" class="link d-inline-block py-3 px-6 rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0 fw-semibold"> Save Changes </a>
-                        <a href="#" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Cancel </a>
+                        <a href="#" class="link d-inline-block py-3 px-6 rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0 fw-semibold"> Sauvegarder </a>
+                        <a href="#" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Annuler </a>
                       </div>
                     </div>
                   </form>
@@ -129,17 +154,17 @@
             <div class="accordion-item user-accordion__item shadow-3">
               <h2 class="accordion-header">
                 <button class="accordion-button :focus-outline-0" type="button" data-bs-toggle="collapse" data-bs-target="#user-account" aria-expanded="true" aria-controls="user-account">
-                  <span class="d-block h3 fw-bold mb-0"> Delete your account </span>
+                  <span class="d-block h3 fw-bold mb-0"> Supprimer votre compte </span>
                 </button>
               </h2>
               <div id="user-account" class="accordion-collapse collapse show" data-bs-parent="#user-info">
                 <div class="accordion-body">
-                  <p class="clr-neutral-500 mb-4"> When you delete your account, you lose access to Front account services, and we permanently delete your personal data. You can cancel the deletion for 14 days. </p>
+                  <p class="clr-neutral-500 mb-4"> Lorsque vous supprimez votre compte, vous perdrez l'accès aux services du compte frontal et nous supprimerons définitivement vos données personnelles. </p>
                   <div class="d-flex align-items-center gap-3 mb-8">
                     <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="delete-account">
-                    <label class="clr-neutral-500" for="delete-account"> Confirm that I want to delete my account. </label>
+                    <label class="clr-neutral-500" for="delete-account"> Confirmez que je souhaite supprimer mon compte. </label>
                   </div>
-                  <a href="#" class="link d-inline-block py-3 px-6 rounded-pill bg-tertiary-300 clr-neutral-700 fw-semibold"> Delete </a>
+                  <a href="#" class="link d-inline-block py-3 px-6 rounded-pill bg-tertiary-300 clr-neutral-700 fw-semibold"> Supprimer </a>
                 </div>
               </div>
             </div>
@@ -157,4 +182,3 @@
 
 <!-- Mirrored from pix-placewise.vercel.app/personal-info.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:56:08 GMT -->
 </html>
-

@@ -9,7 +9,7 @@
   <meta name="description" content="landing page starter kit">
   <meta name="keywords" content="bootstrap 5, saas, landing page">
   <meta name="author" content="asaduzzaman">
-  <title>Placewise - Online Booking HTML Template</title>
+  <title>Boky</title>
   
 </head>
 
@@ -21,7 +21,32 @@
   <!-- /Header -->
   <!-- Banner -->
   
-   <app-header3></app-header3>
+  <div class="section-space--sm bg-neutral-900">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6">
+          <h1 class="d4 clr-neutral-0 mb-3"> Publier une annonce  </h1>
+          <ul class="list list-row list-arrow align-items-center">
+            <li>
+              <a href="profil" class="link d-inline-block clr-neutral-0 :clr-tertiary-300"> Profil </a>
+            </li>
+            <li>
+              <a href="annonce" class="link d-inline-block clr-tertiary-300"> Annonce </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="text-md-end">
+            <a href="#" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-neutral-700 :bg-primary-300">
+              <span class="material-symbols-outlined mat-icon clr-neutral-0"> logout </span>
+              <span class="d-inline-block clr-neutral-0 fw-semibold">Déconnection </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Dashboard -->
   <div class="section-space--sm pt-0 position-relative z-1">
     <span class="w-100 h-30 position-absolute start-0 end-0 top-0 z-n1 bg-neutral-900"></span>
@@ -109,21 +134,12 @@
                                     <div class="accordion-body">
                                       <div class="pt-6">
                                         <p class="mb-4 fs-20 fw-medium">Type de hébergement :</p>
-                                        <ul class="list list-row gap-6 flex-wrap">
-                                          <li>
-                                            <div class="d-flex align-items-center gap-2">
-                                              <input class="custom-radio custom-radio--primary-300" type="radio" name="property-type" id="general-settings">
-                                              <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="general-settings"> General </label>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div class="d-flex align-items-center gap-2">
-                                              <input class="custom-radio custom-radio--primary-300" type="radio" name="property-type" id="featured-settings">
-                                              <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="featured-settings"> Featured </label>
-                                            </div>
-                                          </li>
-                                        </ul>
-                      
+                                        <select class="form-select form-select-lg fs-16">
+                                          <option selected>Aucune</option>
+                                          <option value="1">chambre partagée</option>
+                                          <option value="2">chambre privée </option>
+                                          <option value="3">Maison entiére</option>
+                                        </select>
                                         <div class="pt-6">
                                           <p class="mb-4 fs-20 fw-medium">Nombre de voyageurs :</p>
                                           <select class="form-select form-select-lg fs-16">
@@ -538,6 +554,7 @@
                                             </div>
                                           </li>
                                         </ul>
+                                        <div>
                                         <p class="mb-4 fs-20 fw-medium">Réduction au semaine 10% :</p>
                                         <ul class="list list-row gap-6 flex-wrap">
                                           <li>
@@ -546,6 +563,7 @@
                                               <label class="d-inline-block fs-18 fw-medium cursor-pointer" for="general-settings">Oui</label>
                                             </div>
                                           </li>
+                                          
                                           <li>
                                             <div class="d-flex align-items-center gap-2">
                                               <input class="custom-radio custom-radio--primary-300" type="radio" name="property-type" id="featured-settings">
@@ -553,6 +571,7 @@
                                             </div>
                                           </li>
                                         </ul>
+                                      </div>
                       
                                         <p class="mb-4 fs-20 fw-medium">Prix :</p>
                                         <input type="number" class="form-control mb-4" placeholder="Entrez le prix">
