@@ -17,6 +17,8 @@ import { AnnonceComponent } from './annonce/annonce.component';
 import { ProfilComponent } from './profil/profil.component';
 import { Header3Component } from './header3/header3.component';
 import { AboutComponent } from './about/about.component';
+import { ListeAnnonceComponent } from './liste-annonce/liste-annonce.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { AboutComponent } from './about/about.component';
     AnnonceComponent,
     ProfilComponent,
     Header3Component,
-    AboutComponent
+    AboutComponent,
+    ListeAnnonceComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

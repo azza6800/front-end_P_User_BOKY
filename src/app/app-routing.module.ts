@@ -7,6 +7,8 @@ import { RegisterComponent } from './register/register.component';
 import { AnnonceComponent } from './annonce/annonce.component';
 import { ProfilComponent } from './profil/profil.component';
 import { AboutComponent } from './about/about.component';
+import { ListeAnnonceComponent } from './liste-annonce/liste-annonce.component';
+import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [  
 {path:'',component:HomeComponent},
@@ -16,6 +18,9 @@ const routes: Routes = [
 {path:'annonce',component:AnnonceComponent},
 {path:'profil',component:ProfilComponent},
 {path:'about',component:AboutComponent},
+{path:"liste_Annonce",component:ListeAnnonceComponent},
+{path:"chat",component:ChatComponent}
+
 
 ];
 
