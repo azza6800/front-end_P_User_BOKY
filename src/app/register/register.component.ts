@@ -69,14 +69,11 @@ export class RegisterComponent implements OnInit {
             summary: data.role + ' est ajouté avec succés',
           });
 
-          this.router.navigate(['/login']);
+          
         },
         err => {
           console.log(err);
-          this.toast.error({
-            detail: 'Error Message',
-            summary: 'Probléme de Serveur',
-          });
+          this.router.navigate(['/verification_email']);
         }
       );
     }
