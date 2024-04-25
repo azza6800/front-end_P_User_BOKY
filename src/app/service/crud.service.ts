@@ -3,7 +3,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Utilisateur } from '../Entites/Utilisateur.Entites';
 import { Contact } from '../Entites/Contact.Entites';
 import  {Observable} from 'rxjs';
+import { Annonce } from '../Entites/Annonce.Entites';
 import { JwtHelperService } from '@auth0/angular-jwt';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,20 +18,12 @@ export class CrudService {
   //UtilisateurCrud
   addUtilisateur(utilisateur:Utilisateur)
    {
-    return this.http.post<any>(this.apiUrl+"/Utilisateur/register",utilisateur);
+    return this.http.post<any>(this.apiUrl+"/Utilisateur",utilisateur);
    }
   loginUtilisateur(utilisateur:Utilisateur){
     return this.http.post<any>(this.loginUserUrl, utilisateur);
   }
-  getUserInfo() {
-    var token = localStorage.getItem("myToken");
-    const helper = new JwtHelperService();
-    const decodedToken = helper.decodeToken(token);
-    const expirationDate = helper.getTokenExpirationDate(token);
-    const isExpired = helper.isTokenExpired(token);
-    var decoded: any
-    return decodedToken?.data
-  }
+
   //ContactCrud
   addContact(contact:Contact)
    {
@@ -51,5 +46,25 @@ export class CrudService {
       return false;
     }
   }
-  
+  addAnnonce(annonce:Annonce)
+   {
+    return this.http.post<any>(this.apiUrl+"/annonce",annonce);
+   }
+   getAnnonce(): Observable<Annonce[]>{
+    return this.http.get<Annonce[]>(this.apiUrl + "/annonce");
+  }
+  onDeleteAnnonce(id : number){
+    const url =`${this.apiUrl+"/annonce"}/${id}` 
+    return this.http.delete(url)
+  }
+
+  getUserInfo() {
+    var token = localStorage.getItem("myToken");
+    const helper = new JwtHelperService();
+    const decodedToken = helper.decodeToken(token);
+    const expirationDate = helper.getTokenExpirationDate(token);
+    const isExpired = helper.isTokenExpired(token);
+    var decoded: any
+    return decodedToken?.data
+  }
 }

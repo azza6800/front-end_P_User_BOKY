@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
 import { Annonce} from '../Entites/Annonce.Entites';
 import { Router } from '@angular/router';
 import { CrudService } from '../service/crud.service';
-=======
->>>>>>> 5d8133e23d99fc9fb55deeb7bcc3fb467b2fc047
 
 @Component({
   selector: 'app-liste-annonce',
@@ -12,7 +9,6 @@ import { CrudService } from '../service/crud.service';
   styleUrls: ['./liste-annonce.component.css']
 })
 export class ListeAnnonceComponent {
-<<<<<<< HEAD
   listeAnnonce:Annonce[];
   Annonce:any
   p:number=1;
@@ -29,9 +25,6 @@ export class ListeAnnonceComponent {
       })
    
   }
-=======
-
->>>>>>> 5d8133e23d99fc9fb55deeb7bcc3fb467b2fc047
 }
   ngOnInit(): void {
     this.service.getAnnonce().subscribe(annonce => {
