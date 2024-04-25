@@ -3,6 +3,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Utilisateur } from '../Entites/Utilisateur.Entites';
 import { Contact } from '../Entites/Contact.Entites';
 import  {Observable} from 'rxjs';
+import { Annonce } from '../Entites/Annonce.Entites';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +35,19 @@ export class CrudService {
   getContact(): Observable<Contact[]>{
     return this.http.get<Contact[]>(this.apiUrl + "/Contact");
   }
+
+  addAnnonce(annonce:Annonce)
+   {
+    return this.http.post<any>(this.apiUrl+"/annonce",annonce);
+   }
+   getAnnonce(): Observable<Annonce[]>{
+    return this.http.get<Annonce[]>(this.apiUrl + "/annonce");
+  }
+  onDeleteAnnonce(id : number){
+    const url =`${this.apiUrl+"/annonce"}/${id}` 
+    return this.http.delete(url)
+  }
+
   isLoggedIn(){
 
     let token = localStorage.getItem("myToken");
@@ -41,6 +57,15 @@ export class CrudService {
     } else {
       return false;
     }
+  }
+  getUserInfo() {
+    var token = localStorage.getItem("myToken");
+    const helper = new JwtHelperService();
+    const decodedToken = helper.decodeToken(token);
+    const expirationDate = helper.getTokenExpirationDate(token);
+    const isExpired = helper.isTokenExpired(token);
+    var decoded: any
+    return decodedToken?.data
   }
   
 }
