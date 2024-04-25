@@ -7,8 +7,8 @@ import { RegisterComponent } from './register/register.component';
 import { AnnonceComponent } from './annonce/annonce.component';
 import { ProfilComponent } from './profil/profil.component';
 import { AboutComponent } from './about/about.component';
-import { ListeAnnonceComponent } from './liste-annonce/liste-annonce.component';
 import { ChatComponent } from './chat/chat.component';
+import { ListeAnnonceComponent } from './liste-annonce/liste-annonce.component';
 import { ListeAnnoncesPublicComponent } from './liste-annonces-public/liste-annonces-public.component';
 import { VerificationEmailComponent } from './verification-email/verification-email.component';
 
@@ -20,7 +20,7 @@ const routes: Routes = [
 {path:'annonce',component:AnnonceComponent},
 {path:'profil',component:ProfilComponent},
 {path:'about',component:AboutComponent},
-{path:"liste_Annonce",component:ListeAnnonceComponent},
+{path:'liste_annonce',component:ListeAnnonceComponent},
 {path:"chat",component:ChatComponent},
 {path:"liste_annonces_public",component:ListeAnnoncesPublicComponent},
 {path:"verification_email",component:VerificationEmailComponent}
