@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Utilisateur } from '../Entites/Utilisateur.Entites';
 import { Contact } from '../Entites/Contact.Entites';
 import  {Observable} from 'rxjs';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,15 @@ export class CrudService {
   loginUtilisateur(utilisateur:Utilisateur){
     return this.http.post<any>(this.loginUserUrl, utilisateur);
   }
-
+  getUserInfo() {
+    var token = localStorage.getItem("myToken");
+    const helper = new JwtHelperService();
+    const decodedToken = helper.decodeToken(token);
+    const expirationDate = helper.getTokenExpirationDate(token);
+    const isExpired = helper.isTokenExpired(token);
+    var decoded: any
+    return decodedToken?.data
+  }
   //ContactCrud
   addContact(contact:Contact)
    {
