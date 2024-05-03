@@ -21,6 +21,7 @@ import { ListeAnnonceComponent } from './liste-annonce/liste-annonce.component';
 import { ChatComponent } from './chat/chat.component';
 import { ListeAnnoncesPublicComponent } from './liste-annonces-public/liste-annonces-public.component';
 import { VerificationEmailComponent } from './verification-email/verification-email.component';
+import { ChangerMotDePasseComponent } from './changer-mot-de-passe/changer-mot-de-passe.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { VerificationEmailComponent } from './verification-email/verification-em
     ListeAnnonceComponent,
     ChatComponent,
     ListeAnnoncesPublicComponent,
-    VerificationEmailComponent
+    VerificationEmailComponent,
+    ChangerMotDePasseComponent
   ],
   imports: [
     BrowserModule,
