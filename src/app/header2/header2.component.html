@@ -31,7 +31,7 @@
             <ul class="list list-row gap-4 flex-wrap align-items-center order-1">
               
               <li>
-                <div class="dropdown">
+                <div class="dropdown" *ngIf="IsloggedIn || IsUtilisateurIn">
                   <a href="#" class="link d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-neutral-500" data-bs-toggle="dropdown" data-bs-offset="0,16">
                     <span class="material-symbols-rounded mat-icon position-relative"> notifications <span class="d-inline-block position-absolute top-0 end-0 w-2 h-2 rounded-circle bg-primary-300"></span>
                     </span>
@@ -60,7 +60,7 @@
                 </div>
               </li>
               <li>
-                <div class="dropdown">
+                <div class="dropdown" *ngIf="IsloggedIn || IsUtilisateurIn">
                   <a href="#" class="link d-inline-block rounded-circle" data-bs-toggle="dropdown" data-bs-offset="0,16">
                     <img src="assets/img/user-1.jpg" alt="image" class="img-fluid w-10 h-10 rounded-circle objec-fit-cover">
                   </a>
@@ -119,7 +119,7 @@
               <a href="Contact" class="link menu-link "> Contact </a>
             </li>
           
-          <li class="menu-list">
+          <li class="menu-list" *ngIf="IsloggedIn || IsUtilisateurIn">
             <a href="profil" class="link menu-link "> Tableau de bord </a>
           </li>
             

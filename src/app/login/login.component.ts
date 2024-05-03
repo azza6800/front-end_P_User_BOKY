@@ -65,11 +65,37 @@ export class LoginComponent {
       },
        
         err=>{
-          console.log(err);
-          this.toast.error({
-            detail: 'Error Message',
-            summary: 'Probléme de Serveur',
-          });
+          {
+            console.log(err);
+            if (err.error.message === "Utilisateur not found !") 
+            {
+              this.toast.error({
+                detail: 'Utilisateur non trouvé',
+                summary: 'Erreur',
+              });
+            } 
+            else if (err.error.message === "Incorrect password !") 
+            {
+              this.toast.error({
+                detail: 'Mot de passe incorrect',
+                summary: 'Erreur',
+              });
+            } 
+            else if (err.error.message === "Account is not activated !")
+            {
+              this.toast.error({
+                detail: 'Le compte n\'est pas activé',
+                summary: 'Erreur',
+              });
+            } 
+            else 
+            {
+              this.toast.error({
+                detail: 'Problème de serveur',
+                summary: 'Erreur',
+              });
+            }
+          }
           
         }
       )
