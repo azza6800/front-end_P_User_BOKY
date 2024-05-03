@@ -18,7 +18,7 @@ export class CrudService {
   //UtilisateurCrud
   addUtilisateur(utilisateur:Utilisateur)
    {
-    return this.http.post<any>(this.apiUrl+"/Utilisateur",utilisateur);
+    return this.http.post<any>(this.apiUrl+"/Utilisateur/register",utilisateur);
    }
   loginUtilisateur(utilisateur:Utilisateur){
     return this.http.post<any>(this.loginUserUrl, utilisateur);
