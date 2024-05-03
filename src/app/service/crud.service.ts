@@ -67,4 +67,13 @@ export class CrudService {
     var decoded: any
     return decodedToken?.data
   }
+  isUtilisateurInIn(){
+
+    let token = localStorage.getItem("myToken");
+    if (token) {
+      return true ;
+    } else {
+      return false;
+    }
+  }
 }

@@ -1,3 +1,4 @@
+
 <header class="header header--light header--fixed">
   <div class="container">
     <div class="row">
@@ -13,16 +14,20 @@
             <ul class="list list-row gap-4 flex-wrap align-items-center order-1">
               <li>
                 <div class="dropdown">
-                  <a href="#" class="link d-flex align-items-center gap-2 p-2 rounded-pill bg-primary-5p clr-neutral-500" data-bs-toggle="dropdown" data-bs-offset="0,14">
                     <ul class="list list-row list-divider-half-xs align-items-center lh-1">
                       <li>
-                        <span> Connexion </span>
+                        <a  *ngIf="!IsloggedIn && !IsUtilisateurIn"  href="/login" >
+                          <span _ngcontent-ng-c2843695859="" class="cart-text">
+                          Connection
+                          </span></a>
                       </li>
                       <li>
+                        <a   *ngIf="!IsloggedIn && !IsUtilisateurIn"  href="/register" >
                         <span> Inscription </span>
+                      </a>
                       </li>
                     </ul>
-                  </a>
+                  
                 </div>
               </li>
               <li>
@@ -53,14 +58,15 @@
                   </div>
                 </div>
               </li>
-              <li>
-                <div class="dropdown">
+              <li >
+                
+                <div class="dropdown" *ngIf="IsloggedIn || IsUtilisateurIn"   >
                   <a href="#" class="link d-inline-block rounded-circle" data-bs-toggle="dropdown" data-bs-offset="0,16">
                     <img src="assets/img/user-1.jpg" alt="image" class="img-fluid w-10 h-10 rounded-circle objec-fit-cover">
                   </a>
                   <div class="dropdown-menu dropdown-menu-end p-0 border border-neutral-30">
                     <div class="p-6">
-                      <div class="d-flex align-items-center gap-4 max-width">
+                      <div class="d-flex align-items-center gap-4 max-width" >
                         <img src="assets/img/user-1.jpg" alt="image" class="img-fluid w-12 h-12 rounded-circle object-fit-cover flex-shrink-0">
                         <div class="flex-grow-1">
                           <h5 class="mb-0">Peter Parker</h5>
@@ -86,10 +92,10 @@
                       <div class="hr-dashed my-2"></div>
                       <ul class="list">
                         
-                        <li>
+                        <li *ngIf="IsloggedIn || IsUtilisateurIn" (click)="logout()">
                           <a href="#" class="link d-flex align-items-center gap-3 clr-neutral-400 dropdown-item px-2">
                             <span class="material-symbols-outlined mat-icon fs-28 flex-shrink-0"> logout </span>
-                            <span class="d-block fs-14 fw-medium flex-grow-1"> Déconnexion </span>
+                            <span class="d-block fs-14 fw-medium flex-grow-1" > Déconnexion </span>
                           </a>
                         </li>
                       </ul>
