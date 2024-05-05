@@ -15,10 +15,11 @@ export class CrudService {
   loginUserUrl="http://localhost:8081/api/Utilisateur/Login"
   apiUrl="http://localhost:8081/api"
   constructor(private http:HttpClient) { }
+  helper=new JwtHelperService()
   //UtilisateurCrud
   addUtilisateur(utilisateur:Utilisateur)
    {
-    return this.http.post<any>(this.apiUrl+"/Utilisateur/register",utilisateur);
+    return this.http.post<any>(this.apiUrl+"/Utilisateur",utilisateur);
    }
   loginUtilisateur(utilisateur:Utilisateur){
     return this.http.post<any>(this.loginUserUrl, utilisateur);
@@ -57,6 +58,17 @@ export class CrudService {
     const url =`${this.apiUrl+"/annonce"}/${id}` 
     return this.http.delete(url)
   }
+  getUtilisateur(): Observable<Utilisateur[]>{
+    return this.http.get<Utilisateur[]>(this.apiUrl + "/Utilisateur");
+  }
+  updateUtilisateur(id:number,utilisateur: Utilisateur) {
+    const url = `${this.apiUrl+"/Utilisateur"}/${id}`
+    return this.http.put<any>(url, utilisateur);
+  }
+  findUtilisateurById(id : number): Observable<Utilisateur> {
+    const url =`${this.apiUrl+"/Utilisateur"}/${id}`
+    return this.http.get<Utilisateur>(url)
+  }
 
   getUserInfo() {
     var token = localStorage.getItem("myToken");
@@ -76,4 +88,16 @@ export class CrudService {
       return false;
     }
   }
+  
+  userDetails(){
+    let token:any=localStorage.getItem('myToken');
+    let decodeToken= this.helper.decodeToken(token);
+     return decodeToken.data;
+   }
+   
+   onDeleteUtilisateur(id : number){
+    const url =`${this.apiUrl+"/Utilisateur"}/${id}`
+    return this.http.delete(url)
+  }
+  
 }

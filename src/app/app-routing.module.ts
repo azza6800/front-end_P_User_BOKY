@@ -12,6 +12,7 @@ import { ListeAnnonceComponent } from './liste-annonce/liste-annonce.component';
 import { ListeAnnoncesPublicComponent } from './liste-annonces-public/liste-annonces-public.component';
 import { VerificationEmailComponent } from './verification-email/verification-email.component';
 import { ChangerMotDePasseComponent } from './changer-mot-de-passe/changer-mot-de-passe.component';
+import { ModifierprofilComponent } from './modifierprofil/modifierprofil.component';
 
 const routes: Routes = [  
 {path:'',component:HomeComponent},
@@ -25,8 +26,8 @@ const routes: Routes = [
 {path:"chat",component:ChatComponent},
 {path:"liste_annonces_public",component:ListeAnnoncesPublicComponent},
 {path:"verification_email",component:VerificationEmailComponent},
-{path:"reset_mdp",component:ChangerMotDePasseComponent}
-
+{path:"reset_mdp",component:ChangerMotDePasseComponent},
+{path:"modifierprofil/:id",component:ModifierprofilComponent}
 
 
 ];
