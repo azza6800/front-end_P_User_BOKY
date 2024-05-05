@@ -1,1 +1,107 @@
-<p>changer-mot-de-passe works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from pix-placewise.vercel.app/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:56:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="landing page starter kit">
+  <meta name="keywords" content="bootstrap 5, saas, landing page">
+  <meta name="author" content="asaduzzaman">
+  <title>Placewise - Online Booking HTML Template</title>
+  
+</head>
+
+<body>
+    
+  <!-- Header Top  -->
+  <app-header2></app-header2>
+  <!-- /Header Top  -->
+  <!-- Header -->
+  
+  <!-- /Header -->
+  <div class="section-space--sm bg-primary-5p">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-12">
+                <div class="bg-neutral-0 rounded-4 p-6 p-lg-8">
+                    <section class="section-space text-center">
+                        <div class="container">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="border border-neutral-40 rounded-4 p-8 bg-neutral-0">
+                                        <form *ngIf="enableForm" (ngSubmit)="done()" [formGroup]="checkoutParentGroup" >
+                                            <h3 class="mb-4">Mot de passe oublié</h3>
+                                            <p class="mb-10">Entrez votre adresse e-mail pour récupérer votre code.</p>
+                                            <div class="row g-4" >
+                                                <div class="col-12">
+                                                    <label for="enter-email" class="fs-20 fw-medium d-block mb-3">Adresse e-mail</label>
+                                                    <input formControlName="email" type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="Saisissez votre adresse e-mail" id="enter-email" >
+                                                    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                                                        <div *ngIf="email.errors['required'] || email.errors['noSpace']" class="alert alert-danger" role="alert">
+                                                            E-mail est obligatoire
+                                                        </div>
+                                                        <div *ngIf="email.errors['pattern']" class="alert alert-danger" role="alert">
+                                                          Invalid Email
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="text-center"> <!-- Changement de text-end à text-center -->
+                                                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <form *ngIf="!enableForm" (ngSubmit)="resetNewPassword()" [formGroup]="checkoutParentGroupReset" >
+                                            <h3 class="mb-4">Mot de passe oublié</h3>
+                                            <p class="mb-10">Vérifier votre e-mail pour récuperer votre code </p>
+                                            <div class="row g-4">
+                                                <div class="col-12">
+                                                    <label for="enter-email" class="fs-20 fw-medium d-block mb-3">Code</label>
+                                                    <input  formControlName="code" type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="Saisissez votre code" id="code" >
+                                                    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                                                        <div *ngIf="code.invalid && (code.dirty || code.touched)">
+                                                            <div *ngIf="code.errors['required'] || code.errors['noSpace']" class="alert alert-danger" role="alert">
+                                                                Code est obligatoire
+                                                            </div>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="enter-email" class="fs-20 fw-medium d-block mb-3">Nouveau Mot de passe</label>
+                                                    <input formControlName="password" type="password" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="Saisissez votre nouveau mot de passe" id="password" >
+                                                    <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                                                        <div *ngIf="password.errors['required'] || password.errors['noSpace']" class="alert alert-danger" role="alert">
+                                                          Mot de passe est obligatoire
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="text-center"> <!-- Changement de text-end à text-center -->
+                                                        <button type="submit" class="btn btn-primary">Réinitialiser</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <app-footer></app-footer>
+  
+</body>
+
+
+<!-- Mirrored from pix-placewise.vercel.app/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:56:12 GMT -->
+</html>

@@ -23,6 +23,14 @@ export class CrudService {
   loginUtilisateur(utilisateur:Utilisateur){
     return this.http.post<any>(this.loginUserUrl, utilisateur);
   }
+  checkEmail(utilisateur:Utilisateur)
+  {
+    return this.http.post<any>(this.apiUrl+"/Utilisateur/checkEmail", utilisateur);
+  }
+  resetPassword(email:string,code:string,password:string)
+  {
+    return this.http.post<any>(this.apiUrl+"/Utilisateur/resetPassword", {email,code,password});
+  }
 
   //ContactCrud
   addContact(contact:Contact)
