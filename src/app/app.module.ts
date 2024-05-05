@@ -22,6 +22,7 @@ import { ChatComponent } from './chat/chat.component';
 import { ListeAnnoncesPublicComponent } from './liste-annonces-public/liste-annonces-public.component';
 import { VerificationEmailComponent } from './verification-email/verification-email.component';
 import { ChangerMotDePasseComponent } from './changer-mot-de-passe/changer-mot-de-passe.component';
+import { ModifierprofilComponent } from './modifierprofil/modifierprofil.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { ChangerMotDePasseComponent } from './changer-mot-de-passe/changer-mot-d
     ChatComponent,
     ListeAnnoncesPublicComponent,
     VerificationEmailComponent,
-    ChangerMotDePasseComponent
+    ChangerMotDePasseComponent,
+    ModifierprofilComponent,
+   
   ],
   imports: [
     BrowserModule,

@@ -24,10 +24,7 @@
           <h1 class="d4 clr-neutral-0 mb-3"> Votre Profil </h1>
           <ul class="list list-row list-arrow align-items-center">
             <li>
-              <a href="profil" class="link d-inline-block clr-neutral-0 :clr-tertiary-300"> Tableau de bord</a>
-            </li>
-            <li>
-              <a href="profil" class="link d-inline-block clr-tertiary-300"> Profil </a>
+              <a href="profil" class="link d-inline-block clr-neutral-0 :clr-tertiary-300"> Profil</a>
             </li>
             
           </ul>
@@ -50,7 +47,61 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-md-5 col-lg-4 col-xl-3">
-          <app-header3></app-header3>
+          <div class="p-6 rounded-4 bg-neutral-0 box-shadow">
+            <div class="w-30 h-30 border border-primary-100 rounded-circle bg-neutral-0 p-6 d-grid place-content-center position-relative mx-auto mb-6">
+              <img src="assets/img/team-1.jpg" alt="image" class="w-24 h-24 object-fit-cover rounded-circle">
+              <div class="w-8 h-8 d-grid place-content-center rounded-circle border border-2 border-neutral bg-primary-300 position-absolute end-0 bottom-0">
+                <span class="material-symbols-outlined mat-icon clr-neutral-0"> check </span>
+              </div>
+            </div>
+            <div class="text-center mb-10"*ngFor="let utilisateur of profil">
+              <h4 class="clr-neutral-500"> {{utilisateur.nom }} {{utilisateur.prenom }} </h4>
+              <p class="mb-0 clr-neutral-500"> {{utilisateur.email }} </p>
+            </div>
+            <div class="mb-10">
+              <span class="d-block clr-neutral-400 fs-12 mb-4"> Account </span>
+              <ul class="list gap-3">
+                <li>
+                  <a href="profil" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300 active-clr">
+                    <span class="material-symbols-outlined mat-icon fs-20"> account_circle </span>
+                    <span class="d-block fw-medium"> Profil </span>
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="user-notification.html" class="link d-flex align-items-center justify-content-between gap-2 clr-neutral-500 :clr-primary-300">
+                    <span class="d-flex align-items-center gap-2">
+                      <span class="material-symbols-outlined mat-icon fs-20"> notifications </span>
+                      <span class="d-block fw-medium"> Notifications </span>
+                    </span>
+                    <span class="d-grid place-content-center w-6 h-6 rounded-circle bg-secondary-500 clr-neutral-0 fs-14"> 1 </span>
+                  </a>
+                </li>
+               
+                <li>
+                  <a href="chat" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300">
+                    <span class="material-symbols-outlined mat-icon fs-20"> chat </span>
+                    <span class="d-block fw-medium"> Chat </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="annonce" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300">
+                    <span class="material-symbols-outlined mat-icon fs-20"> confirmation_number </span>
+                    <span class="d-block fw-medium"> <i class="bi bi-file-plus"></i>Ajouter Annonce</span>
+                  </a>
+                </li>
+                <li>
+                  <a  href="listeAnnonce" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300">
+                    <span class="material-symbols-outlined mat-icon fs-20"> favorite  </span>
+                    <span class="d-block fw-medium"> <i class="bi bi-file-plus"></i>Mes annonces </span>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+            
+           
+          </div>
         </div>
         <div class="col-md-7 col-lg-8 col-xl-9">
           <div class="accordion user-accordion d-flex flex-column gap-6" id="user-info">
@@ -60,6 +111,7 @@
                   <span class="d-block h3 fw-bold mb-0"> Informations de base </span>
                 </button>
               </h2>
+              
               <div id="basic-info" class="accordion-collapse collapse show" data-bs-parent="#user-info">
                 <div class="accordion-body">
                   <div class="avatar-upload mx-auto ms-md-0 mb-6">
@@ -72,39 +124,72 @@
                       </div>
                     </div>
                   </div>
-                  <form action="#" class="row g-4">
-                    <div class="col-lg-6">
-                      <label for="full-name" class="d-block mb-2 fw-medium clr-neutral-500">  Nom : </label>
-                      <input type="text" id="full-name" class="form-control py-3 px-6 rounded-4" placeholder="Entrez Votre Nom">
-                    </div>
-                    <div class="col-lg-6">
-                        <label for="full-name" class="d-block mb-2 fw-medium clr-neutral-500">Prenom : </label>
-                        <input type="text" id="full-name" class="form-control py-3 px-6 rounded-4" placeholder="Entrez Votre prenom">
+                  <form class="row g-4" *ngFor="let utilisateur of profil">
+                    <section class="mt-4">
+                      <div class="col-lg-8">
+                        <div class="card border-light mb-4">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <p class="mb-0 fw-bold">Nom :</p>
+                              </div>
+                              <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{ utilisateur.nom }}</p>
+                              </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <p class="mb-0 fw-bold">Prénom :</p>
+                              </div>
+                              <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{ utilisateur.prenom }}</p>
+                              </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <p class="mb-0 fw-bold">Email :</p>
+                              </div>
+                              <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{ utilisateur.email }}</p>
+                              </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <p class="mb-0 fw-bold">Téléphone :</p>
+                              </div>
+                              <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{ utilisateur.telephone }}</p>
+                              </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <p class="mb-0 fw-bold">Adresse :</p>
+                              </div>
+                              <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{ utilisateur.adresse }}</p>
+                              </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-9 offset-sm-3">
+                                <div class="card card-animate bg-light">
+                                  <button (click)="modifierProfil(utilisateur.id)" class="btn btn-sm btn-outline-primary rounded-pill px-4 py-2">
+                                    Modifier <i class="ri-edit-fill"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    <div class="col-lg-6">
-                      <label for="user-email" class="d-block mb-2 fw-medium clr-neutral-500"> Email : </label>
-                      <input type="text" id="user-email" class="form-control py-3 px-6 rounded-4" placeholder="Entrez votre email">
-                    </div>
-                    <div class="col-lg-6">
-                        <label for="full-name" class="d-block mb-2 fw-medium clr-neutral-500">Date de naissance : </label>
-                        <input type="date" id="full-name" class="form-control py-3 px-6 rounded-4" placeholder="Entrez Votre Date De Naissance ">
-                      </div>
-                    
-                    <div class="col-lg-12">
-                      <label for="user-phone" class="d-block mb-2 fw-medium clr-neutral-500"> Telephone : </label>
-                      <input type="text" id="user-phone" class="form-control py-3 px-6 rounded-4" placeholder="Enter number">
-                    </div>
-                    <div class="col-lg-6">
-                        <label for="full-name" class="d-block mb-2 fw-medium clr-neutral-500">Adresse: </label>
-                        <input type="text" id="full-name" class="form-control py-3 px-6 rounded-4" placeholder="Entrez Votre Adresse">
-                      </div>
-                    <div class="col-12">
-                      <div class="d-flex align-items-center gap-6 flex-wrap">
-                        <a href="#" class="link d-inline-block py-3 px-6 rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0 fw-semibold"> Sauvegarder </a>
-                        <a href="#" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Annuler </a>
-                      </div>
-                    </div>
+                    </section>
                   </form>
+                  
+                  
                 </div>
               </div>
             </div>
@@ -116,14 +201,14 @@
                   <span class="d-block h3 fw-bold mb-0"> Supprimer votre compte </span>
                 </button>
               </h2>
-              <div id="user-account" class="accordion-collapse collapse show" data-bs-parent="#user-info">
+              <div id="user-account" class="accordion-collapse collapse show" data-bs-parent="#user-info"*ngFor="let utilisateur of profil">
                 <div class="accordion-body">
                   <p class="clr-neutral-500 mb-4"> Lorsque vous supprimez votre compte, vous perdrez l'accès aux services du compte frontal et nous supprimerons définitivement vos données personnelles. </p>
                   <div class="d-flex align-items-center gap-3 mb-8">
                     <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="delete-account">
                     <label class="clr-neutral-500" for="delete-account"> Confirmez que je souhaite supprimer mon compte. </label>
                   </div>
-                  <a href="#" class="link d-inline-block py-3 px-6 rounded-pill bg-tertiary-300 clr-neutral-700 fw-semibold"> Supprimer </a>
+                  <div  ><button type="submit" (click)="Deleteutilisateur(utilisateur)" class="link d-inline-block py-3 px-6 rounded-pill bg-tertiary-300 clr-neutral-700 fw-semibold"> Supprimer </button></div>
                 </div>
               </div>
             </div>
