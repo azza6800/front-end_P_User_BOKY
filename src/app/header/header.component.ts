@@ -11,16 +11,8 @@ import { Utilisateur } from '../Entites/Utilisateur.Entites';
 export class HeaderComponent {
   IsloggedIn:boolean
   IsUtilisateurIn:boolean
-  userDetails: Utilisateur; // Type spécifique pour userDetails
-  profil: Utilisateur[];
-  p:number=1;
-  collection:any[]
-  utilisateur: any;
-
-  constructor(private router: Router, private service: CrudService) {
-    this.userDetails = this.service.userDetails();
-    console.log(this.userDetails); 
-  }
+ 
+  constructor(private service:CrudService,private router:Router) { }
 
   ngOnInit(): void {
     this.IsloggedIn=this.service.isLoggedIn();
