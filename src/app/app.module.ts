@@ -23,6 +23,8 @@ import { ListeAnnoncesPublicComponent } from './liste-annonces-public/liste-anno
 import { VerificationEmailComponent } from './verification-email/verification-email.component';
 import { ChangerMotDePasseComponent } from './changer-mot-de-passe/changer-mot-de-passe.component';
 import { ModifierprofilComponent } from './modifierprofil/modifierprofil.component';
+import { DetailAnnoncePublicComponent } from './detail-annonce-public/detail-annonce-public.component';
+import { ModifierAnnonceComponent } from './modifier-annonce/modifier-annonce.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { ModifierprofilComponent } from './modifierprofil/modifierprofil.compone
     VerificationEmailComponent,
     ChangerMotDePasseComponent,
     ModifierprofilComponent,
+    DetailAnnoncePublicComponent,
+    ModifierAnnonceComponent,
    
   ],
   imports: [

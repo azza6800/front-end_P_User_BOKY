@@ -22,8 +22,9 @@
   <app-header2></app-header2>
   <!-- /Header -->
   <!-- Property List -->
+  
   <div class="section-space--sm bg-primary-5p">
-    <div class="container-lg">
+    <div class="container-xl">
       <div class="row g-4">
         <div class="col-md-4">
           <div class="py-6 px-8 bg-neutral-0 rounded-4 box-shadow">
@@ -243,13 +244,13 @@
                   <li class="flex-grow-1">
                     <ul class="list list-row flex-wrap justify-content-center justify-content-lg-start justify-content-xl-center gap-4">
                       <li>
-                        <a href="property-grid.html" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300 active-clr">
+                        <a href="property-grid.html" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300">
                           <span class="material-symbols-outlined mat-icon"> grid_view </span>
                           <span class="d-inline-block fw-medium"> Grid </span>
                         </a>
                       </li>
                       <li>
-                        <a href="property-list.html" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300">
+                        <a href="property-list.html" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300 active-clr">
                           <span class="material-symbols-outlined mat-icon"> reorder </span>
                           <span class="d-inline-block fw-medium"> List </span>
                         </a>
@@ -274,426 +275,64 @@
                 </ul>
               </div>
             </div>
-            <div class="col-xl-6">
-              <div class="property-card">
+            <div class="col-12"  *ngFor="let annonce of listAnnonce ">
+              
+              <div class="property-card property-card--row">
                 <div class="property-card__head">
                   <div class="property-card__img">
                     <img src="assets/img/featured-img-1.jpg" alt="image" class="img-fluid w-100">
                   </div>
-                  <a href="property-grid.html" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> For Sale </a>
+                  <a href="property-grid.html" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> {{annonce.type_d_hebergement}} </a>
                   <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
                     <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
                   </button>
-                  <span class="property-card__popular-tag">
-                    <span class="d-inline-block fs-14 fw-semibold clr-neutral-0 bg-primary-300 py-2 px-9"> Popular </span>
-                  </span>
                 </div>
-                <div class="property-card__body">
-                  <div class="d-flex align-items-center gap-1 mb-4">
-                    <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
-                    <span class="d-inline-block"> 3890 Poplar Dr. </span>
-                  </div>
-                  <a href="property-details-1.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> Regal North Hills - 4150 Main at North Hills St, Raleigh </a>
-                  <ul class="list list-row flex-wrap dotted-divider">
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
-                      <span class="d-block"> 3 Room </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
-                      <span class="d-block"> 5 Bed </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
-                      <span class="d-block"> 1 Bath </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> drag_pan </span>
-                      <span class="d-block"> 732 sft </span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="property-card__body py-0">
-                  <div class="hr-dashed"></div>
-                </div>
-                <div class="property-card__body">
-                  <div class="d-flex flex-wrap justify-content-between align-items-center">
-                    <span class="d-block fs-20 fw-medium clr-primary-300"> $5,256 <span class="d-inline-block clr-neutral-500 fs-16 fw-normal"> /month </span>
-                    </span>
-                    <a href="property-details-1.html" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-6">
-              <div class="property-card">
-                <div class="property-card__head">
-                  <div class="swiper property-card-slider">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-2.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-3.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-4.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-5.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
+                <div class="property-card__content">
+                  <div class="property-card__body">
+                    <div class="d-flex align-items-center gap-1 mb-4">
+                      <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
+                      <span class="d-inline-block"> {{annonce.code_postale}} {{annonce.pays}} {{annonce.ville}} </span>
                     </div>
-                    <div class="swiper-pagination property-card-pagination"></div>
-                    <div class="swiper-button-prev property-card-prev"></div>
-                    <div class="swiper-button-next property-card-next"></div>
+                    <a href="property-details-1.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> {{annonce.titre}} </a>
+                    <ul class="list list-row flex-wrap dotted-divider">
+                      <li>
+                        <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
+                        <span class="d-block fs-14"> {{annonce.nb_chamber}} Chambres </span>
+                      </li>
+                      <li>
+                        <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
+                        <span class="d-block fs-14"> {{annonce.nb_lits}} lits </span>
+                      </li>
+                      <li>
+                        <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
+                        <span class="d-block fs-14"> {{annonce.nb_salles}} Salles de bain</span>
+                      </li>
+                      <li>
+                        <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> group </span>
+                        <span class="d-block fs-14"> {{annonce.nb_voyageur}} Vacanciers</span>
+                      </li>
+                    </ul>
                   </div>
-                  <a href="property-grid.html" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> For Rent </a>
-                  <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
-                    <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
-                  </button>
-                </div>
-                <div class="property-card__body">
-                  <div class="d-flex align-items-center gap-1 mb-4">
-                    <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
-                    <span class="d-inline-block"> 8558 Green Rd. </span>
+                  <div class="property-card__body py-0">
+                    <div class="hr-dashed"></div>
                   </div>
-                  <a href="property-details-1.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> Spring Lane Cinemas - 1351 Plaza Blvd, Sanford, NC 27330 </a>
-                  <ul class="list list-row flex-wrap dotted-divider">
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
-                      <span class="d-block"> 3 Room </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
-                      <span class="d-block"> 5 Bed </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
-                      <span class="d-block"> 1 Bath </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> drag_pan </span>
-                      <span class="d-block"> 732 sft </span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="property-card__body py-0">
-                  <div class="hr-dashed"></div>
-                </div>
-                <div class="property-card__body">
-                  <div class="d-flex flex-wrap justify-content-between align-items-center">
-                    <span class="d-block fs-20 fw-medium clr-primary-300"> $5,256 <span class="d-inline-block clr-neutral-500 fs-16 fw-normal"> /month </span>
-                    </span>
-                    <a href="property-details-1.html" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-6">
-              <div class="property-card">
-                <div class="property-card__head">
-                  <div class="swiper property-card-slider">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-3.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-4.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-5.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-6.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
+                  <div class="property-card__body">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                      <span class="d-block fs-20 fw-medium clr-primary-300"> {{annonce.prix}} DT <span class="d-inline-block clr-neutral-500 fs-14 fw-normal"> /Nuit </span>
+                      </span>
+                      <button (click)="detailannonce(annonce.id)" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </button>
                     </div>
-                    <div class="swiper-pagination property-card-pagination"></div>
-                    <div class="swiper-button-prev property-card-prev"></div>
-                    <div class="swiper-button-next property-card-next"></div>
-                  </div>
-                  <a href="property-grid.html" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> For Sale </a>
-                  <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
-                    <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
-                  </button>
-                  <span class="property-card__popular-tag">
-                    <span class="d-inline-block fs-14 fw-semibold clr-neutral-0 bg-primary-300 py-2 px-9"> Popular </span>
-                  </span>
-                </div>
-                <div class="property-card__body">
-                  <div class="d-flex align-items-center gap-1 mb-4">
-                    <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
-                    <span class="d-inline-block"> 7529 E. Pecan St. </span>
-                  </div>
-                  <a href="property-details-1.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> RCE Theaters - 907 S Beckford Dr, Henderson, NC 27536 </a>
-                  <ul class="list list-row flex-wrap dotted-divider">
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
-                      <span class="d-block"> 3 Room </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
-                      <span class="d-block"> 5 Bed </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
-                      <span class="d-block"> 1 Bath </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> drag_pan </span>
-                      <span class="d-block"> 732 sft </span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="property-card__body py-0">
-                  <div class="hr-dashed"></div>
-                </div>
-                <div class="property-card__body">
-                  <div class="d-flex flex-wrap justify-content-between align-items-center">
-                    <span class="d-block fs-20 fw-medium clr-primary-300"> $5,256 <span class="d-inline-block clr-neutral-500 fs-16 fw-normal"> /month </span>
-                    </span>
-                    <a href="property-details-1.html" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
+                    
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-xl-6">
-              <div class="property-card">
-                <div class="property-card__head">
-                  <div class="swiper property-card-slider">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-4.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-1.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-2.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-6.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-pagination property-card-pagination"></div>
-                    <div class="swiper-button-prev property-card-prev"></div>
-                    <div class="swiper-button-next property-card-next"></div>
-                  </div>
-                  <a href="property-grid.html" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> For Rent </a>
-                  <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
-                    <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
-                  </button>
-                  <span class="property-card__popular-tag">
-                    <span class="d-inline-block fs-14 fw-semibold clr-neutral-0 bg-primary-300 py-2 px-9"> Popular </span>
-                  </span>
-                </div>
-                <div class="property-card__body">
-                  <div class="d-flex align-items-center gap-1 mb-4">
-                    <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
-                    <span class="d-inline-block"> 3605 Parker Rd. </span>
-                  </div>
-                  <a href="property-details-1.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> Costco Wholesale - 1021 Oak Forest Ln, Myrtle Beach, SC </a>
-                  <ul class="list list-row flex-wrap dotted-divider">
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
-                      <span class="d-block"> 3 Room </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
-                      <span class="d-block"> 5 Bed </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
-                      <span class="d-block"> 1 Bath </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> drag_pan </span>
-                      <span class="d-block"> 732 sft </span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="property-card__body py-0">
-                  <div class="hr-dashed"></div>
-                </div>
-                <div class="property-card__body">
-                  <div class="d-flex flex-wrap justify-content-between align-items-center">
-                    <span class="d-block fs-20 fw-medium clr-primary-300"> $5,256 <span class="d-inline-block clr-neutral-500 fs-16 fw-normal"> /month </span>
-                    </span>
-                    <a href="property-details-1.html" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-6">
-              <div class="property-card">
-                <div class="property-card__head">
-                  <div class="swiper property-card-slider">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-5.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-4.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-2.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-6.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-pagination property-card-pagination"></div>
-                    <div class="swiper-button-prev property-card-prev"></div>
-                    <div class="swiper-button-next property-card-next"></div>
-                  </div>
-                  <a href="property-grid.html" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> For Sale </a>
-                  <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
-                    <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
-                  </button>
-                </div>
-                <div class="property-card__body">
-                  <div class="d-flex align-items-center gap-1 mb-4">
-                    <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
-                    <span class="d-inline-block"> 7529 E. Pecan St. </span>
-                  </div>
-                  <a href="property-details-1.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> Dollar General - 5416 Rock Quarry Rd, Raleigh, NC 27610 </a>
-                  <ul class="list list-row flex-wrap dotted-divider">
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
-                      <span class="d-block"> 3 Room </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
-                      <span class="d-block"> 5 Bed </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
-                      <span class="d-block"> 1 Bath </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> drag_pan </span>
-                      <span class="d-block"> 732 sft </span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="property-card__body py-0">
-                  <div class="hr-dashed"></div>
-                </div>
-                <div class="property-card__body">
-                  <div class="d-flex flex-wrap justify-content-between align-items-center">
-                    <span class="d-block fs-20 fw-medium clr-primary-300"> $5,256 <span class="d-inline-block clr-neutral-500 fs-16 fw-normal"> /month </span>
-                    </span>
-                    <a href="property-details-1.html" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-6">
-              <div class="property-card">
-                <div class="property-card__head">
-                  <div class="swiper property-card-slider">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-6.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-5.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-4.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-img-1.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-pagination property-card-pagination"></div>
-                    <div class="swiper-button-prev property-card-prev"></div>
-                    <div class="swiper-button-next property-card-next"></div>
-                  </div>
-                  <a href="property-grid.html" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> For Rent </a>
-                  <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
-                    <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
-                  </button>
-                </div>
-                <div class="property-card__body">
-                  <div class="d-flex align-items-center gap-1 mb-4">
-                    <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
-                    <span class="d-inline-block"> 3890 Poplar Dr. </span>
-                  </div>
-                  <a href="property-details-1.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> Best Buy - 6280 Capital Blvd, Raleigh, NC 27616 </a>
-                  <ul class="list list-row flex-wrap dotted-divider">
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
-                      <span class="d-block"> 3 Room </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
-                      <span class="d-block"> 5 Bed </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
-                      <span class="d-block"> 1 Bath </span>
-                    </li>
-                    <li>
-                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> drag_pan </span>
-                      <span class="d-block"> 732 sft </span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="property-card__body py-0">
-                  <div class="hr-dashed"></div>
-                </div>
-                <div class="property-card__body">
-                  <div class="d-flex flex-wrap justify-content-between align-items-center">
-                    <span class="d-block fs-20 fw-medium clr-primary-300"> $5,256 <span class="d-inline-block clr-neutral-500 fs-16 fw-normal"> /month </span>
-                    </span>
-                    <a href="property-details-1.html" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
-                  </div>
-                </div>
-              </div>
+            
             </div>
             <div class="col-12">
+
               <nav>
                 <ul class="pagination gap-3 justify-content-center">
+                  
                   <li class="page-item">
                     <a class="page-link p-0 w-10 h-10 d-grid place-content-center lh-1 rounded-circle border border-primary-300 clr-primary-300" href="#">
                       <span class="material-symbols-outlined mat-icon fs-16"> arrow_back_ios </span>
@@ -717,138 +356,10 @@
   </div>
   <!-- /Property List -->
   <!-- Footer -->
-  <div class="bg-neutral-900">
-    <div class="section-space">
-      <div class="container">
-        <div class="row gy-5">
-          <div class="col-md-6 col-xl-3">
-            <a href="index-2.html" class="link d-inline-block mb-6">
-              <img src="assets/img/logo-light.png" alt="image" class="img-fluid">
-            </a>
-            <p class="clr-neutral-30 mb-6"> Real estate can be bought, sold, leased, or rented, and can be a valuable investment opportunity. The value of real estate can be... </p>
-            <ul class="list list-row gap-3 flex-wrap">
-              <li>
-                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle border border-primary clr-neutral-0 :bg-primary-300 :clr-neutral-0">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle border border-primary clr-neutral-0 :bg-primary-300 :clr-neutral-0">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle border border-primary clr-neutral-0 :bg-primary-300 :clr-neutral-0">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle border border-primary clr-neutral-0 :bg-primary-300 :clr-neutral-0">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle border border-primary clr-neutral-0 :bg-primary-300 :clr-neutral-0">
-                  <i class="fab fa-dribbble"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <h4 class="clr-neutral-0 mb-6"> Quick Link </h4>
-            <ul class="list gap-2">
-              <li>
-                <a href="about-us.html" class="link d-inline-block clr-neutral-30 :clr-secondary-300"> About Us </a>
-              </li>
-              <li>
-                <a href="property-grid.html" class="link d-inline-block clr-neutral-30 :clr-secondary-300"> Properties </a>
-              </li>
-              <li>
-                <a href="agent.html" class="link d-inline-block clr-neutral-30 :clr-secondary-300"> Agents </a>
-              </li>
-              <li>
-                <a href="faq.html" class="link d-inline-block clr-neutral-30 :clr-secondary-300"> FAQs </a>
-              </li>
-              <li>
-                <a href="blog-grid.html" class="link d-inline-block clr-neutral-30 :clr-secondary-300"> Blog </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <h4 class="clr-neutral-0 mb-6"> Contact </h4>
-            <ul class="list gap-4">
-              <li>
-                <div class="d-flex align-items-center gap-4">
-                  <div class="w-8 h-8 rounded-circle d-grid place-content-center bg-primary-300 clr-neutral-0 flex-shrink-00">
-                    <span class="material-symbols-outlined mat-icon fw-200"> phone_in_talk </span>
-                  </div>
-                  <p class="mb-0 clr-neutral-30"> (316) 555-0116 </p>
-                </div>
-              </li>
-              <li>
-                <div class="d-flex align-items-center gap-4">
-                  <div class="w-8 h-8 rounded-circle d-grid place-content-center bg-secondary-300 clr-neutral-0 flex-shrink-00">
-                    <span class="material-symbols-outlined mat-icon fw-200"> mark_as_unread </span>
-                  </div>
-                  <p class="mb-0 clr-neutral-30"> example@mail.com </p>
-                </div>
-              </li>
-              <li>
-                <div class="d-flex align-items-center gap-4">
-                  <div class="w-8 h-8 rounded-circle d-grid place-content-center bg-tertiary-300 clr-neutral-0 flex-shrink-00">
-                    <span class="material-symbols-outlined mat-icon fw-200"> distance </span>
-                  </div>
-                  <p class="mb-0 clr-neutral-30"> 31 Brandy Way, Sutton, SM2 6SE </p>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <h4 class="clr-neutral-0 mb-6"> Newsletter </h4>
-            <p class="mb-6 clr-neutral-30"> Subscribe our newsletter to get our latest update & news </p>
-            <div class="p-2 rounded-pill border border-neutral-200">
-              <form action="#" class="d-flex align-items-center">
-                <input type="text" placeholder="Email address" class="w-100 border-0 bg-transparent clr-neutral-30 px-3 py-2 ::placeholder-neutral-30 :focus-outline-0">
-                <button type="button" class="d-grid place-content-center px-6 py-3 rounded-pill bg-tertiary-300 clr-neutral-0 border-0">
-                  <span class="material-symbols-outlined mat-icon fw-300"> send </span>
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="py-8 border-top border-primary-500">
-            <div class="row g-4 align-items-center">
-              <div class="col-lg-6">
-                <p class="m-0 clr-neutral-0 text-center text-lg-start"> Copyright &copy; 2023 <span class="clr-tertiary-300">Placewise</span>. Designed By <a href="#" class="link clr-secondary-300">Pixelaxis</a>
-                </p>
-              </div>
-              <div class="col-lg-6">
-                <ul class="list list-row align-items-center flex-wrap gap-6 justify-content-center justify-content-lg-end">
-                  <li>
-                    <a href="sign-in.html" class="link clr-neutral-0 :clr-secondary-300"> Sign in </a>
-                  </li>
-                  <li>
-                    <a href="signup.html" class="link clr-neutral-0 :clr-secondary-300"> Sign Up </a>
-                  </li>
-                  <li>
-                    <a href="faq.html" class="link clr-neutral-0 :clr-secondary-300"> FAQ </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-footer></app-footer>
   <!-- /Footer -->
   <!-- scrpts -->
-  
+ 
 </body>
 
 

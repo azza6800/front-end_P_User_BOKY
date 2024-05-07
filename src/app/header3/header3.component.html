@@ -5,9 +5,9 @@
       <span class="material-symbols-outlined mat-icon clr-neutral-0"> check </span>
     </div>
   </div>
-  <div class="text-center mb-10">
-    <h4 class="clr-neutral-500"> Savannah Nguyen </h4>
-    <p class="mb-0 clr-neutral-500"> info@example.com </p>
+  <div class="text-center mb-10" *ngFor="let utilisateur of profil">
+    <h4 class="clr-neutral-500"> {{utilisateur.nom }} {{utilisateur.prenom }}</h4>
+    <p class="mb-0 clr-neutral-500"> {{utilisateur.email }} </p>
   </div>
   <div class="mb-10">
     <span class="d-block clr-neutral-400 fs-12 mb-4"> Account </span>

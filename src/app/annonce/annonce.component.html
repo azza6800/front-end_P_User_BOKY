@@ -61,25 +61,11 @@
                 <h3 class="mb-0 flex-grow-1"> My Bookings </h3>
                 <div class="hr-line my-6"></div>
                 <div class="row g-4">
-                  <div class="col-12">
-                    <div class="list-group border border-neutral-40 rounded-4 booking-tab">
-                      <a class="link booking-tab__btn active" data-bs-toggle="list" href="#upcoming">
-                        <span class="material-symbols-outlined mat-icon fs-20"> local_mall </span>
-                        <span class="d-inline-block"> Upcoming Booking </span>
-                      </a>
-                      <a class="link booking-tab__btn" data-bs-toggle="list" href="#canceled">
-                        <span class="material-symbols-outlined mat-icon fs-20"> close </span>
-                        <span class="d-inline-block"> Canceled Booking </span>
-                      </a>
-                      <a class="link booking-tab__btn" data-bs-toggle="list" href="#completed">
-                        <span class="material-symbols-outlined mat-icon fs-20"> task_alt </span>
-                        <span class="d-inline-block"> Completed Booking </span>
-                      </a>
-                    </div>
-                  </div>
+                  
                   <div class="col-12">
                     <div class="tab-content">
-                      <div class="tab-pane fade show active" id="upcoming">
+                      <form *ngIf="enableForm" (ngSubmit)="done()" [formGroup]="Partie1Form">
+                      <div class="tab-pane fade show active" id="P1">
                         <ul class="list gap-4">
                           <li>
                             <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
@@ -91,8 +77,7 @@
                                   <div id="addProperty" class="accordion-collapse collapse show">
                                     <div class="accordion-body">
                                       <div class="pt-6">
-                                       
-                                        <section class="section-space position-relative z-1">
+                                        <section class="section-space position-relative z-1" >
                                           
                                           <div class="container">
                                               <div class="row g-4">
@@ -100,7 +85,8 @@
                                                       <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
                                                           <div class="p-8">
                                                               <span class="material-symbols-outlined fs-60 clr-primary-300 lh-1 transition"> emoji_transportation </span>
-                                                              <h5 class="mt-5 transition"> Appartements </h5>
+                                                              
+                                                              <h5 ><input formControlName="type_d_hebergement" value="appartement" type="radio">Appartements </h5>
                                                           </div>
                                                           
                                                       </div>
@@ -109,7 +95,7 @@
                                                       <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
                                                           <div class="p-8">
                                                               <span class="material-symbols-outlined fs-60 clr-secondary-500 lh-1 transition"> home_work </span>
-                                                              <h5 class="mt-5 transition"> Maison d'hotes </h5>
+                                                              <h5><input formControlName="type_d_hebergement" value="Maisond'hotes" type="radio"> Maison d'hotes </h5>
                                                           </div>
                                                           
                                                       </div>
@@ -118,7 +104,7 @@
                                                       <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
                                                           <div class="p-8">
                                                               <span class="material-symbols-outlined fs-60 clr-tertiary-500 lh-1 transition"> add_business </span>
-                                                              <h5 class="mt-5 transition"> Camping car </h5>
+                                                              <h5><input formControlName="type_d_hebergement" value="Camping car" type="radio"> Camping car </h5>
                                                           </div>
                                                           
                                                       </div>
@@ -127,7 +113,7 @@
                                                       <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
                                                           <div class="p-8">
                                                               <span class="material-symbols-outlined fs-60 clr-primary-300 lh-1 transition"> apartment </span>
-                                                              <h5 class="mt-5 transition"> Chamber d'hotes </h5>
+                                                              <h5 ><input formControlName="type_d_hebergement" value="Chamber d'hotes" type="radio"> Chamber d'hotes </h5>
                                                           </div>
                                                           
                                                       </div>
@@ -136,7 +122,7 @@
                                                       <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
                                                           <div class="p-8">
                                                               <span class="material-symbols-outlined fs-60 clr-primary-300 lh-1 transition"> moving_ministry </span>
-                                                              <h5 class="mt-5 transition"> Cabane </h5>
+                                                              <h5><input formControlName="type_d_hebergement" value="Cabane" type="radio"> Cabane </h5>
                                                           </div>
                                                           
                                                       </div>
@@ -158,9 +144,9 @@
                                               
                                             </div>
                                            
-                                              <div class="quantity">
+                                              <div class="quantity"  >
                                                 <button type="button" class="quantity__button quantity__button-down material-symbols-outlined mat-icon clr-primary-300"> do_not_disturb_on </button>
-                                                <input type="text" class="quantity__value" value="0">
+                                                <input #quantityInput type="text" class="quantity__value"  value="0" >
                                                 <button type="button" class="quantity__button quantity__button-up material-symbols-outlined mat-icon clr-primary-300"> add_circle </button>
                                               </div>
                                             </div>
@@ -174,9 +160,9 @@
                                               
                                             </div>
                                            
-                                              <div class="quantity">
+                                              <div class="quantity" >
                                                 <button type="button" class="quantity__button quantity__button-down material-symbols-outlined mat-icon clr-primary-300"> do_not_disturb_on </button>
-                                                <input type="text" class="quantity__value" value="0">
+                                                <input  #quantityInput1 type="text" class="quantity__value" value="0" >
                                                 <button type="button" class="quantity__button quantity__button-up material-symbols-outlined mat-icon clr-primary-300"> add_circle </button>
                                               </div>
                                             </div>
@@ -192,9 +178,9 @@
                                               
                                             </div>
                                            
-                                              <div class="quantity">
+                                              <div class="quantity" >
                                                 <button type="button" class="quantity__button quantity__button-down material-symbols-outlined mat-icon clr-primary-300"> do_not_disturb_on </button>
-                                                <input type="text" class="quantity__value" value="0">
+                                                <input  #quantityInput2 type="text" class="quantity__value" value="0" >
                                                 <button type="button" class="quantity__button quantity__button-up material-symbols-outlined mat-icon clr-primary-300"> add_circle </button>
                                               </div>
                                             </div>
@@ -207,9 +193,9 @@
                                               
                                             </div>
                                            
-                                              <div class="quantity">
+                                              <div class="quantity" >
                                                 <button type="button" class="quantity__button quantity__button-down material-symbols-outlined mat-icon clr-primary-300"> do_not_disturb_on </button>
-                                                <input type="text" class="quantity__value" value="0">
+                                                <input #quantityInput3 type="text" class="quantity__value" value="0" >
                                                 <button type="button" class="quantity__button quantity__button-up material-symbols-outlined mat-icon clr-primary-300"> add_circle </button>
                                               </div>
                                             </div>
@@ -217,8 +203,8 @@
                                         </div>
                                       </div>
                       
-                                        <p class="mt-6 mb-4 fs-20 fw-medium">Description :</p>
-                                        <textarea rows="5" class="form-control" placeholder="Description.."></textarea>
+                                        <p class="mt-6 mb-4 fs-20 fw-medium">Créez votre description</p>
+                                        <textarea rows="5" class="form-control" placeholder="Description.." formControlName="description"></textarea>
                                       </div>
                                     </div>
                                   </div>
@@ -228,12 +214,14 @@
                           </li>
                         </ul>
                         <div class="d-flex justify-content-end mt-4">
-                          <button class="btn btn-primary" id="btnNext">Suivant</button>
+                          <button class="btn btn-primary" id="btnNext" type="submit">Suivant</button>
                         </div>
                       </div>
-                      
-                      
-                      <div class="tab-pane fade" id="canceled">
+                    </form>
+
+                     
+                    
+                      <form *ngIf="!enableForm">
                         <ul class="list gap-4">
                           <li>
                               <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
@@ -559,10 +547,13 @@
                           </li>
                         </ul>
                         <div class="d-flex justify-content-end mt-4">
-                          <button class="btn btn-primary" id="btnNext">Suivant</button>
+                          <button class="btn btn-primary" id="btnNext" type="submit">Suivant</button>
                         </div>
-                      </div>
-                      <div class="tab-pane fade" id="completed">
+                      </form>
+                      
+                    
+                    <form *ngIf="!enableForm2">
+                      <div class="tab-pane fade" id="P3">
                        
                         <ul class="list gap-4">
                           <li>
@@ -619,13 +610,10 @@
                                                 <input type="text" id="pays" class="form-control" placeholder="Entrez le pays">
                                               </div>
                                               
-                                              <div class="mb-4">
-                                                <label for="etat" class="form-label fs-20 fw-medium">État :</label>
-                                                <input type="text" id="etat" class="form-control" placeholder="Entrez l'état">
-                                              </div>
+                                              
                                               
                                               <div class="mb-4">
-                                                <label for="libelle-voie" class="form-label fs-20 fw-medium">Libellé de la voie :</label>
+                                                <label for="libelle-voie" class="form-label fs-20 fw-medium">Ville :</label>
                                                 <input type="text" id="libelle-voie" class="form-control" placeholder="Entrez le libellé de la voie">
                                               </div>
                                               
@@ -660,10 +648,10 @@
                           </li>
                         </ul>
                         <div class="d-flex justify-content-end mt-4">
-                          <button class="btn btn-primary" id="btnNext">Terminer</button>
+                          <button class="btn btn-primary" id="btnNext" type="submit">Terminer</button>
                         </div>
                       </div>
-                      
+                    </form>
                     </div>
                   </div>
                 </div>

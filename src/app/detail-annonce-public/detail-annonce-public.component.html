@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from pix-placewise.vercel.app/property-details-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:55:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="landing page starter kit">
+  <meta name="keywords" content="bootstrap 5, saas, landing page">
+  <meta name="author" content="asaduzzaman">
+  <title>Placewise - Online Booking HTML Template</title>
+  
+</head>
+
+<body>
+  
+  <app-header2></app-header2>
+
+  <!-- /Header -->
+  <div class="bg-primary-5p">
+    <div class="py-4">
+      <div class="container-fluid">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <a href="assets/img/property-details-img-1.jpg" class="link property-gallery">
+                  <img src="assets/img/property-details-img-1.jpg" alt="image" class="img-fluid w-100">
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="assets/img/property-details-img-2.jpg" class="link property-gallery">
+                  <img src="assets/img/property-details-img-2.jpg" alt="image" class="img-fluid w-100">
+                </a>
+              </div>
+              <div class="col-12">
+                <a href="assets/img/property-details-img-3.jpg" class="link property-gallery">
+                  <img src="assets/img/property-details-img-3.jpg" alt="image" class="img-fluid w-100">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <a href="assets/img/property-details-img-4.jpg" class="link property-gallery">
+              <img src="assets/img/property-details-img-4.jpg" alt="image" class="img-fluid w-100">
+            </a>
+          </div>
+          <div class="col-lg-4">
+            <div class="row g-4">
+              <div class="col-12">
+                <a href="assets/img/property-details-img-5.jpg" class="link property-gallery">
+                  <img src="assets/img/property-details-img-5.jpg" alt="image" class="img-fluid w-100">
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="assets/img/property-details-img-6.jpg" class="link property-gallery">
+                  <img src="assets/img/property-details-img-6.jpg" alt="image" class="img-fluid w-100">
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="assets/img/property-details-img-7.jpg" class="link property-gallery">
+                  <img src="assets/img/property-details-img-7.jpg" alt="image" class="img-fluid w-100">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" >
+      <div class="row" >
+        <div class="col-xl-8">
+          <div class="section-space--sm">
+            <div class="bg-neutral-0 rounded-4 py-8 px-5">
+              <div class="p-6 bg-primary-3p rounded-4 border border-neutral-40 mb-10">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                  <h5 class="clr-primary-300 d-inline-block mb-0">  {{annonce.type_d_hebergement}} </h5>
+                  
+                </div>
+                <h2 class="mt-4 mb-8"> {{annonce.titre}}</h2>
+                <ul class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+                  <li>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="material-symbols-outlined mat-icon clr-secondary-400"> distance </span>
+                      <p class="mb-0"> {{annonce.code_postale}} {{annonce.pays}} {{annonce.ville}} </p>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="mb-0"> ID: <span class="clr-primary-300">12546</span>
+                    </p>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center gap-1">
+                      <span class="material-symbols-outlined mat-icon solid clr-tertiary-300"> star_rate </span>
+                      <p class="mb-0"> 4.5(66) </p>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="mb-0">
+                      <span class="clr-neutral-500">Published:</span> Feb 9, 23
+                    </p>
+                  </li>
+                </ul>
+                <div class="hr-dashed my-8"></div>
+                <ul class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
+                  <li>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="material-symbols-outlined mat-icon"> home_work </span>
+                      <p class="mb-0"> {{annonce.nb_chamber}}Room </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="material-symbols-outlined mat-icon"> bed </span>
+                      <p class="mb-0"> 7 Bed </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="material-symbols-outlined mat-icon"> bathtub </span>
+                      <p class="mb-0"> 3 Bath </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="material-symbols-outlined mat-icon"> drag_pan </span>
+                      <p class="mb-0"> 702 sft </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="material-symbols-outlined mat-icon"> calendar_month </span>
+                      <p class="mb-0"> 2023 </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="p-6 bg-primary-3p rounded-4 border border-neutral-40 mb-10">
+                <h4 class="mb-5"> Description </h4>
+                <p class="mb-5 clr-neutral-500"> {{annonce.description}} </p>
+                <a href="#" class="link d-flex align-items-center gap-2 clr-primary-300">
+                  <span class="fw-semibold d-inline-block"> Read More </span>
+                  <span class="material-symbols-outlined mat-icon"> arrow_right_alt </span>
+                </a>
+              </div>
+              <div class="p-6 bg-primary-3p rounded-4 border border-neutral-40 mb-10">
+                <h4 class="mb-5"> Amenities </h4>
+                <div class="mb-10">
+                  <div class="row g-4">
+                    <div class="col-md-4 col-lg-3">
+                      <ul class="list gap-4">
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> Air Condition </span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> Laundry Room </span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> Window Cover </span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                      <ul class="list gap-4">
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> Free WiFi </span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> Pool </span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> Gym </span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                      <ul class="list gap-4">
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> Internet </span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> Car Parking </span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> Heating </span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                      <ul class="list gap-4">
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> Alarm </span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> Pets Allow </span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> Spa Massage </span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
+              </div>
+              <div class="p-6 bg-primary-3p rounded-4 border border-neutral-40 mb-10">
+                <h4 class="mb-5"> Property Video </h4>
+                <div class="property-showcase bg-neutral-0 p-1 rounded-4 overflow-hidden position-relative z-1">
+                  <img src="assets/img/property-video-img.jpg" alt="image" class="img-fluid w-100 rounded-4 z-n1">
+                  <a href="https://vimeo.com/115041822" class="video-popup link d-grid place-content-center w-14 h-14 rounded-circle bg-tertiary-300 clr-neutral-900 z-2 position-absolute position-center">
+                    <span class="material-symbols-rounded mat-icon solid fs-36"> play_arrow </span>
+                  </a>
+                </div>
+              </div>
+              <div class="p-6 bg-primary-3p rounded-4 border border-neutral-40 mb-10">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-5">
+                  <h4 class="mb-0"> Location </h4>
+                  <a href="#" class="btn btn-outline-primary py-2 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> View All <span class="material-symbols-outlined mat-icon lh-1"> trending_flat </span>
+                  </a>
+                </div>
+                <div class="w-100">
+                  <iframe class="w-100 h-400 rounded-4" src="https://maps.google.com/maps?q=california&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
+                </div>
+              </div>
+              <div class="p-6 bg-primary-3p rounded-4 border border-neutral-40 mb-10">
+                <h4 class="mb-5"> Room Rates </h4>
+                <ul class="list">
+                  <li>
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 py-4 px-6 bg-primary-5p rounded-pill">
+                      <p class="mb-0">Monday - Thursday</p>
+                      <p class="mb-0 fw-medium fs-18">$399</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 py-4 px-6 rounded-pill">
+                      <p class="mb-0">Friday - Sunday</p>
+                      <p class="mb-0 fw-medium fs-18">$499</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 py-4 px-6 bg-primary-5p rounded-pill">
+                      <p class="mb-0">Rent by month</p>
+                      <p class="mb-0 fw-medium fs-18">-7.34%</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 py-4 px-6 rounded-pill">
+                      <p class="mb-0">Min number of nights</p>
+                      <p class="mb-0 fw-medium fs-18">1 night</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 py-4 px-6 bg-primary-5p rounded-pill">
+                      <p class="mb-0">Max number of nights</p>
+                      <p class="mb-0 fw-medium fs-18">70 nights</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="d-flex align-items-center justify-content-between gap-4 flex-wrap">
+                <a href="#" class="link d-flex align-items-center clr-neutral-500 :clr-primary-300 gap-1 order-1">
+                  <span class="material-symbols-outlined mat-icon"> arrow_back </span>
+                  <span class="d-inline-block fw-semibold"> Prev Property </span>
+                </a>
+                <ul class="list list-row flex-wrap gap-3 justify-content-center order-3 flex-grow-1 order-md-2">
+                  <li>
+                    <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
+                      <i class="fab fa-dribbble"></i>
+                    </a>
+                  </li>
+                </ul>
+                <a href="#" class="link d-flex align-items-center clr-neutral-500 :clr-primary-300 gap-1 order-2">
+                  <span class="d-inline-block fw-semibold"> Next Property </span>
+                  <span class="material-symbols-outlined mat-icon"> arrow_forward </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-neutral-0 rounded-4 py-8 px-5">
+            <div class="d-flex align-items-center gap-4 justify-content-between flex-wrap mb-10">
+              <div class="d-flex align-items-center gap-2">
+                <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate </span>
+                <h3 class="mb-0"> 4.7 (21 reviews) </h3>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <p class="mb-0 clr-neutral-500"> Sort By : </p>
+                <select class="form-select w-auto rounded-pill">
+                  <option selected>Latest</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+            <div class="bg-primary-5p rounded-4 p-6 mb-8">
+              <div class="d-flex align-items-center flex-wrap justify-content-between gap-4">
+                <div class="d-flex gap-5 align-items-center">
+                  <div class="w-15 h-15 flex-shrink-0 rounded-circle overflow-hidden">
+                    <img src="assets/img/user-1.jpg" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                  </div>
+                  <div class="flex-grow-1">
+                    <h5 class="mb-1 fw-semibold"> Kiss Laura </h5>
+                    <p class="mb-0 clr-neutral-500"> Product Designer </p>
+                  </div>
+                </div>
+                <div class="text-sm-end">
+                  <p class="mb-1"> 09:01 am </p>
+                  <p class="mb-0"> Mar 03, 2023 </p>
+                </div>
+              </div>
+              <div class="hr-dashed my-6"></div>
+              <ul class="list list-row mb-2">
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate_half </span>
+                </li>
+              </ul>
+              <p class="mb-0 clr-neutral-500"> I highly recommend [real estate agent's name] as a professional and knowledgeable real estate agent. They provided valuable guidance throughout the selling process </p>
+              <div class="hr-dashed my-6"></div>
+              <div class="d-flex flex-wrap align-items-center gap-10 mb-6">
+                <div class="d-flex align-items-center gap-2 clr-primary-300">
+                  <span class="material-symbols-outlined mat-icon"> thumb_up </span>
+                  <span class="d-inline-block"> 178 </span>
+                </div>
+                <div class="d-flex align-items-center gap-2 clr-primary-300">
+                  <span class="material-symbols-outlined mat-icon"> forum </span>
+                  <span class="d-inline-block"> Reply </span>
+                </div>
+              </div>
+              <div class="d-flex gap-5 align-items-center">
+                <div class="w-15 h-15 flex-shrink-0 rounded-circle overflow-hidden">
+                  <img src="assets/img/user-2.jpg" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                </div>
+                <div class="flex-grow-1">
+                  <input class="form-control form-control-lg fs-16 py-4 px-5 rounded-pill" type="text" placeholder="Join the discussion">
+                </div>
+              </div>
+            </div>
+            <div class="bg-primary-5p rounded-4 p-6 mb-8">
+              <div class="d-flex align-items-center flex-wrap justify-content-between gap-4">
+                <div class="d-flex gap-5 align-items-center">
+                  <div class="w-15 h-15 flex-shrink-0 rounded-circle overflow-hidden">
+                    <img src="assets/img/user-3.jpg" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                  </div>
+                  <div class="flex-grow-1">
+                    <h5 class="mb-1 fw-semibold"> Kristin Watson </h5>
+                    <p class="mb-0 clr-neutral-500"> Product Designer </p>
+                  </div>
+                </div>
+                <div class="text-sm-end">
+                  <p class="mb-1"> 09:01 am </p>
+                  <p class="mb-0"> Mar 03, 2023 </p>
+                </div>
+              </div>
+              <div class="hr-dashed my-6"></div>
+              <ul class="list list-row mb-2">
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate_half </span>
+                </li>
+              </ul>
+              <p class="mb-0 clr-neutral-500"> I highly recommend [real estate agent's name] as a professional and knowledgeable real estate agent. They provided valuable guidance throughout the selling process </p>
+              <div class="hr-dashed my-6"></div>
+              <div class="d-flex flex-wrap align-items-center gap-10">
+                <div class="d-flex align-items-center gap-2 clr-primary-300">
+                  <span class="material-symbols-outlined mat-icon"> thumb_up </span>
+                  <span class="d-inline-block"> 178 </span>
+                </div>
+                <div class="d-flex align-items-center gap-2 clr-primary-300">
+                  <span class="material-symbols-outlined mat-icon"> forum </span>
+                  <span class="d-inline-block"> Reply </span>
+                </div>
+              </div>
+            </div>
+            <div class="bg-primary-5p rounded-4 p-6 mb-8">
+              <div class="d-flex align-items-center flex-wrap justify-content-between gap-4">
+                <div class="d-flex gap-5 align-items-center">
+                  <div class="w-15 h-15 flex-shrink-0 rounded-circle overflow-hidden">
+                    <img src="assets/img/user-4.jpg" alt="image" class="img-fluid w-100 h-100 object-fit-cover">
+                  </div>
+                  <div class="flex-grow-1">
+                    <h5 class="mb-1 fw-semibold"> Marvin McKinney </h5>
+                    <p class="mb-0 clr-neutral-500"> Product Designer </p>
+                  </div>
+                </div>
+                <div class="text-sm-end">
+                  <p class="mb-1"> 09:01 am </p>
+                  <p class="mb-0"> Mar 03, 2023 </p>
+                </div>
+              </div>
+              <div class="hr-dashed my-6"></div>
+              <ul class="list list-row mb-2">
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon solid fs-32 clr-tertiary-300"> star_rate_half </span>
+                </li>
+              </ul>
+              <p class="mb-0 clr-neutral-500"> I highly recommend [real estate agent's name] as a professional and knowledgeable real estate agent. They provided valuable guidance throughout the selling process </p>
+              <div class="hr-dashed my-6"></div>
+              <div class="d-flex flex-wrap align-items-center gap-10">
+                <div class="d-flex align-items-center gap-2 clr-primary-300">
+                  <span class="material-symbols-outlined mat-icon"> thumb_up </span>
+                  <span class="d-inline-block"> 178 </span>
+                </div>
+                <div class="d-flex align-items-center gap-2 clr-primary-300">
+                  <span class="material-symbols-outlined mat-icon"> forum </span>
+                  <span class="d-inline-block"> Reply </span>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="featured-tab link fw-semibold clr-primary-400 d-inline-block py-3 px-6 bg-primary-50 :bg-primary-300 :clr-neutral-0 rounded-pill active"> See All Reviews </a>
+          </div>
+          <div class="section-space--sm">
+            <div class="bg-neutral-0 rounded-4 py-8 px-5">
+              <h4 class="mb-0">Write a review</h4>
+              <div class="hr-dashed my-6"></div>
+              <p class="fs-20 fw-medium">Rating *</p>
+              <ul class="list list-row mb-6">
+                <li>
+                  <span class="material-symbols-outlined mat-icon fs-32 solid clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon fs-32 solid clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon fs-32 solid clr-tertiary-300"> star_rate </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon fs-32 solid clr-tertiary-300"> star_rate_half </span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined mat-icon fs-32 solid clr-tertiary-300"> star_rate_half </span>
+                </li>
+              </ul>
+              <form action="#">
+                <div class="row g-4">
+                  <div class="col-12">
+                    <label for="review-name" class="fs-20 fw-medium d-block mb-3">Name *</label>
+                    <input type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="Enter Name.." id="review-name">
+                  </div>
+                  <div class="col-12">
+                    <label for="review-email" class="fs-20 fw-medium d-block mb-3">Email *</label>
+                    <input type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="Enter Email.." id="review-email">
+                  </div>
+                  <div class="col-12">
+                    <label for="review-review" class="fs-20 fw-medium d-block mb-3">Review *</label>
+                    <textarea id="review-review" rows="5" class="form-control bg-primary-3p border border-neutral-40 rounded-5 py-3 px-5"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <a href="#" class="featured-tab link fw-semibold clr-primary-400 d-inline-block py-3 px-6 bg-primary-50 :bg-primary-300 :clr-neutral-0 rounded-pill active"> Submit Review </a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="section-space--sm">
+            <div class="bg-neutral-0 rounded-4 py-8 px-6">
+              <p class="mb-3 fs-18 fw-medium"> Price </p>
+              <div class="d-flex align-items-start gap-2 mb-6">
+                <div class="d-flex gap-3 align-items-center">
+                  <span class="material-symbols-outlined mat-icon"> sell </span>
+                  <p class="mb-0"> From </p>
+                  <h3 class="mb-0"> $399 </h3>
+                </div>
+                <span class="material-symbols-outlined mat-icon"> info </span>
+              </div>
+              <div class="list-group about-tab mb-7">
+                <a class="list-group-item active" data-bs-toggle="list" href="#booking-list"> Booking Form </a>
+                <a class="list-group-item" data-bs-toggle="list" href="#enquiry-list"> Enquiry Form </a>
+              </div>
+              <div class="tab-content mb-8">
+                <div class="tab-pane fade show active" id="booking-list">
+                  <div class="d-flex bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+                    <span class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0"> calendar_month </span>
+                    <div class="flex-grow-1">
+                      <p class="mb-1">Feb 17 - Feb 25</p>
+                      <p class="mb-0 fs-12 clr-neutral-400"> Check in - Check out </p>
+                    </div>
+                  </div>
+                  <div class="d-flex bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40">
+                    <span class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0"> group </span>
+                    <div class="flex-grow-1">
+                      <p class="mb-1">6 Guests</p>
+                      <p class="mb-0 fs-12 clr-neutral-400"> Guests </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="enquiry-list">
+                  <div class="d-flex bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+                    <span class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0"> calendar_month </span>
+                    <div class="flex-grow-1">
+                      <p class="mb-1">Feb 17 - Feb 25</p>
+                      <p class="mb-0 fs-12 clr-neutral-400"> Check in - Check out </p>
+                    </div>
+                  </div>
+                  <div class="d-flex bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40">
+                    <span class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0"> group </span>
+                    <div class="flex-grow-1">
+                      <p class="mb-1">6 Guests</p>
+                      <p class="mb-0 fs-12 clr-neutral-400"> Guests </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <p class="mb-0 clr-neutral-500"> $119 x 4 night </p>
+                <p class="mb-0 fw-medium"> $1015 </p>
+              </div>
+              <div class="d-flex align-items-center justify-content-between">
+                <p class="mb-0 clr-neutral-500"> Service charge </p>
+                <p class="mb-0 fw-medium"> $10 </p>
+              </div>
+              <div class="hr-dashed my-4"></div>
+              <div class="d-flex align-items-center justify-content-between mb-10">
+                <p class="mb-0 clr-neutral-500"> Total </p>
+                <p class="mb-0 fw-medium"> $1025 </p>
+              </div>
+              <button  (click)="reserver(annonce)" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0 fw-medium w-100 justify-content-center mb-6">
+                <span class="d-inline-block"> Reserver </span>
+              </button>
+              <ul class="list list-row justify-content-center gap-6">
+                <li>
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="w-7 h-7 rounded-circle bg-primary-50 clr-primary-300 d-grid place-content-center">
+                      <span class="material-symbols-outlined mat-icon fs-18"> favorite </span>
+                    </div>
+                    <span class="d-inline-block fs-14 clr-neutral-500"> Save To Wish List </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="w-7 h-7 rounded-circle bg-primary-50 clr-primary-300 d-grid place-content-center">
+                      <span class="material-symbols-outlined mat-icon fs-18"> compare_arrows </span>
+                    </div>
+                    <span class="d-inline-block fs-14 clr-neutral-500"> Compare </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="bg-neutral-0 rounded-4 py-8 px-6">
+            <div class="w-30 h-30 border border-primary-100 rounded-circle bg-neutral-0 p-6 d-grid place-content-center position-relative mx-auto mb-10">
+              <img src="assets/img/team-1.jpg" alt="image" class="w-24 h-24 object-fit-cover rounded-circle">
+              <div class="w-8 h-8 d-grid place-content-center rounded-circle border border-2 border-neutral bg-primary-300 position-absolute end-0 bottom-0">
+                <span class="material-symbols-outlined mat-icon clr-neutral-0"> check </span>
+              </div>
+            </div>
+            <h4 class="text-center mb-4"> Savannah Nguyen </h4>
+            <ul class="list list-row list-divider-dot-sm align-items-cener justify-content-center flex-wrap mb-7">
+              <li>
+                <p class="mb-0"> ID: <span class="clr-primary-300">235</span>
+                </p>
+              </li>
+              <li>
+                <p class="mb-0"> Property: 24 </p>
+              </li>
+              <li>
+                <div class="d-flex gap-1 align-items-cener">
+                  <span class="material-symbols-outlined mat-icon solid clr-tertiary-300"> star_rate </span>
+                  <p class="mb-0"> 4.8 </p>
+                </div>
+              </li>
+            </ul>
+            <ul class="list list-row justify-content-center flex-wrap gap-3">
+              <li>
+                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
+                  <i class="fab fa-dribbble"></i>
+                </a>
+              </li>
+            </ul>
+            <div class="hr-dashed my-7"></div>
+            <ul class="list gap-4 mb-10 max-text-30 mx-auto">
+              <li>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="material-symbols-outlined mat-icon clr-primary-300"> calendar_month </span>
+                  <p class="mb-0"> Joined in June 2018 </p>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="material-symbols-outlined mat-icon clr-secondary-300"> chat </span>
+                  <p class="mb-0"> Response rate - 100% </p>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="material-symbols-outlined mat-icon clr-tertiary-300"> alarm_on </span>
+                  <p class="mb-0"> Fast response </p>
+                </div>
+              </li>
+            </ul>
+            <div class="text-center">
+              <a href="#" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> See Host Profile </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-space--sm pt-xl-0">
+      <div class="container">
+        <div class="row gy-5">
+          <div class="col-12">
+            <div class="row g-4 align-items-center">
+              <div class="col-md-6">
+                <h2 class="mb-0"> Recently viewed </h2>
+              </div>
+              <div class="col-md-6">
+                <div class="text-md-end d-flex gap-3 justify-content-md-end">
+                  <div class="swiper-button-prev recent-view-slider__btn recent-view-slider__btn-prev">
+                  </div>
+                  <div class="swiper-button-next recent-view-slider__btn recent-view-slider__btn-next">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="swiper recent-view-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide ps-2">
+                  <div class="property-card">
+                    <div class="property-card__head">
+                      <div class="property-card__img">
+                        <img src="assets/img/featured-img-1.jpg" alt="image" class="img-fluid w-100">
+                      </div>
+                      <a href="property-details-2.html" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> For Sale </a>
+                      <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
+                        <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
+                      </button>
+                      <span class="property-card__popular-tag">
+                        <span class="d-inline-block fs-14 fw-semibold clr-neutral-0 bg-primary-300 py-2 px-9"> Popular </span>
+                      </span>
+                    </div>
+                    <div class="property-card__body">
+                      <div class="d-flex align-items-center gap-1 mb-4">
+                        <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
+                        <span class="d-inline-block"> 3890 Poplar Dr. </span>
+                      </div>
+                      <a href="property-details-2.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> Regal North Hills - 4150 Main at North Hills St, Raleigh </a>
+                      <ul class="list list-row flex-wrap dotted-divider">
+                        <li>
+                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
+                          <span class="d-block"> 3 Room </span>
+                        </li>
+                        <li>
+                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
+                          <span class="d-block"> 5 Bed </span>
+                        </li>
+                        <li>
+                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
+                          <span class="d-block"> 1 Bath </span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="property-card__body py-0">
+                      <div class="hr-dashed"></div>
+                    </div>
+                    <div class="property-card__body">
+                      <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <span class="d-block fs-20 fw-medium clr-primary-300"> $5,256 <span class="d-inline-block clr-neutral-500 fs-16 fw-normal"> /month </span>
+                        </span>
+                        <a href="property-details-2.html" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide ps-2">
+                  <div class="property-card">
+                    <div class="property-card__head">
+                      <div class="property-card__img">
+                        <img src="assets/img/featured-img-2.jpg" alt="image" class="img-fluid w-100">
+                      </div>
+                      <a href="property-details-2.html" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> For Sale </a>
+                      <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
+                        <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
+                      </button>
+                      <span class="property-card__popular-tag">
+                        <span class="d-inline-block fs-14 fw-semibold clr-neutral-0 bg-primary-300 py-2 px-9"> Popular </span>
+                      </span>
+                    </div>
+                    <div class="property-card__body">
+                      <div class="d-flex align-items-center gap-1 mb-4">
+                        <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
+                        <span class="d-inline-block"> 3890 Poplar Dr. </span>
+                      </div>
+                      <a href="property-details-2.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> Regal North Hills - 4150 Main at North Hills St, Raleigh </a>
+                      <ul class="list list-row flex-wrap dotted-divider">
+                        <li>
+                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
+                          <span class="d-block"> 3 Room </span>
+                        </li>
+                        <li>
+                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
+                          <span class="d-block"> 5 Bed </span>
+                        </li>
+                        <li>
+                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
+                          <span class="d-block"> 1 Bath </span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="property-card__body py-0">
+                      <div class="hr-dashed"></div>
+                    </div>
+                    <div class="property-card__body">
+                      <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <span class="d-block fs-20 fw-medium clr-primary-300"> $5,256 <span class="d-inline-block clr-neutral-500 fs-16 fw-normal"> /month </span>
+                        </span>
+                        <a href="property-details-2.html" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide ps-2">
+                  <div class="property-card">
+                    <div class="property-card__head">
+                      <div class="property-card__img">
+                        <img src="assets/img/featured-img-3.jpg" alt="image" class="img-fluid w-100">
+                      </div>
+                      <a href="property-details-2.html" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> For Sale </a>
+                      <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
+                        <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
+                      </button>
+                      <span class="property-card__popular-tag">
+                        <span class="d-inline-block fs-14 fw-semibold clr-neutral-0 bg-primary-300 py-2 px-9"> Popular </span>
+                      </span>
+                    </div>
+                    <div class="property-card__body">
+                      <div class="d-flex align-items-center gap-1 mb-4">
+                        <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
+                        <span class="d-inline-block"> 3890 Poplar Dr. </span>
+                      </div>
+                      <a href="property-details-2.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> Regal North Hills - 4150 Main at North Hills St, Raleigh </a>
+                      <ul class="list list-row flex-wrap dotted-divider">
+                        <li>
+                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
+                          <span class="d-block"> 3 Room </span>
+                        </li>
+                        <li>
+                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
+                          <span class="d-block"> 5 Bed </span>
+                        </li>
+                        <li>
+                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
+                          <span class="d-block"> 1 Bath </span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="property-card__body py-0">
+                      <div class="hr-dashed"></div>
+                    </div>
+                    <div class="property-card__body">
+                      <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <span class="d-block fs-20 fw-medium clr-primary-300"> $5,256 <span class="d-inline-block clr-neutral-500 fs-16 fw-normal"> /month </span>
+                        </span>
+                        <a href="property-details-2.html" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <app-footer></app-footer>
+  <!-- /Footer -->
+  <!-- scrpts -->
+  
+</body>
+
+
+<!-- Mirrored from pix-placewise.vercel.app/property-details-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:55:50 GMT -->
+</html>

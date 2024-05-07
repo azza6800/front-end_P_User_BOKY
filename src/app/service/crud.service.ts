@@ -60,10 +60,13 @@ export class CrudService {
     return this.http.post<any>(this.apiUrl+"/annonce",annonce);
    }
    getAnnonce(): Observable<Annonce[]>{
-    return this.http.get<Annonce[]>(this.apiUrl + "/annonce");
+    return this.http.get<Annonce[]>(this.apiUrl + "/Annonce");
+  }
+  getAnnonceById(id:number): Observable<Annonce>{
+    return this.http.get<Annonce>(this.apiUrl + "/Annonce/"+id);
   }
   onDeleteAnnonce(id : number){
-    const url =`${this.apiUrl+"/annonce"}/${id}` 
+    const url =`${this.apiUrl+"/Annonce"}/${id}` 
     return this.http.delete(url)
   }
   getUtilisateur(): Observable<Utilisateur[]>{
@@ -107,5 +110,8 @@ export class CrudService {
     const url =`${this.apiUrl+"/Utilisateur"}/${id}`
     return this.http.delete(url)
   }
+  reserverFromApi(rq:any){
+    return this.http.post<any>( "http://localhost:8081/api/Reservation" ,rq );
+ }
   
 }

@@ -14,7 +14,6 @@ export class ChangerMotDePasseComponent {
   enableForm: boolean = true;
   checkoutParentGroup: FormGroup;
   checkoutParentGroupReset: FormGroup;
-  formChildGroup: any;
   constructor(
     private fb: FormBuilder,
     private service:CrudService,

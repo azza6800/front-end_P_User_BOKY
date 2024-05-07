@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CrudService } from '../service/crud.service';
 import { Router } from '@angular/router';
+import { Utilisateur } from '../Entites/Utilisateur.Entites';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +11,16 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   IsloggedIn:boolean
   IsUtilisateurIn:boolean
- 
-  constructor(private service:CrudService,private router:Router) { }
+  userDetails: Utilisateur; // Type spécifique pour userDetails
+  profil: Utilisateur[];
+  p:number=1;
+  collection:any[]
+  utilisateur: any;
+
+  constructor(private router: Router, private service: CrudService) {
+    this.userDetails = this.service.userDetails();
+    console.log(this.userDetails); 
+  }
 
   ngOnInit(): void {
     this.IsloggedIn=this.service.isLoggedIn();

@@ -18,10 +18,11 @@ export class Annonce{
         public reduction_mois?:boolean,
         public prix?:string,
         public pays?:string,
-        public etat?:string,
-        public libelle_de_voie?:string,
+        public etat?:boolean,
+        public ville?:string,
         public code_postale?:string,
         public heure_depart?:string,
         public heure_arriver?:string,
+        public date?:string,
     ){}
 }

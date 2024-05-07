@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
@@ -18,56 +18,81 @@ export class AnnonceComponent {
   imgURL: any
   userFile: any
   message = ""
+  @ViewChild('quantityInput') quantityInput!: ElementRef;
+  @ViewChild('quantityInput1') quantityInput1!: ElementRef;
+  @ViewChild('quantityInput2') quantityInput2!: ElementRef;
+  @ViewChild('quantityInput3') quantityInput3!: ElementRef;
   listeAnnonce: Annonce[]
-
-  constructor(private service :CrudService,private router:Router,private fb:FormBuilder,private toast:NgToastService) {
-    let formControls = {
+  enableForm: boolean = true;
+  enableForm2: boolean = true;
+  Partie1Form: FormGroup;
+  Partie2Form: FormGroup;
+  constructor(
+    private fb: FormBuilder,
+    private service:CrudService,
+    private router:Router,private toast:NgToastService
+  ) {
+    let formControlP1= {
       type_d_hebergement: new FormControl( '', [
-          Validators.required,]),
-      nb_voyageur: new FormControl( '', [
-            Validators.required,]),
-      nb_chamber: new FormControl( '', [
-      Validators.required,]),
-      nb_lits: new FormControl( '', [
-      Validators.required,]),
-      nb_salles: new FormControl( '', [
         Validators.required,]),
-      equipement: new FormControl( '', [
+    nb_voyageur: new FormControl( '', [
           Validators.required,]),
-      equipement_specail: new FormControl( '', [
+    nb_chamber: new FormControl( '', [
+    Validators.required,]),
+    nb_lits: new FormControl( '', [
+    Validators.required,]),
+    nb_salles: new FormControl( '', [
+      Validators.required,]),
+      description: new FormControl( '', [
+        Validators.required,]),
+    }
+    let formControlP2 = {
+      equipement: new FormControl( '', [
+        Validators.required,]),
+    equipement_specail: new FormControl( '', [
+          Validators.required,]),
+    equipement_securite: new FormControl( '', [
             Validators.required,]),
-      equipement_securite: new FormControl( '', [
-              Validators.required,]),
+      
+    }
+    let formControls = {
+ 
+      
       image: new FormControl( '', [
-                Validators.required,]),
+          Validators.required,]),
        titre: new FormControl( '', [
-             Validators.required,]),
-       description: new FormControl( '', [
-              Validators.required,]),
+          Validators.required,]),
        mode_de_confirmation: new FormControl( '', [
-               Validators.required,]),
+          Validators.required,]),
       frais_de_service: new FormControl( '', [
-               Validators.required,]),
+          Validators.required,]),
       reduction_semaine: new FormControl( '', [
-              Validators.required,]),
+          Validators.required,]),
       reduction_mois: new FormControl( '', [
-              Validators.required,]),
+          Validators.required,]),
       prix: new FormControl( '', [
-              Validators.required,]),
+          Validators.required,]),
       pays: new FormControl( '', [
-              Validators.required,]),
+          Validators.required,]),
       etat: new FormControl( '', [
-             Validators.required,]),
-      libelle_de_voie: new FormControl( '', [
-              Validators.required,]),
+          Validators.required,]),
+      ville: new FormControl( '', [
+          Validators.required,]),
       code_postale: new FormControl( '', [
-                Validators.required,]),
+          Validators.required,]),
        heure_depart: new FormControl( '', [
-                Validators.required,]),
+          Validators.required,]),
       heure_arriver: new FormControl( '', [
-                    Validators.required,]),}
-     this.AnnonceForm = this.fb.group(formControls)
+          Validators.required,]),}
+                    
+    this.AnnonceForm = this.fb.group(formControls)
+    this.Partie1Form = this.fb.group(formControlP1)
+    this.Partie2Form = this.fb.group(formControlP2)
+     
    }
+
+
+   
 
   
   onSelectFile(event: any) {
@@ -87,17 +112,22 @@ export class AnnonceComponent {
       };
     }
   }
-  get type_d_hebergement() { return this.AnnonceForm.get('type_d_hebergement'); }
-  get nb_voyageur() { return this.AnnonceForm.get('nb_voyageur'); }
-  get nb_chamber() { return this.AnnonceForm.get('nb_chamber'); }
-  get nb_lits() { return this.AnnonceForm.get('nb_lits'); }
-  get nb_salles() { return this.AnnonceForm.get('nb_salles'); }
-  get equipement() { return this.AnnonceForm.get('equipement'); }
-  get equipement_specail() { return this.AnnonceForm.get('equipement_specail'); }
-  get equipement_securite() { return this.AnnonceForm.get('equipement_securite'); } 
+  get type_d_hebergement() { return this.Partie1Form.get('type_d_hebergement'); }
+  get nb_voyageur() 
+  { const value = this.quantityInput.nativeElement.value;
+    return value; }
+  get nb_chamber() { const value = this.quantityInput1 ? this.quantityInput1.nativeElement.value : '';
+    return value; }
+  get nb_lits() { const value = this.quantityInput2.nativeElement.value;
+    return value;}
+  get nb_salles() { const value = this.quantityInput3 ? this.quantityInput1.nativeElement.value : ''
+    return value; }
+  get description() { return this.Partie1Form.get('description'); }
+  get equipement() { return this.Partie2Form.get('equipement'); }
+  get equipement_specail() { return this.Partie2Form.get('equipement_specail'); }
+  get equipement_securite() { return this.Partie2Form.get('equipement_securite'); } 
   get image() { return this.AnnonceForm.get('image'); }
   get titre() { return this.AnnonceForm.get('titre'); }
-  get description() { return this.AnnonceForm.get('descriptionl'); }
   get mode_de_confirmation() { return this.AnnonceForm.get('mode_de_confirmation'); }
   get frais_de_service() { return this.AnnonceForm.get('frais_de_service'); }
   get reduction_semaine() { return this.AnnonceForm.get('reduction_semaine'); }
@@ -105,25 +135,58 @@ export class AnnonceComponent {
   get prix() { return this.AnnonceForm.get('prix'); }
   get pays() { return this.AnnonceForm.get('pays'); }
   get etat() { return this.AnnonceForm.get('etat'); }
-  get libelle_de_voie() { return this.AnnonceForm.get('libelle_de_voie'); }
+  get ville() { return this.AnnonceForm.get('ville'); }
   get code_postale() { return this.AnnonceForm.get('code_postale'); }
   get heure_depart() { return this.AnnonceForm.get('heure_depart'); }
   get heure_arriver() { return this.AnnonceForm.get('heure_arriver'); }
- 
+
+  done() {
+    let data = this.Partie1Form.value;
+    
+    console.log("data avant "+data);
+    console.log(data.type_d_hebergement,this.nb_voyageur,this.nb_chamber,this.nb_lits,this.nb_salles,data.description);
+    console.log("data apres : "+ data);
+    if (
+      data.type_d_hebergement == 0 ||
+      
+      data.description ==0
+    )
+    {
+      this.toast.info({
+        detail: 'Error Message',
+        summary: 'Remplir votre champs',
+      });
+    } else {
+  
+      this.enableForm = false
+      console.log(this.enableForm);
+    }
+  }
+    
+
+  // Méthode pour récupérer la valeur de l'input
+  getValue(): number {
+    const value = this.quantityInput.nativeElement.value;
+    return value; // ou utilisez la valeur comme vous le souhaitez
+  }
   addNewAnnonce() {
     let datas=this.service.getUserInfo();
     let data = this.AnnonceForm.value;
+    let data1 = this.Partie1Form.value;
+    let data2 = this.Partie2Form.value;
     console.log(data);
+    console.log(data1);
+    console.log(data2);
     let model: Saveannonce= new Saveannonce();
     model.id = null;
-    model.type_d_hebergement=data.type_d_hebergement;
-       model.nb_voyageur= data.nb_voyageur;
-       model.nb_chamber=data.nb_chamber;
-       model.nb_lits=data.nb_lits;
-       model.nb_salles=data.nb_salles;
-      model.equipement=data.equipement;
-       model.equipement_specail=data.equipement_specail;
-      model.equipement_securite=data.equipement_securite;
+    model.type_d_hebergement=data1.type_d_hebergement;
+       model.nb_voyageur= data1.nb_voyageur;
+       model.nb_chamber=data1.nb_chamber;
+       model.nb_lits=data1.nb_lits;
+       model.nb_salles=data1.nb_salles;
+      model.equipement=data2.equipement;
+       model.equipement_specail=data2.equipement_specail;
+      model.equipement_securite=data2.equipement_securite;
       model.image = this.imgURL;
       model.titre=data.titre;
       model.description=data.description;
@@ -134,22 +197,22 @@ export class AnnonceComponent {
       model.prix=data.prix;
       model.pays=data.pays;
       model.etat=data.etat;
-      model.libelle_de_voie=data.libelle_de_voie;
+      model.ville=data.ville;
       model.code_postale=data.code_postale;
       model.heure_depart=data.heure_depart;
       model.heure_arriver=data.heure_arriver;
-      model.Id_utilisateur=datas?.id;
-      console.log(model.Id_utilisateur);
+      model.id_annonceur=datas?.id;
+      console.log(model.id_annonceur);
   
       if (
-      data.type_d_hebergement == 0 ||
-      data.nb_voyageur == 0 ||
-      data.nb_chamber == 0 ||
-      data.nb_lits == 0 ||
-      data.nb_salles == 0 ||
-      data.equipement == 0 ||
-      data.equipement_specail == 0 ||
-      data.equipement_securite == 0 ||
+      data1.type_d_hebergement == 0 ||
+      data1.nb_voyageur == 0 ||
+      data1.nb_chamber == 0 ||
+      data1.nb_lits == 0 ||
+      data1.nb_salles == 0 ||
+      data2.equipement == 0 ||
+      data2.equipement_specail == 0 ||
+      data2.equipement_securite == 0 ||
       data.image == 0 ||
       data.titre == 0 ||
       data.description == 0 ||
@@ -160,7 +223,7 @@ export class AnnonceComponent {
       data.prix == 0 ||
       data.pays == 0 ||
       data.etat == 0 ||
-      data.libelle_de_voie == 0 ||
+      data.ville == 0 ||
       data.code_postale == 0 ||
       data.heure_depart == 0 ||
       data.heure_arriver == 0 
