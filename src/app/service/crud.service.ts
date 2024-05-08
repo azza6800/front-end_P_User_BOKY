@@ -5,6 +5,7 @@ import { Contact } from '../Entites/Contact.Entites';
 import  {Observable} from 'rxjs';
 import { Annonce } from '../Entites/Annonce.Entites';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { NgIf } from '@angular/common';
 
 
 
@@ -19,7 +20,7 @@ export class CrudService {
   //UtilisateurCrud
   addUtilisateur(utilisateur:Utilisateur)
    {
-    return this.http.post<any>(this.apiUrl+"/Utilisateur",utilisateur);
+    return this.http.post<any>(this.apiUrl+"/Utilisateur/register",utilisateur);
    }
   loginUtilisateur(utilisateur:Utilisateur){
     return this.http.post<any>(this.loginUserUrl, utilisateur);
@@ -92,8 +93,20 @@ export class CrudService {
   }
   isUtilisateurInIn(){
 
-    let token = localStorage.getItem("myToken");
-    if (token) {
+    let token = localStorage.getItem("role");
+    
+    if (token=="reservateur") {
+      return true ;
+    } else {
+      return false;
+    }
+  }
+
+  isProprietaire(){
+
+    let token = localStorage.getItem("role");
+    
+    if (token=="Propriétaire") {
       return true ;
     } else {
       return false;
@@ -101,7 +114,7 @@ export class CrudService {
   }
   
   userDetails(){
-    let token:any=localStorage.getItem('myToken');
+    let token:any=localStorage.getItem('role');
     let decodeToken= this.helper.decodeToken(token);
      return decodeToken.data;
    }

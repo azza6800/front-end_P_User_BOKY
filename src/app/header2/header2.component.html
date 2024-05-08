@@ -104,7 +104,7 @@
                             <span class="d-block fs-14 fw-medium flex-grow-1"> Profil </span>
                           </a>
                         </li>
-                        <li>
+                        <li *ngIf="!IsUtilisateurIn && isProprietaire">
                           <a href="#" class="link d-flex align-items-center gap-3 clr-neutral-400 dropdown-item px-2">
                             <span class="material-symbols-outlined mat-icon fs-28 flex-shrink-0"> event_note </span>
                             <span class="d-block fs-14 fw-medium flex-grow-1"> Mes Annonces </span>
@@ -142,7 +142,7 @@
               <a href="Contact" class="link menu-link "> Contact </a>
             </li>
           
-          <li class="menu-list" *ngIf="IsloggedIn || IsUtilisateurIn">
+          <li class="menu-list" *ngIf="!IsUtilisateurIn && isProprietaire">
             <a href="profil" class="link menu-link "> Tableau de bord </a>
           </li>
             

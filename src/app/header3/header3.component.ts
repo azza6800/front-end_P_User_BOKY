@@ -14,10 +14,21 @@ export class Header3Component {
   p:number=1;
   collection:any[]
   utilisateur: any;
+  isProprietaire:boolean
+  IsUtilisateurIn:boolean
 
-  constructor(private router: Router, private service: CrudService) {
-    this.userDetails = this.service.userDetails();
-    console.log(this.userDetails); 
+ 
+  constructor(private service:CrudService,private router:Router) { }
+
+  ngOnInit(): void {
+    this.IsUtilisateurIn=this.service.isUtilisateurInIn();
+    this.isProprietaire=this.service.isProprietaire();
+    console.log(this.userDetails);
+    this.service.getUtilisateur().subscribe(utilisateurs => {
+      this.profil = utilisateurs.filter(user => user.id === this.userDetails.id);
+    });
+    
+  
   }
   Deleteutilisateur(utilisateur: Utilisateur){
     if(confirm("Voulez vous supprimer cet utilisateur avec l'ID " + utilisateur.id + " ?")) {
@@ -31,12 +42,7 @@ export class Header3Component {
     }
   }
 
-  ngOnInit(): void {
-    console.log(this.userDetails);
-    this.service.getUtilisateur().subscribe(utilisateurs => {
-      this.profil = utilisateurs.filter(user => user.id === this.userDetails.id);
-    });
-  }
+ 
  
   logout(): void {
     console.log("logout");

@@ -11,12 +11,16 @@ import { Utilisateur } from '../Entites/Utilisateur.Entites';
 export class HeaderComponent {
   IsloggedIn:boolean
   IsUtilisateurIn:boolean
+  isProprietaire:boolean
+
  
   constructor(private service:CrudService,private router:Router) { }
 
   ngOnInit(): void {
     this.IsloggedIn=this.service.isLoggedIn();
     this.IsUtilisateurIn=this.service.isUtilisateurInIn();
+    this.isProprietaire=this.service.isProprietaire();
+    
   
   }
  

@@ -25,6 +25,9 @@ import { ChangerMotDePasseComponent } from './changer-mot-de-passe/changer-mot-d
 import { ModifierprofilComponent } from './modifierprofil/modifierprofil.component';
 import { DetailAnnoncePublicComponent } from './detail-annonce-public/detail-annonce-public.component';
 import { ModifierAnnonceComponent } from './modifier-annonce/modifier-annonce.component';
+import { PaymentComponent } from './payment/payment.component';
+import { MesReservationComponent } from './mes-reservation/mes-reservation.component';
+import { ReservationMesAnnoncesComponent } from './reservation-mes-annonces/reservation-mes-annonces.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,9 @@ import { ModifierAnnonceComponent } from './modifier-annonce/modifier-annonce.co
     ModifierprofilComponent,
     DetailAnnoncePublicComponent,
     ModifierAnnonceComponent,
+    PaymentComponent,
+    MesReservationComponent,
+    ReservationMesAnnoncesComponent,
    
   ],
   imports: [

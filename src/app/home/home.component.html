@@ -23,67 +23,62 @@
   <!-- Hero -->
   <div class="secondary-hero">
     <div class="container">
-      <div class="row justify-content-center">
+      <div class="row g-4">
         <div class="col-12">
-          <h1 class="d2 clr-neutral-0 mb-10 max-text-18"> Easy Way to Find a Perfect Property </h1>
+          <h1 class="d2 clr-neutral-0 mb-10 max-text-18"> Trouvez facilement votre maison parfaite ! </h1>
           <div class="d-flex align-items-center gap-4 gap-md-10 flex-wrap mb-10">
-            <div class="border border-neutral-40 rounded-pill p-2">
-              <div class="list list-row gap-6 list-group secondary-hero__btn-group">
-                <a class="list-group-item link active rounded-pill px-6 py-3 fw-semibold clr-neutral-0 bg-transparent border-0" data-bs-toggle="list" href="#list-rent"> Rent </a>
-                <a class="list-group-item link rounded-pill px-6 py-3 fw-semibold clr-neutral-0 bg-transparent border-0" data-bs-toggle="list" href="#list-buy"> Buy </a>
-                <a class="list-group-item link rounded-pill px-6 py-3 fw-semibold clr-neutral-0 bg-transparent border-0" data-bs-toggle="list" href="#list-sell"> Sell </a>
-              </div>
-            </div>
-            <a href="payment-method.html" class="link d-inline-flex align-items-center gap-2 py-5 px-10 rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0 fw-semibold">
-              <span class="d-inline-block"> Calculate </span>
+            <a href="liste_annonces_public" class="link d-inline-flex align-items-center gap-2 py-5 px-10 rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0 fw-semibold">
+              <span class="d-inline-block"> Tous Type </span>
               <span class="material-symbols-outlined mat-icon fw-200"> trending_flat </span>
             </a>
           </div>
-          <div class="property-filter align-items-center">
-            <div class="property-filter__item">
-              <div class="d-flex align-items-center gap-3">
-                <span class="material-symbols-outlined mat-icon clr-neutral-500 fs-32"> distance </span>
-                <select class="form-select">
-                  <option selected>Location</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </div>
-            </div>
-            <div class="property-filter__item">
-              <div class="d-flex align-items-center gap-3">
-                <span class="material-symbols-outlined mat-icon clr-neutral-500 fs-32"> grid_view </span>
-                <select class="form-select">
-                  <option selected>Property type</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </div>
-            </div>
-            <div class="property-filter__item flex-grow-1">
-              <div class="property-search__price property-search__col rounded-pill d-flex align-items-center gap-2">
-                <div class="d-flex gap-2 align-items-center">
-                  <span class="material-symbols-rounded mat-icon clr-neutral-500 fs-32"> add_card </span>
-                  <span class="d-inline-block"> Price </span>
+          <div >
+            <form action="#">
+              <div class="property-search p-6 rounded-3 bg-neutral-0">
+                <div class="property-search__content d-flex flex-wrap justify-content-center align-items-center gap-4">
+                  
+                  <div class="property-search__select property-search__col rounded-pill d-flex align-items-center gap-2 px-6">
+                    <span class="material-symbols-outlined mat-icon"> distance </span>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Location</option>
+                      <option value="1">New York</option>
+                      <option value="2">Chicago</option>
+                      <option value="3">Atlanta</option>
+                    </select>
+                  </div>
+                  <div class="property-search__select property-search__col rounded-pill d-flex align-items-center gap-2 px-6">
+                    <span class="material-symbols-rounded mat-icon"> grid_view </span>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Property Type</option>
+                      <option value="1">Houses</option>
+                      <option value="2">Apartments</option>
+                      <option value="3">Commercial</option>
+                    </select>
+                  </div>
+                  <div class="property-search__price property-search__col rounded-pill d-flex align-items-center gap-2 px-6 py-3">
+                    <div class="d-flex gap-2 align-items-center">
+                      <span class="material-symbols-rounded mat-icon"> add_card </span>
+                      <span class="d-inline-block fs-14"> Price </span>
+                    </div>
+                    <div class="property-search__range d-grid">
+                      <input type="range" min="1" max="1000" value="450" class="property-search__range-input" id="myRange" oninput="rangevalue.value=value">
+                    </div>
+                    <div class="property-search__range-price">
+                      <span class="d-inline-block fs-10 clr-primary-300"> $ <output class="property-search__range-value" id="rangevalue">450</output>
+                      </span>
+                    </div>
+                  </div>
+                  <button class="btn rounded-pill property-search__btn property-search__col">
+                    <span class="material-symbols-rounded mat-icon"> search </span>
+                  </button>
                 </div>
-                <div class="property-search__range d-grid">
-                  <input type="range" min="1" max="1000" value="450" class="property-search__range-input" id="myRange" oninput="rangevalue.value=value">
-                </div>
-                <div class="property-search__range-price">
-                  <span class="d-inline-block fs-10 clr-primary-300"> $ <output class="property-search__range-value" id="rangevalue">450</output>
-                  </span>
-                </div>
               </div>
-            </div>
-            <button type="button" class="property-filter__btn">
-              <span class="material-symbols-outlined mat-icon fw-200 fs-40"> straight </span>
-            </button>
+            </form>
           </div>
         </div>
       </div>
     </div>
+    
   </div>
   <!-- /Hero -->
   <!-- Category Section  -->

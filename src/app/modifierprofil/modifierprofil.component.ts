@@ -82,7 +82,6 @@ get role() { return this.updateForm.get('role'); }
       data.nom,
       data.prenom,
       data.email,
-      data.date_de_naissance,
       data.telephone,
       data.adresse,
       data.mdp, 

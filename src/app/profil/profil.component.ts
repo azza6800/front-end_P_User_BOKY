@@ -19,7 +19,7 @@ export class ProfilComponent {
   utilisateur: any;
 
   constructor(private router: Router, private service: CrudService) {
-    this.userDetails = this.service.userDetails();
+    this.userDetails = this.service.getUserInfo();
     console.log(this.userDetails); 
   }
   Deleteutilisateur(utilisateur: Utilisateur){

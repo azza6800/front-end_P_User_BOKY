@@ -15,23 +15,33 @@ import { ChangerMotDePasseComponent } from './changer-mot-de-passe/changer-mot-d
 import { ModifierprofilComponent } from './modifierprofil/modifierprofil.component';
 import { ModifierAnnonceComponent } from './modifier-annonce/modifier-annonce.component';
 import { DetailAnnoncePublicComponent } from './detail-annonce-public/detail-annonce-public.component';
+import { PaymentComponent } from './payment/payment.component';
+import { MesReservationComponent } from './mes-reservation/mes-reservation.component';
+import { ReservationMesAnnoncesComponent } from './reservation-mes-annonces/reservation-mes-annonces.component';
+import { AuthGuard, AuthGuardR } from './service/auth.service';
 
 const routes: Routes = [  
 {path:'',component:HomeComponent},
 {path:'login',component:LoginComponent},
 {path:'Contact',component:ContactComponent},
 {path:'register',component:RegisterComponent},
-{path:'annonce',component:AnnonceComponent},
-{path:'profil',component:ProfilComponent},
+{path:'annonce',component:AnnonceComponent,canActivate:[AuthGuardR]},
+{path:'profil',component:ProfilComponent,canActivate:[AuthGuard]},
 {path:'about',component:AboutComponent},
-{path:'liste_annonce',component:ListeAnnonceComponent},
-{path:"chat",component:ChatComponent},
+{path:'liste_annonce',component:ListeAnnonceComponent,canActivate:[AuthGuardR]},
+{path:"chat",component:ChatComponent,canActivate:[AuthGuard]},
 {path:"liste_annonces_public",component:ListeAnnoncesPublicComponent},
 {path:"verification_email",component:VerificationEmailComponent},
 {path:"reset_mdp",component:ChangerMotDePasseComponent},
-{path:"modifierprofil/:id",component:ModifierprofilComponent},
-{path:"modifierannonce/:id",component:ModifierAnnonceComponent},
-{path:"detailannonce/:id",component:DetailAnnoncePublicComponent}
+{path:"modifierprofil/:id",component:ModifierprofilComponent,canActivate:[AuthGuard]},
+{path:"modifierannonce/:id",component:ModifierAnnonceComponent,canActivate:[AuthGuardR]},
+{path:"detailannonce/:id",component:DetailAnnoncePublicComponent},
+{path:"paiment",component:PaymentComponent,canActivate:[AuthGuard]},
+{path:"mes_reservation",component:MesReservationComponent,canActivate:[AuthGuard]},
+{path:"reservation_mes_annonces",component:ReservationMesAnnoncesComponent,canActivate:[AuthGuardR]},
+
+
+
 
 
 ];
