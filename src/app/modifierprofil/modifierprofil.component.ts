@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { Router, ActivatedRoute } from '@angular/router';
 import { Utilisateur } from '../Entites/Utilisateur.Entites';
 import { CrudService } from '../service/crud.service';
+import { NgToastService } from 'ng-angular-popup';
+
 
 @Component({
   selector: 'app-modifierprofil',
@@ -10,17 +12,38 @@ import { CrudService } from '../service/crud.service';
   styleUrls: ['./modifierprofil.component.css']
 })
 export class ModifierprofilComponent implements OnInit {
+  onSelectFile(event: any) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.userFile = file;
+      var mimeType = event.target.files[0].type;
+      if (mimeType.match(/image\/*/) == null) {
+        this.message = 'Only images are supported.';
+        return;
+      }
+      var reader = new FileReader();
+      this.imagePath = file;
+      reader.readAsDataURL(file);
+      reader.onload = (_event) => {
+        this.imgURL = reader.result;
+      };
+    }
+  }
+  imagePath: any
+  imgURL: any
   updateForm: FormGroup;
   id: number;
   currentUtilisateur = new Utilisateur()
   userFile: any;
   public message!: string;
+  userDetails: any;
   constructor(
     private fb: FormBuilder,
     private service: CrudService,
     private route: Router,
-    private router: ActivatedRoute
+    private router: ActivatedRoute,private toast:NgToastService
   ) {
+    this.userDetails = this.service.getUserInfo();
     let formControles = {
       nom: new FormControl('', [
         Validators.required,
@@ -34,6 +57,8 @@ export class ModifierprofilComponent implements OnInit {
       telephone: new FormControl('', [Validators.required]),
       confirmPassword: ['', Validators.required],
     role: ['', Validators.required],
+    date_de_naissance: [''],
+    photo: ['']
      
     };
     this.updateForm = this.fb.group(formControles);
@@ -58,6 +83,13 @@ export class ModifierprofilComponent implements OnInit {
     return this.updateForm.get('telephone');
   }
 get role() { return this.updateForm.get('role'); }
+get date_de_naissance() { return this.updateForm.get('date_de_naissance'); }
+get photo (){return this.updateForm.get('photo');}
+  
+
+
+
+
 
 
   
@@ -71,10 +103,12 @@ get role() { return this.updateForm.get('role'); }
         nom: event.nom,
         prenom: event.prenom,
         email: event.email,
+        date_de_naissance: event.date_de_naissance,
         telephone: event.telephone,
         adresse: event.adresse,
         mdp: event.mdp,
-        role: event.role, });}); }
+        role: event.role,
+         });}); }
   updateUtilisateur() {
     let data = this.updateForm.value;
     let utilisateur =new Utilisateur(
@@ -82,14 +116,23 @@ get role() { return this.updateForm.get('role'); }
       data.nom,
       data.prenom,
       data.email,
+      data.date_de_naissance,
       data.telephone,
       data.adresse,
       data.mdp, 
-      data.role,);
+      data.role,
+      this.imgURL);
     console.log(utilisateur);
     console.log(data);
     this.service.updateUtilisateur(this.id,utilisateur).subscribe((res) => {
+      
       console.log(res);
+      this.toast.info({
+        detail: 'Modifier avec succée',
+        summary: 'valide',
+      });
       this.route.navigate(['/profil'])}); }
 
 }
+
+

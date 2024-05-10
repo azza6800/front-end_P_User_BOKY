@@ -10,10 +10,16 @@
               <img src="assets/img/logo.png" alt="logo" class="logo d-none d-xl-inline-block">
             </a>
           </li>
-         
-          <li class="d-none d-md-block">
-            <a href="contact" class="link btn bg-primary-300 :bg-primary-300 clr-neutral-0 :clr-neutral-0 fw-600 py-4 px-8 rounded-pill"> Submit Property </a>
+          <li *ngIf="IsloggedIn && !isProprietaire">
+            <button (click)="ModifierRole()" class="link btn d-flex align-items-center gap-2   bg-primary-300  clr-neutral-0 :clr-neutral-0 fw-600 py-4 px-8 rounded-pill">
+              <span class="material-symbols-outlined mat-icon fs-20"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-add" viewBox="0 0 16 16">
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h4a.5.5 0 1 0 0-1h-4a.5.5 0 0 1-.5-.5V7.207l5-5 6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-3.5-2a.5.5 0 0 0-.5.5v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 1 0 1 0v-1h1a.5.5 0 1 0 0-1h-1v-1a.5.5 0 0 0-.5-.5"/>
+              </svg></span>
+              <span class="d-block fw-medium"> <i class="bi bi-file-plus"></i>Ajouter Annonce</span>
+            </button>
           </li>
+          
         </ul>
       </div>
     </div>
@@ -85,15 +91,15 @@
               <li>
                 <div class="dropdown" *ngIf="IsloggedIn || IsUtilisateurIn">
                   <a href="#" class="link d-inline-block rounded-circle" data-bs-toggle="dropdown" data-bs-offset="0,16">
-                    <img src="assets/img/user-1.jpg" alt="image" class="img-fluid w-10 h-10 rounded-circle objec-fit-cover">
+                    <img src="{{userDetails.photo }}" alt="image" class="img-fluid w-10 h-10 rounded-circle objec-fit-cover">
                   </a>
                   <div class="dropdown-menu dropdown-menu-end p-0 border border-neutral-30">
                     <div class="p-6">
                       <div class="d-flex align-items-center gap-4 max-width">
-                        <img src="assets/img/user-1.jpg" alt="image" class="img-fluid w-12 h-12 rounded-circle object-fit-cover flex-shrink-0">
+                        <img src="{{userDetails.photo }}" alt="image" class="img-fluid w-12 h-12 rounded-circle object-fit-cover flex-shrink-0">
                         <div class="flex-grow-1">
-                          <h5 class="mb-0">Peter Parker</h5>
-                          <span class="d-block fs-14"> Los Angeles, CA </span>
+                          <h5 class="mb-0">{{userDetails.nom}} {{userDetails.prenom}}</h5>
+                          <span class="d-block fs-14"> {{userDetails.role}} </span>
                         </div>
                       </div>
                       <div class="hr-dashed mt-4 mb-2"></div>
@@ -140,6 +146,10 @@
             </li>
             <li class="menu-list">
               <a href="Contact" class="link menu-link "> Contact </a>
+            </li>
+            <li class="menu-list">
+              <a href="Contact" class="link menu-link "> Ménage </a>
+              
             </li>
           
           <li class="menu-list" *ngIf="!IsUtilisateurIn && isProprietaire">

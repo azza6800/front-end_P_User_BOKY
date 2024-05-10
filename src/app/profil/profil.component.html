@@ -65,12 +65,9 @@
               <div id="basic-info" class="accordion-collapse collapse show" data-bs-parent="#user-info">
                 <div class="accordion-body">
                   <div class="avatar-upload mx-auto ms-md-0 mb-6">
-                    <div class="avatar-upload__edit">
-                      <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" class="avatar-upload__input" />
-                      <label for="imageUpload" class="avatar-upload__label"></label>
-                    </div>
+                    
                     <div class="avatar-upload__preview">
-                      <div id="imagePreview" class="avatar-upload__img" style="background-image: url('assets/img/team-1.jpg');">
+                      <div id="imagePreview" class="avatar-upload__img" style="background-image: url('{{userDetails.photo }}');">
                       </div>
                     </div>
                   </div>
@@ -103,6 +100,16 @@
                               </div>
                               <div class="col-sm-9">
                                 <p class="text-muted mb-0">{{ utilisateur.email }}</p>
+                              </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <p class="mb-0 fw-bold">Date de naissance :</p>
+                              </div>
+                              
+                              <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{ utilisateur.date_de_naissance }}</p>
                               </div>
                             </div>
                             <hr>

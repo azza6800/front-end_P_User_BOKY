@@ -1,13 +1,13 @@
 <div class="p-6 rounded-4 bg-neutral-0 box-shadow">
   <div class="w-30 h-30 border border-primary-100 rounded-circle bg-neutral-0 p-6 d-grid place-content-center position-relative mx-auto mb-6">
-    <img src="assets/img/team-1.jpg" alt="image" class="w-24 h-24 object-fit-cover rounded-circle">
+    <img src="{{userDetails1.photo}}" alt="image" class="w-24 h-24 object-fit-cover rounded-circle">
     <div class="w-8 h-8 d-grid place-content-center rounded-circle border border-2 border-neutral bg-primary-300 position-absolute end-0 bottom-0">
       <span class="material-symbols-outlined mat-icon clr-neutral-0"> check </span>
     </div>
   </div>
-  <div class="text-center mb-10" *ngFor="let utilisateur of profil">
-    <h4 class="clr-neutral-500"> {{utilisateur.nom }} {{utilisateur.prenom }}</h4>
-    <p class="mb-0 clr-neutral-500"> {{utilisateur.email }} </p>
+  <div class="text-center mb-10" >
+    <h4 class="clr-neutral-500"> {{userDetails1.nom }} {{userDetails1.prenom }}</h4>
+    <p class="mb-0 clr-neutral-500"> {{userDetails1.email }} </p>
   </div>
   <div class="mb-10">
     <span class="d-block clr-neutral-400 fs-12 mb-4"> Account </span>

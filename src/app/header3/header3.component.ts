@@ -16,6 +16,7 @@ export class Header3Component {
   utilisateur: any;
   isProprietaire:boolean
   IsUtilisateurIn:boolean
+  userDetails1: any;
 
  
   constructor(private service:CrudService,private router:Router) { }
@@ -23,6 +24,8 @@ export class Header3Component {
   ngOnInit(): void {
     this.IsUtilisateurIn=this.service.isUtilisateurInIn();
     this.isProprietaire=this.service.isProprietaire();
+    this.userDetails1 = this.service.getUserDetails();
+
     console.log(this.userDetails);
     this.service.getUtilisateur().subscribe(utilisateurs => {
       this.profil = utilisateurs.filter(user => user.id === this.userDetails.id);

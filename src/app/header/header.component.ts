@@ -12,14 +12,17 @@ export class HeaderComponent {
   IsloggedIn:boolean
   IsUtilisateurIn:boolean
   isProprietaire:boolean
+  userDetails: any;
 
  
   constructor(private service:CrudService,private router:Router) { }
 
   ngOnInit(): void {
+    this.userDetails = this.service.getUserDetails();
     this.IsloggedIn=this.service.isLoggedIn();
     this.IsUtilisateurIn=this.service.isUtilisateurInIn();
     this.isProprietaire=this.service.isProprietaire();
+    console.log("photo hathy "+this.userDetails.photo)
     
   
   }

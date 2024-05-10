@@ -221,7 +221,7 @@
 
                      
                     
-                      <form *ngIf="!enableForm">
+                      <form *ngIf="!enableForm" [formGroup]="Partie2Form">
                         <ul class="list gap-4">
                           <li>
                               <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
@@ -510,8 +510,10 @@
                               <div class="accordion property-accordion">
                                 <div class="accordion-item">
                                   <h3 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#map-location" aria-expanded="true"> Images </button>
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#map-location" aria-expanded="true"  > Images </button>
                                   </h3>
+                                  <label for="image" class="form-label ">Image</label>
+										<input class="form-control " type="file" id="image" name="dzImage" accept="image/*" (change)=" onSelectFile($event)" formControlName="image">
                                   <div id="map-location" class="accordion-collapse collapse show">
                                     <div class="accordion-body">
                                       <div class="pt-6">

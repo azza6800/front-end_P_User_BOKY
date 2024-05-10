@@ -118,6 +118,11 @@ export class CrudService {
     let decodeToken= this.helper.decodeToken(token);
      return decodeToken.data;
    }
+   getUserDetails(){
+    let token:any=localStorage.getItem('myToken');
+    let decodeToken= this.helper.decodeToken(token);
+     return decodeToken.data;
+   }
    
    onDeleteUtilisateur(id : number){
     const url =`${this.apiUrl+"/Utilisateur"}/${id}`

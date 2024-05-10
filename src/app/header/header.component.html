@@ -67,15 +67,15 @@
               <li >
                 <div class="dropdown" *ngIf="IsloggedIn || IsUtilisateurIn"   >
                   <a href="#" class="link d-inline-block rounded-circle" data-bs-toggle="dropdown" data-bs-offset="0,16">
-                    <img src="assets/img/user-1.jpg" alt="image" class="img-fluid w-10 h-10 rounded-circle objec-fit-cover">
+                    <img src="{{userDetails.photo }}" alt="image" class="img-fluid w-10 h-10 rounded-circle objec-fit-cover">
                   </a>
                   <div class="dropdown-menu dropdown-menu-end p-0 border border-neutral-30">
                     <div class="p-6">
                       <div class="d-flex align-items-center gap-4 max-width" >
-                        <img src="assets/img/user-1.jpg" alt="image" class="img-fluid w-12 h-12 rounded-circle object-fit-cover flex-shrink-0">
+                        <img src="{{userDetails.photo }}" alt="image" class="img-fluid w-12 h-12 rounded-circle object-fit-cover flex-shrink-0">
                         <div class="flex-grow-1">
-                          <h5 class="mb-0">Peter Parker</h5>
-                          <span class="d-block fs-14"> Los Angeles, CA </span>
+                          <h5 class="mb-0">{{userDetails.nom}} {{userDetails.prenom}}</h5>
+                          <span class="d-block fs-14"> {{userDetails.role}} </span>
                         </div>
                       </div>
                       <div class="hr-dashed mt-4 mb-2"></div>

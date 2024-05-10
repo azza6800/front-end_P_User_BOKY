@@ -25,7 +25,7 @@ const routes: Routes = [
 {path:'login',component:LoginComponent},
 {path:'Contact',component:ContactComponent},
 {path:'register',component:RegisterComponent},
-{path:'annonce',component:AnnonceComponent,canActivate:[AuthGuardR]},
+{path:'annonce',component:AnnonceComponent,canActivate:[AuthGuard]},
 {path:'profil',component:ProfilComponent,canActivate:[AuthGuard]},
 {path:'about',component:AboutComponent},
 {path:'liste_annonce',component:ListeAnnonceComponent,canActivate:[AuthGuardR]},

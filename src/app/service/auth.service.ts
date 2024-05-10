@@ -46,7 +46,7 @@ export class AuthGuardR implements CanActivate {
     let IsUtilisateurIn=this.service.isUtilisateurInIn();
     let isProprietaire=this.service.isProprietaire();
   
-      if (isLoggedIn && !IsUtilisateurIn && isProprietaire) {
+      if (isLoggedIn  && isProprietaire) {
         return true;
       }else{
         this.router.navigate(['/login']);

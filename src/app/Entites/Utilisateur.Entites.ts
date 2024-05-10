@@ -4,10 +4,12 @@ export class Utilisateur{
         public nom?:string,
         public prenom?:string,
         public email?:string,
+        public date_de_naissance?:string,
         public telephone?:string,
         public adresse?:string,
         public mdp?:string,
         public role?:string,
-        public etat?:boolean 
+        public etat?:boolean ,
+        public photo?:string
     ){}
 }

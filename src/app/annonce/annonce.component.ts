@@ -53,13 +53,14 @@ export class AnnonceComponent {
           Validators.required,]),
     equipement_securite: new FormControl( '', [
             Validators.required,]),
+            image: new FormControl( '', [
+              Validators.required,]),
       
     }
     let formControls = {
  
       
-      image: new FormControl( '', [
-          Validators.required,]),
+      
        titre: new FormControl( '', [
           Validators.required,]),
        mode_de_confirmation: new FormControl( '', [

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Annonce } from '../Entites/Annonce.Entites';
 import { CrudService } from '../service/crud.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-detail-annonce-public',
@@ -15,14 +16,50 @@ export class DetailAnnoncePublicComponent {
   p:number=1;
   id: number;
   collection:any[]
+  enableForm: boolean = true;
+  checkoutParentGroup: FormGroup;
   constructor(
     private fb: FormBuilder,
     private service: CrudService,
     private route: Router,
-    private router: ActivatedRoute
-  ) { }
+    private router: ActivatedRoute,private toast:NgToastService
+  ) { 
+    let formControls = {
+      date_arrivée: new FormControl('',[
+        Validators.required,
+        
+      ]),
+      date_depart: new FormControl('',[
+        Validators.required,
+        
+      ]),
+      nb_vacancier: new FormControl('',[
+        Validators.required,
+        
+      ])
+    }
+    this.checkoutParentGroup = this.fb.group(formControls)
+  }
  
- 
+  done() {
+    let data = this.checkoutParentGroup.value;
+    
+    
+    if (
+  
+      data.date_arrivée == 0 ||
+      data.date_depart==0 ||
+      data.nb_vacancier ==0
+    )
+    {
+      this.toast.info({
+        detail: 'Error Message',
+        summary: 'Remplir votre champs',
+      });
+    } else {
+      this.enableForm = false
+    }
+    }
   reserver(event:any)
   {
     this.messageCommande=`<div class="alert alert-primary" role="alert">

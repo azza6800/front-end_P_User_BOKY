@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
   addNewUtilisateur() {
     let data = this.UtilisateurForm.value;
     console.log(data);
-    let utilisateur = new Utilisateur(undefined, data.nom, data.prenom, data.email, data.telephone, data.adresse, data.mdp, data.role,data.etat);
+    let utilisateur = new Utilisateur(undefined, data.nom, data.prenom, data.email,null, data.telephone, data.adresse, data.mdp, data.role,data.etat);
     console.log(utilisateur);
 
     if (
