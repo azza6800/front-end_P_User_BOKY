@@ -45,4 +45,5 @@ export class PaymentComponent {
       window.document.body.appendChild(script);
     }
   }
+  
 }

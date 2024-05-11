@@ -88,19 +88,10 @@
                       <p class="mb-0"> {{annonce.code_postale}} {{annonce.pays}} {{annonce.ville}} </p>
                     </div>
                   </li>
-                  <li>
-                    <p class="mb-0"> ID: <span class="clr-primary-300">12546</span>
-                    </p>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-1">
-                      <span class="material-symbols-outlined mat-icon solid clr-tertiary-300"> star_rate </span>
-                      <p class="mb-0"> 4.5(66) </p>
-                    </div>
-                  </li>
+                  
                   <li>
                     <p class="mb-0">
-                      <span class="clr-neutral-500">Published:</span> Feb 9, 23
+                      <span class="clr-neutral-500">Publié :</span> {{annonce.date  | date: 'yyyy/MM/dd' }}
                     </p>
                   </li>
                 </ul>
@@ -109,162 +100,218 @@
                   <li>
                     <div class="d-flex align-items-center gap-2">
                       <span class="material-symbols-outlined mat-icon"> home_work </span>
-                      <p class="mb-0"> {{annonce.nb_chamber}}Room </p>
+                      <p class="mb-0"> {{annonce.nb_chamber}} Chambres </p>
                     </div>
                   </li>
                   <li>
                     <div class="d-flex align-items-center gap-2">
                       <span class="material-symbols-outlined mat-icon"> bed </span>
-                      <p class="mb-0"> 7 Bed </p>
+                      <p class="mb-0"> {{annonce.nb_lits}} lits </p>
                     </div>
                   </li>
                   <li>
                     <div class="d-flex align-items-center gap-2">
                       <span class="material-symbols-outlined mat-icon"> bathtub </span>
-                      <p class="mb-0"> 3 Bath </p>
+                      <p class="mb-0"> {{annonce.nb_salles}} Salles de bain </p>
                     </div>
                   </li>
                   <li>
+                    
                     <div class="d-flex align-items-center gap-2">
-                      <span class="material-symbols-outlined mat-icon"> drag_pan </span>
-                      <p class="mb-0"> 702 sft </p>
+                      <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> group </span>
+                      <span class="d-block fs-14"> {{annonce.nb_voyageur}} Vacanciers</span>
                     </div>
                   </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-2">
-                      <span class="material-symbols-outlined mat-icon"> calendar_month </span>
-                      <p class="mb-0"> 2023 </p>
-                    </div>
-                  </li>
+                 
                 </ul>
               </div>
               <div class="p-6 bg-primary-3p rounded-4 border border-neutral-40 mb-10">
                 <h4 class="mb-5"> Description </h4>
                 <p class="mb-5 clr-neutral-500"> {{annonce.description}} </p>
-                <a href="#" class="link d-flex align-items-center gap-2 clr-primary-300">
-                  <span class="fw-semibold d-inline-block"> Read More </span>
-                  <span class="material-symbols-outlined mat-icon"> arrow_right_alt </span>
-                </a>
+               
               </div>
               <div class="p-6 bg-primary-3p rounded-4 border border-neutral-40 mb-10">
-                <h4 class="mb-5"> Amenities </h4>
+                <h4 class="mb-5"> Equipement  </h4>
                 <div class="mb-10">
                   <div class="row g-4">
                     <div class="col-md-4 col-lg-3">
                       <ul class="list gap-4">
-                        <li>
-                          <div class="d-flex align-items-center gap-2">
+                        <li *ngFor="let i of [0, 1, 2]" >
+                          <div *ngIf=" annonce.equipement[i]!= null " class="d-flex align-items-center gap-2">
                             <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
                               <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
                             </div>
-                            <span class="d-inline-block"> Air Condition </span>
+                            <span class="d-inline-block"> {{annonce.equipement[i]}} </span>
                           </div>
                         </li>
-                        <li>
-                          <div class="d-flex align-items-center gap-2">
+                        
+                      </ul>
+                      
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                      <ul class="list gap-4">
+                        <li *ngFor="let i of [3,4,5]">
+                          <div  *ngIf=" annonce.equipement[i]!= null " class="d-flex align-items-center gap-2">
                             <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
                               <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
                             </div>
-                            <span class="d-inline-block"> Laundry Room </span>
+                            <span class="d-inline-block"> {{annonce.equipement[i]}} </span>
                           </div>
                         </li>
-                        <li>
-                          <div class="d-flex align-items-center gap-2">
-                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
-                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
-                            </div>
-                            <span class="d-inline-block"> Window Cover </span>
-                          </div>
-                        </li>
+                       
                       </ul>
                     </div>
                     <div class="col-md-4 col-lg-3">
                       <ul class="list gap-4">
-                        <li>
+                        <li *ngFor="let i of [6,7,8]">
                           <div class="d-flex align-items-center gap-2">
-                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                            <div *ngIf=" annonce.equipement[i]!= null "  class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
                               <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
                             </div>
-                            <span class="d-inline-block"> Free WiFi </span>
+                            <span class="d-inline-block"> {{annonce.equipement[i]}} </span>
                           </div>
                         </li>
-                        <li>
-                          <div class="d-flex align-items-center gap-2">
-                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
-                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
-                            </div>
-                            <span class="d-inline-block"> Pool </span>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="d-flex align-items-center gap-2">
-                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
-                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
-                            </div>
-                            <span class="d-inline-block"> Gym </span>
-                          </div>
-                        </li>
+                       
                       </ul>
                     </div>
                     <div class="col-md-4 col-lg-3">
                       <ul class="list gap-4">
-                        <li>
+                        <li *ngFor="let i of [9,10,11]">
                           <div class="d-flex align-items-center gap-2">
-                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                            <div *ngIf=" annonce.equipement[i]!= null "  class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
                               <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
                             </div>
-                            <span class="d-inline-block"> Internet </span>
+                            <span class="d-inline-block"> {{annonce.equipement[i]}} </span>
                           </div>
                         </li>
-                        <li>
-                          <div class="d-flex align-items-center gap-2">
-                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
-                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
-                            </div>
-                            <span class="d-inline-block"> Car Parking </span>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="d-flex align-items-center gap-2">
-                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
-                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
-                            </div>
-                            <span class="d-inline-block"> Heating </span>
-                          </div>
-                        </li>
+                       
                       </ul>
                     </div>
-                    <div class="col-md-4 col-lg-3">
-                      <ul class="list gap-4">
-                        <li>
-                          <div class="d-flex align-items-center gap-2">
-                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
-                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
-                            </div>
-                            <span class="d-inline-block"> Alarm </span>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="d-flex align-items-center gap-2">
-                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
-                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
-                            </div>
-                            <span class="d-inline-block"> Pets Allow </span>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="d-flex align-items-center gap-2">
-                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
-                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
-                            </div>
-                            <span class="d-inline-block"> Spa Massage </span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
+                    
                   </div>
                 </div>
-                <a href="#" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
+              </div>
+              <div class="p-6 bg-primary-3p rounded-4 border border-neutral-40 mb-10">
+                <h4 class="mb-5"> Equipement spécial </h4>
+                <div class="mb-10">
+                  <div class="row g-4">
+                    <div class="col-md-4 col-lg-3">
+                      <ul class="list gap-4">
+                        <li *ngFor="let i of [0, 1, 2]" >
+                          <div *ngIf=" annonce.equipement_specail[i]!= null " class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> {{annonce.equipement_specail[i]}} </span>
+                          </div>
+                        </li>
+                        
+                      </ul>
+                      
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                      <ul class="list gap-4">
+                        <li *ngFor="let i of [3,4,5]">
+                          <div  *ngIf=" annonce.equipement_specail[i]!= null " class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> {{annonce.equipement_specail[i]}} </span>
+                          </div>
+                        </li>
+                       
+                      </ul>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                      <ul class="list gap-4">
+                        <li *ngFor="let i of [6,7,8]">
+                          <div class="d-flex align-items-center gap-2">
+                            <div *ngIf=" annonce.equipement_specail[i]!= null "  class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> {{annonce.equipement_specail[i]}} </span>
+                          </div>
+                        </li>
+                       
+                      </ul>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                      <ul class="list gap-4">
+                        <li *ngFor="let i of [9,10,11]">
+                          <div class="d-flex align-items-center gap-2">
+                            <div *ngIf=" annonce.equipement_specail[i]!= null "  class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> {{annonce.equipement_specail[i]}} </span>
+                          </div>
+                        </li>
+                       
+                      </ul>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="p-6 bg-primary-3p rounded-4 border border-neutral-40 mb-10">
+                <h4 class="mb-5"> Equipement de sécurite </h4>
+                <div class="mb-10">
+                  <div class="row g-4">
+                    <div class="col-md-4 col-lg-3">
+                      <ul class="list gap-4">
+                        <li *ngFor="let i of [0, 1, 2]" >
+                          <div *ngIf=" annonce.equipement_securite[i]!= null " class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> {{annonce.equipement_securite[i]}} </span>
+                          </div>
+                        </li>
+                        
+                      </ul>
+                      
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                      <ul class="list gap-4">
+                        <li *ngFor="let i of [3,4,5]">
+                          <div  *ngIf=" annonce.equipement_securite[i]!= null " class="d-flex align-items-center gap-2">
+                            <div class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> {{annonce.equipement_securite[i]}} </span>
+                          </div>
+                        </li>
+                       
+                      </ul>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                      <ul class="list gap-4">
+                        <li *ngFor="let i of [6,7,8]">
+                          <div class="d-flex align-items-center gap-2">
+                            <div *ngIf=" annonce.equipement_securite[i]!= null "  class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> {{annonce.equipement_securite[i]}} </span>
+                          </div>
+                        </li>
+                       
+                      </ul>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                      <ul class="list gap-4">
+                        <li *ngFor="let i of [9,10,11]">
+                          <div class="d-flex align-items-center gap-2">
+                            <div *ngIf=" annonce.equipement_securite[i]!= null "  class="w-6 h-6 d-grid place-content-center rounded-circle flex-shrink-0 bg-primary-50">
+                              <span class="material-symbols-outlined mat-icon fs-20 clr-primary-300"> check </span>
+                            </div>
+                            <span class="d-inline-block"> {{annonce.equipement_securite[i]}} </span>
+                          </div>
+                        </li>
+                       
+                      </ul>
+                    </div>
+                    
+                  </div>
+                </div>
               </div>
               <div class="p-6 bg-primary-3p rounded-4 border border-neutral-40 mb-10">
                 <h4 class="mb-5"> Property Video </h4>
@@ -278,80 +325,13 @@
               <div class="p-6 bg-primary-3p rounded-4 border border-neutral-40 mb-10">
                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-5">
                   <h4 class="mb-0"> Location </h4>
-                  <a href="#" class="btn btn-outline-primary py-2 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> View All <span class="material-symbols-outlined mat-icon lh-1"> trending_flat </span>
-                  </a>
+                  <span class="d-inline-block"> Des informations précises sur l'emplacement sont fournies après la confirmation d'une réservation. </span>
+
                 </div>
                 <div class="w-100">
-                  <iframe class="w-100 h-400 rounded-4" src="https://maps.google.com/maps?q=california&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
                 </div>
               </div>
-              <div class="p-6 bg-primary-3p rounded-4 border border-neutral-40 mb-10">
-                <h4 class="mb-5"> Room Rates </h4>
-                <ul class="list">
-                  <li>
-                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 py-4 px-6 bg-primary-5p rounded-pill">
-                      <p class="mb-0">Monday - Thursday</p>
-                      <p class="mb-0 fw-medium fs-18">$399</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 py-4 px-6 rounded-pill">
-                      <p class="mb-0">Friday - Sunday</p>
-                      <p class="mb-0 fw-medium fs-18">$499</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 py-4 px-6 bg-primary-5p rounded-pill">
-                      <p class="mb-0">Rent by month</p>
-                      <p class="mb-0 fw-medium fs-18">-7.34%</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 py-4 px-6 rounded-pill">
-                      <p class="mb-0">Min number of nights</p>
-                      <p class="mb-0 fw-medium fs-18">1 night</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 py-4 px-6 bg-primary-5p rounded-pill">
-                      <p class="mb-0">Max number of nights</p>
-                      <p class="mb-0 fw-medium fs-18">70 nights</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="d-flex align-items-center justify-content-between gap-4 flex-wrap">
-                <a href="#" class="link d-flex align-items-center clr-neutral-500 :clr-primary-300 gap-1 order-1">
-                  <span class="material-symbols-outlined mat-icon"> arrow_back </span>
-                  <span class="d-inline-block fw-semibold"> Prev Property </span>
-                </a>
-                <ul class="list list-row flex-wrap gap-3 justify-content-center order-3 flex-grow-1 order-md-2">
-                  <li>
-                    <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
-                      <i class="fab fa-linkedin-in"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
-                      <i class="fab fa-dribbble"></i>
-                    </a>
-                  </li>
-                </ul>
-                <a href="#" class="link d-flex align-items-center clr-neutral-500 :clr-primary-300 gap-1 order-2">
-                  <span class="d-inline-block fw-semibold"> Next Property </span>
-                  <span class="material-symbols-outlined mat-icon"> arrow_forward </span>
-                </a>
-              </div>
+              
             </div>
           </div>
           <div class="bg-neutral-0 rounded-4 py-8 px-5">
@@ -585,14 +565,14 @@
                     <div class="flex-grow-1">
                       <div class="col-lg-8">
                         <label for="user-birthdate" class="d-block mb-2 fw-medium clr-neutral-500">Date d'arrivée:</label>
-                        <input type="date" id="user-birthdate" class="form-control py-3 px-6 rounded-4" formControlName="date_arrivée">
+                        <input type="date" id="user-birthdate" class="form-control py-3 px-6 rounded-4" formControlName="date_arrivee">
                       </div>
                       <div class="col-lg-8">
                         <label for="user-birthdate" class="d-block mb-2 fw-medium clr-neutral-500">Date de départ: </label>
                         <input type="date" id="user-birthdate" class="form-control py-3 px-6 rounded-4" formControlName="date_depart">
                       </div>
-                      <p class="mb-1">Feb 17 - Feb 25</p>
-                      <p class="mb-0 fs-12 clr-neutral-400"> Date d'arrivée - Date de départ </p>
+                      <p></p>
+                      <p class="mb-0 fs-12 clr-neutral-400">  Date d'arrivée {{ currentDateArrivee }} - Date de départ {{ currentDateDepart }}</p>
         
                     </div>
                   </div>
@@ -606,17 +586,38 @@
                 
                 
               </div>
+              <div>
               <div class="d-flex align-items-center justify-content-between mb-4">
-                <p class="mb-0 clr-neutral-500"> $119 x 4 night </p>
-                <p class="mb-0 fw-medium"> $1015 </p>
+                <p class="mb-0 clr-neutral-500"> {{annonce.prix}} x {{numberOfNights}} Nuit </p>
+                <p class="mb-0 fw-medium">  {{prix}}   DT</p>
               </div>
-              
-              <div class="hr-dashed my-4"></div>
-              <div class="d-flex align-items-center justify-content-between mb-10">
+              <div *ngIf="numberOfNights<7 "class="hr-dashed my-4"></div>
+              <div  *ngIf="numberOfNights<7 " class="d-flex align-items-center justify-content-between mb-10">
                 <p class="mb-0 clr-neutral-500"> Total </p>
-                <p class="mb-0 fw-medium"> $1025 </p>
+                <p class="mb-0 fw-medium"> {{prix}} DT</p>
               </div>
-              <button  (click)="reserver(annonce)" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0 fw-medium w-100 justify-content-center mb-6">
+              <div *ngIf="numberOfNights>=7 && numberOfNights<30  && annonce.reduction_semaine==true" >
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                  <p class="mb-0 clr-neutral-500"> Remise 7 % </p>
+                </div>
+                <div  class="d-flex align-items-center justify-content-between mb-10">
+                  <p class="mb-0 clr-neutral-500"> Total </p>
+                  <p class="mb-0 fw-medium"> {{prixsemaine}}  DT</p>
+                </div>
+              </div>
+              <div *ngIf="numberOfNights>=30  && annonce.reduction_mois==true" >
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                  <p class="mb-0 clr-neutral-500"> Remise 15 % </p>
+                </div>
+                <div  class="d-flex align-items-center justify-content-between mb-10">
+                  <p class="mb-0 clr-neutral-500"> Total </p>
+                  <p class="mb-0 fw-medium"> {{prixmois}}  DT</p>
+                </div>
+              </div>
+            </div>
+            
+              
+              <button  type="submit" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0 fw-medium w-100 justify-content-center mb-6">
                 <span class="d-inline-block"> Reserver </span>
               </button>
               
@@ -624,251 +625,97 @@
           </div>
           <div class="bg-neutral-0 rounded-4 py-8 px-6">
             <div class="w-30 h-30 border border-primary-100 rounded-circle bg-neutral-0 p-6 d-grid place-content-center position-relative mx-auto mb-10">
-              <img src="assets/img/team-1.jpg" alt="image" class="w-24 h-24 object-fit-cover rounded-circle">
+              <img src="{{annonceur.photo}}" alt="image" class="w-24 h-24 object-fit-cover rounded-circle">
               <div class="w-8 h-8 d-grid place-content-center rounded-circle border border-2 border-neutral bg-primary-300 position-absolute end-0 bottom-0">
                 <span class="material-symbols-outlined mat-icon clr-neutral-0"> check </span>
               </div>
             </div>
-            <h4 class="text-center mb-4"> Savannah Nguyen </h4>
+            <h4 class="text-center mb-4"> {{annonceur.nom }} {{annonceur.prenom}} </h4>
             <ul class="list list-row list-divider-dot-sm align-items-cener justify-content-center flex-wrap mb-7">
-              <li>
-                <p class="mb-0"> ID: <span class="clr-primary-300">235</span>
-                </p>
+              <li><div class="mb-0"></div></li>
+              <li >
+                <span > Propriété : {{nbannonce}} </span>
               </li>
               <li>
-                <p class="mb-0"> Property: 24 </p>
+                  <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
+                  <span > {{annonceur.adresse}} </span>
               </li>
-              <li>
-                <div class="d-flex gap-1 align-items-cener">
-                  <span class="material-symbols-outlined mat-icon solid clr-tertiary-300"> star_rate </span>
-                  <p class="mb-0"> 4.8 </p>
-                </div>
-              </li>
+              
             </ul>
-            <ul class="list list-row justify-content-center flex-wrap gap-3">
-              <li>
-                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="link d-grid place-content-center w-9 h-9 rounded-circle bg-primary-50 clr-primary-300 :bg-primary-300 :clr-neutral-0">
-                  <i class="fab fa-dribbble"></i>
-                </a>
-              </li>
-            </ul>
-            <div class="hr-dashed my-7"></div>
-            <ul class="list gap-4 mb-10 max-text-30 mx-auto">
-              <li>
-                <div class="d-flex align-items-center gap-2">
-                  <span class="material-symbols-outlined mat-icon clr-primary-300"> calendar_month </span>
-                  <p class="mb-0"> Joined in June 2018 </p>
-                </div>
-              </li>
-              <li>
-                <div class="d-flex align-items-center gap-2">
-                  <span class="material-symbols-outlined mat-icon clr-secondary-300"> chat </span>
-                  <p class="mb-0"> Response rate - 100% </p>
-                </div>
-              </li>
-              <li>
-                <div class="d-flex align-items-center gap-2">
-                  <span class="material-symbols-outlined mat-icon clr-tertiary-300"> alarm_on </span>
-                  <p class="mb-0"> Fast response </p>
-                </div>
-              </li>
-            </ul>
-            <div class="text-center">
-              <a href="#" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> See Host Profile </a>
-            </div>
+            
           </div>
         </div>
       </div>
     </div>
-    <div class="section-space--sm pt-xl-0">
-      <div class="container">
-        <div class="row gy-5">
-          <div class="col-12">
-            <div class="row g-4 align-items-center">
-              <div class="col-md-6">
-                <h2 class="mb-0"> Recently viewed </h2>
+   
+  </form>
+  <form *ngIf="!enableForm" class="d-flex justify-content-center" >
+    <div class="section-space--sm">
+      <div class="bg-neutral-0 rounded-4 py-8 px-6">
+        <div class="d-flex align-items-center justify-content-center mb-6">
+          <div class="text-center">
+            <h3 class="mb-0">Demande de réservation</h3>
+            <p>Votre réservation ne sera pas confirmée tant que l'hôte n'aura pas accepté votre demande. </p>
+            <p>Le montant ne sera débité qu'à cette date.</p>
+          </div>
+        </div>
+        
+        <div class="tab-content mb-8">
+          <div class="tab-pane fade show active" id="booking-list">
+            <div class="d-flex bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+              <span class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0"> calendar_month </span>
+              <div class="flex-grow-1">
+                <p class="mb-1">{{reservation.date_arrivee}} - {{reservation.date_depart}}</p>
+                <p class="mb-0 fs-12 clr-neutral-400"> Date d'arrivée - Date de départ </p>
               </div>
-              <div class="col-md-6">
-                <div class="text-md-end d-flex gap-3 justify-content-md-end">
-                  <div class="swiper-button-prev recent-view-slider__btn recent-view-slider__btn-prev">
-                  </div>
-                  <div class="swiper-button-next recent-view-slider__btn recent-view-slider__btn-next">
-                  </div>
-                </div>
+            </div>
+            <div class="d-flex bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40">
+              <span class="material-symbols-outlined mat-icon clr-neutral-200 fs-32 flex-shrink-0"> group </span>
+              <div class="flex-grow-1">
+                <p class="mb-1">{{reservation.nb_vacancier}} Vacanciers </p>
+                <p class="mb-0 fs-12 clr-neutral-400"> Vacanciers </p>
               </div>
             </div>
           </div>
-          <div class="col-12">
-            <div class="swiper recent-view-slider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide ps-2">
-                  <div class="property-card">
-                    <div class="property-card__head">
-                      <div class="property-card__img">
-                        <img src="assets/img/featured-img-1.jpg" alt="image" class="img-fluid w-100">
-                      </div>
-                      <a href="property-details-2.html" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> For Sale </a>
-                      <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
-                        <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
-                      </button>
-                      <span class="property-card__popular-tag">
-                        <span class="d-inline-block fs-14 fw-semibold clr-neutral-0 bg-primary-300 py-2 px-9"> Popular </span>
-                      </span>
-                    </div>
-                    <div class="property-card__body">
-                      <div class="d-flex align-items-center gap-1 mb-4">
-                        <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
-                        <span class="d-inline-block"> 3890 Poplar Dr. </span>
-                      </div>
-                      <a href="property-details-2.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> Regal North Hills - 4150 Main at North Hills St, Raleigh </a>
-                      <ul class="list list-row flex-wrap dotted-divider">
-                        <li>
-                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
-                          <span class="d-block"> 3 Room </span>
-                        </li>
-                        <li>
-                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
-                          <span class="d-block"> 5 Bed </span>
-                        </li>
-                        <li>
-                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
-                          <span class="d-block"> 1 Bath </span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="property-card__body py-0">
-                      <div class="hr-dashed"></div>
-                    </div>
-                    <div class="property-card__body">
-                      <div class="d-flex flex-wrap justify-content-between align-items-center">
-                        <span class="d-block fs-20 fw-medium clr-primary-300"> $5,256 <span class="d-inline-block clr-neutral-500 fs-16 fw-normal"> /month </span>
-                        </span>
-                        <a href="property-details-2.html" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide ps-2">
-                  <div class="property-card">
-                    <div class="property-card__head">
-                      <div class="property-card__img">
-                        <img src="assets/img/featured-img-2.jpg" alt="image" class="img-fluid w-100">
-                      </div>
-                      <a href="property-details-2.html" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> For Sale </a>
-                      <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
-                        <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
-                      </button>
-                      <span class="property-card__popular-tag">
-                        <span class="d-inline-block fs-14 fw-semibold clr-neutral-0 bg-primary-300 py-2 px-9"> Popular </span>
-                      </span>
-                    </div>
-                    <div class="property-card__body">
-                      <div class="d-flex align-items-center gap-1 mb-4">
-                        <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
-                        <span class="d-inline-block"> 3890 Poplar Dr. </span>
-                      </div>
-                      <a href="property-details-2.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> Regal North Hills - 4150 Main at North Hills St, Raleigh </a>
-                      <ul class="list list-row flex-wrap dotted-divider">
-                        <li>
-                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
-                          <span class="d-block"> 3 Room </span>
-                        </li>
-                        <li>
-                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
-                          <span class="d-block"> 5 Bed </span>
-                        </li>
-                        <li>
-                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
-                          <span class="d-block"> 1 Bath </span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="property-card__body py-0">
-                      <div class="hr-dashed"></div>
-                    </div>
-                    <div class="property-card__body">
-                      <div class="d-flex flex-wrap justify-content-between align-items-center">
-                        <span class="d-block fs-20 fw-medium clr-primary-300"> $5,256 <span class="d-inline-block clr-neutral-500 fs-16 fw-normal"> /month </span>
-                        </span>
-                        <a href="property-details-2.html" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide ps-2">
-                  <div class="property-card">
-                    <div class="property-card__head">
-                      <div class="property-card__img">
-                        <img src="assets/img/featured-img-3.jpg" alt="image" class="img-fluid w-100">
-                      </div>
-                      <a href="property-details-2.html" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> For Sale </a>
-                      <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
-                        <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
-                      </button>
-                      <span class="property-card__popular-tag">
-                        <span class="d-inline-block fs-14 fw-semibold clr-neutral-0 bg-primary-300 py-2 px-9"> Popular </span>
-                      </span>
-                    </div>
-                    <div class="property-card__body">
-                      <div class="d-flex align-items-center gap-1 mb-4">
-                        <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
-                        <span class="d-inline-block"> 3890 Poplar Dr. </span>
-                      </div>
-                      <a href="property-details-2.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> Regal North Hills - 4150 Main at North Hills St, Raleigh </a>
-                      <ul class="list list-row flex-wrap dotted-divider">
-                        <li>
-                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
-                          <span class="d-block"> 3 Room </span>
-                        </li>
-                        <li>
-                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
-                          <span class="d-block"> 5 Bed </span>
-                        </li>
-                        <li>
-                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
-                          <span class="d-block"> 1 Bath </span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="property-card__body py-0">
-                      <div class="hr-dashed"></div>
-                    </div>
-                    <div class="property-card__body">
-                      <div class="d-flex flex-wrap justify-content-between align-items-center">
-                        <span class="d-block fs-20 fw-medium clr-primary-300"> $5,256 <span class="d-inline-block clr-neutral-500 fs-16 fw-normal"> /month </span>
-                        </span>
-                        <a href="property-details-2.html" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          
+        </div>
+        <div>
+          <div class="d-flex align-items-center justify-content-between mb-4">
+            <p class="mb-0 clr-neutral-500"> {{annonce.prix}} x {{numberOfNights}} Nuit </p>
+            <p class="mb-0 fw-medium">  {{prix}}   DT</p>
+          </div>
+          <div *ngIf="numberOfNights<7 "class="hr-dashed my-4"></div>
+          <div  *ngIf="numberOfNights<7 " class="d-flex align-items-center justify-content-between mb-10">
+            <p class="mb-0 clr-neutral-500"> Total </p>
+            <p class="mb-0 fw-medium"> {{prix}} DT</p>
+          </div>
+          <div *ngIf="numberOfNights>=7 && numberOfNights<30  && annonce.reduction_semaine==true" >
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <p class="mb-0 clr-neutral-500"> Remise 7 % </p>
+            </div>
+            <div  class="d-flex align-items-center justify-content-between mb-10">
+              <p class="mb-0 clr-neutral-500"> Total </p>
+              <p class="mb-0 fw-medium"> {{prixsemaine}}  DT</p>
+            </div>
+          </div>
+          <div *ngIf="numberOfNights>=30  && annonce.reduction_mois==true" >
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <p class="mb-0 clr-neutral-500"> Remise 15 % </p>
+            </div>
+            <div  class="d-flex align-items-center justify-content-between mb-10">
+              <p class="mb-0 clr-neutral-500"> Total </p>
+              <p class="mb-0 fw-medium"> {{prixmois}}  DT</p>
             </div>
           </div>
         </div>
+        <button (click)="makePayment()" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0 fw-medium w-100 justify-content-center mb-6">
+          <span class="d-inline-block"> Payée </span>
+        </button>
+        
       </div>
     </div>
   </form>
+
   </div>
   <!-- Footer -->
   <app-footer></app-footer>

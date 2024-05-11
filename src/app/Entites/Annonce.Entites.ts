@@ -12,8 +12,6 @@ export class Annonce{
         public image?:string,
         public titre?:string,
         public description?:string,
-        public mode_de_confirmation?:string,
-        public frais_de_service?:string,
         public reduction_semaine?:boolean,
         public reduction_mois?:boolean,
         public prix?:string,

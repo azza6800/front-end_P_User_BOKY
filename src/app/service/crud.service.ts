@@ -33,6 +33,10 @@ export class CrudService {
   {
     return this.http.post<any>(this.apiUrl+"/Utilisateur/resetPassword", {email,code,password});
   }
+  getUtilisateurByAnnonce(id:number):Observable<Utilisateur>{const url =`${this.apiUrl+"/Annonce/get-utilisateur"}/${id}`
+  return this.http.get<any>(url);}
+  listeAnnonceByAnnonceur(id:number):Observable<Utilisateur[]>{const url =`${this.apiUrl+"/Annonce/get-all-by-id-annonceur"}/${id}`
+    return this.http.get<Utilisateur[]>(url);}
 
   //ContactCrud
   addContact(contact:Contact)

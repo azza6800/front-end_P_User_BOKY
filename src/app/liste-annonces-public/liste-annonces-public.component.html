@@ -28,16 +28,10 @@
       <div class="row g-4">
         <div class="col-md-4">
           <div class="py-6 px-8 bg-neutral-0 rounded-4 box-shadow">
-            <h4 class="mb-0"> Filter </h4>
+            <h4 class="mb-0"> Rechercher </h4>
             <div class="hr-dashed my-6 opacity-50"></div>
-            <div class="d-flex align-items-center justify-content-between rounded-pill border border-neutral-40 bg-primary-3p px-5 py-3">
-              <input type="text" class="form-control bg-transparent border-0 focus-outline-0" placeholder="Keywords...">
-              <button type="button" class="border-0 bg-transparent p-0 lh-1">
-                <span class="material-symbols-outlined mat-icon clr-neutral-600"> search </span>
-              </button>
-            </div>
-            <div class="hr-dashed my-6 opacity-50"></div>
-            <p class="mb-4 clr-neutral-700 fs-20 fw-medium"> Category </p>
+            
+            <p class="mb-4 clr-neutral-700 fs-20 fw-medium"> Type d'hebérgement </p>
             <ul class="list list-row flex-wrap align-items-center gap-6">
               <li>
                 <div class="d-flex align-items-center gap-2">
@@ -61,16 +55,7 @@
             <div class="hr-dashed my-6 opacity-50"></div>
             <p class="mb-4 clr-neutral-700 fs-20 fw-medium"> Select Types </p>
             <ul class="list gap-4">
-              <li>
-                <div class="property-search__select property-search__col rounded-pill px-6">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected="">Property Types</option>
-                    <option value="1">New York</option>
-                    <option value="2">Chicago</option>
-                    <option value="3">Atlanta</option>
-                  </select>
-                </div>
-              </li>
+              
               <li>
                 <div class="property-search__select property-search__col rounded-pill px-6">
                   <select class="form-select" aria-label="Default select example">
@@ -103,7 +88,7 @@
               </li>
             </ul>
             <div class="hr-dashed my-6 opacity-50"></div>
-            <p class="mb-4 clr-neutral-700 fs-20 fw-medium"> Pricing scale </p>
+            <p class="mb-4 clr-neutral-700 fs-20 fw-medium"> Prix à l'échelle (DT)</p>
             <div class="range-slider">
               <div class="range-slider__progress"></div>
               <span class="range-min-wrapper">
@@ -114,167 +99,21 @@
               </span>
             </div>
             <div class="d-flex align-items-center justify-content-center gap-2 mt-3">
-              <div class="min-value range-slider__value"> $ <input type="number" min="0" max="100" value="25" disabled>
+              <div class="min-value range-slider__value"> <input type="number" min="50" max="2000" value="100" disabled>
               </div>
               <span>-</span>
-              <div class="max-value range-slider__value"> $ <input type="number" min="0" max="100" value="100" disabled>
+              <div class="max-value range-slider__value"> <input type="number" min="50" max="2000" value="2000" disabled>
               </div>
             </div>
             <div class="hr-dashed my-6 opacity-50"></div>
-            <p class="mb-4 clr-neutral-700 fs-20 fw-medium"> Amenities </p>
-            <div class="row g-4">
-              <div class="col-xl-6">
-                <ul class="list gap-4">
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="laundry">
-                      <label class="clr-neutral-500" for="laundry">Laundry</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="lawn">
-                      <label class="clr-neutral-500" for="lawn">Lawn</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="microwave">
-                      <label class="clr-neutral-500" for="microwave">Microwave</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="refrigerator">
-                      <label class="clr-neutral-500" for="refrigerator">Refrigerator</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="tv-cable">
-                      <label class="clr-neutral-500" for="tv-cable">TV Cable</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="washer">
-                      <label class="clr-neutral-500" for="washer">Washer</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="wifi">
-                      <label class="clr-neutral-500" for="wifi">WiFi</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="sauna">
-                      <label class="clr-neutral-500" for="sauna">Sauna</label>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-xl-6">
-                <ul class="list gap-4">
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="air-condition">
-                      <label class="clr-neutral-500" for="air-condition">Air Condition</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="barbeque">
-                      <label class="clr-neutral-500" for="barbeque">Barbeque</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="dryer">
-                      <label class="clr-neutral-500" for="dryer">Dryer</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="gym">
-                      <label class="clr-neutral-500" for="gym">Gym</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="Internet">
-                      <label class="clr-neutral-500" for="Internet">Internet</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="swimming-pool">
-                      <label class="clr-neutral-500" for="swimming-pool">Pool</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="window-cover">
-                      <label class="clr-neutral-500" for="window-cover">Window</label>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center gap-3">
-                      <input class="custom-checkbox custom-checkbox--rounded flex-shrink-0" type="checkbox" id="outdoor-shower">
-                      <label class="clr-neutral-500" for="outdoor-shower">Outdoor</label>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="hr-dashed my-6 opacity-50"></div>
+
             <a href="#" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 fw-semibold w-100 text-center">
-              <span class="material-symbols-outlined mat-icon fw-300"> rotate_right </span> Read More </a>
+              <span class="material-symbols-outlined mat-icon clr-neutral-600"> search </span> Rechercher</a>
           </div>
         </div>
         <div class="col-md-8">
           <div class="row g-4">
-            <div class="col-12">
-              <div class="bg-neutral-0 rounded-2 py-3 px-6 box-shadow">
-                <ul class="list list-row align-items-center flex-wrap gap-3">
-                  <li class="d-none d-xl-block">
-                    <p class="mb-0 clr-neutral-500"> Showing 5 of 20 Results </p>
-                  </li>
-                  <li class="flex-grow-1">
-                    <ul class="list list-row flex-wrap justify-content-center justify-content-lg-start justify-content-xl-center gap-4">
-                      <li>
-                        <a href="property-grid.html" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300">
-                          <span class="material-symbols-outlined mat-icon"> grid_view </span>
-                          <span class="d-inline-block fw-medium"> Grid </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="property-list.html" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300 active-clr">
-                          <span class="material-symbols-outlined mat-icon"> reorder </span>
-                          <span class="d-inline-block fw-medium"> List </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="property-map.html" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300">
-                          <span class="material-symbols-outlined mat-icon"> map </span>
-                          <span class="d-inline-block fw-medium"> Map </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="d-none d-lg-flex align-items-center">
-                    <p class="mb-0 clr-neutral-500 flex-grow-1"> Sort By : </p>
-                    <select class="form-select py-0 border-0 w-auto">
-                      <option selected>latest</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            
             <div class="col-12"  *ngFor="let annonce of listAnnonce ">
               
               <div class="property-card property-card--row">
@@ -320,7 +159,7 @@
                     <div class="d-flex flex-wrap justify-content-between align-items-center">
                       <span class="d-block fs-20 fw-medium clr-primary-300"> {{annonce.prix}} DT <span class="d-inline-block clr-neutral-500 fs-14 fw-normal"> /Nuit </span>
                       </span>
-                      <button (click)="detailannonce(annonce.id)" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </button>
+                      <button (click)="detailannonce(annonce.id)" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Explorez</button>
                     </div>
                     
                   </div>
