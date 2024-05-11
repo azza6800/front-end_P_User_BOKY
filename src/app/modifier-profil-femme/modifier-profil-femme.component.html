@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from pix-placewise.vercel.app/personal-info.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:56:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="landing page starter kit">
+  <meta name="keywords" content="bootstrap 5, saas, landing page">
+  <meta name="author" content="asaduzzaman">
+  <title>Placewise - Online Booking HTML Template</title>
+  
+</head>
+
+<body class="bg-primary-3p">
+  
+  <div class="section-space--sm bg-neutral-900">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6">
+          <h1 class="d4 clr-neutral-0 mb-3"> Modifier Votre Profil </h1>
+          <ul class="list list-row list-arrow align-items-center">
+           
+            
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- /Banner -->
+  <!-- Dashboard -->
+  <div class="section-space--sm pt-0 position-relative z-1">
+    <span class="w-100 h-30 position-absolute start-0 end-0 top-0 z-n1 bg-neutral-900"></span>
+    <div class="container">
+      <div class="row justify-content-center g-6">
+        <div class="col-md-7 col-lg-8 col-xl-9">
+          <div class="accordion user-accordion d-flex flex-column gap-6" id="user-info">
+            <div class="accordion-item user-accordion__item shadow-3">
+              <h2 class="accordion-header">
+                <button class="accordion-button :focus-outline-0" type="button" data-bs-toggle="collapse" data-bs-target="#basic-info" aria-expanded="true" aria-controls="basic-info">
+                  <span class="d-block h3 fw-bold mb-0"> Informations de base </span>
+                </button>
+              </h2>
+              <div id="basic-info" class="accordion-collapse collapse show" data-bs-parent="#user-info">
+                <div class="accordion-body">
+                  <div class="avatar-upload mx-auto ms-md-0 mb-6">
+                    <div class="avatar-upload__edit">
+                      <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" class="avatar-upload__input" />
+                      <label for="imageUpload" class="avatar-upload__label"></label>
+                    </div>
+                    <div class="avatar-upload__preview">
+                      <div id="imagePreview" class="avatar-upload__img" style="background-image: url('assets/img/team-1.jpg');">
+                      </div>
+                    </div>
+                  </div>
+                  <form class="row g-4" (ngSubmit)="updateUtilisateur()" [formGroup]="updateForm">
+                    <div class="col-lg-6">
+                      <label for="full-name" class="d-block mb-2 fw-medium clr-neutral-500">Nom:</label>
+                      <input type="text" id="full-name" class="form-control py-3 px-6 rounded-4" placeholder="Entrez Votre Nom" formControlName="nom">
+                    </div>
+                    <div class="col-lg-6">
+                      <label for="first-name" class="d-block mb-2 fw-medium clr-neutral-500">Prénom:</label>
+                      <input type="text" id="first-name" class="form-control py-3 px-6 rounded-4" placeholder="Entrez Votre Prénom" formControlName="prenom">
+                    </div>
+                    <div class="col-lg-6">
+                      <label for="user-email" class="d-block mb-2 fw-medium clr-neutral-500">Email:</label>
+                      <input type="text" id="user-email" class="form-control py-3 px-6 rounded-4" placeholder="Entrez votre Email" formControlName="email">
+                    </div>
+                    <div class="col-lg-12">
+                      <label for="address" class="d-block mb-2 fw-medium clr-neutral-500">Adresse:</label>
+                      <input type="text" id="address" class="form-control py-3 px-6 rounded-4" placeholder="Entrez Votre Adresse" formControlName="adresse">
+                    </div>
+                    <div class="col-lg-12">
+                      <label for="user-phone" class="d-block mb-2 fw-medium clr-neutral-500">Téléphone:</label>
+                      <input type="text" id="user-phone" class="form-control py-3 px-6 rounded-4" placeholder="Entrez votre numéro" formControlName="telephone">
+                    </div>
+                    <div class="col-12">
+                      <div class="d-flex align-items-center gap-6 flex-wrap">
+                        <button type="submit" class="btn btn-primary">Modifier</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- /Dashboard -->
+  <!-- Footer -->
+ 
+  
+</body>
+
+
+<!-- Mirrored from pix-placewise.vercel.app/personal-info.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:56:08 GMT -->
+</html>
+
+

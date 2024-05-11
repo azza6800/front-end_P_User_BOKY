@@ -19,6 +19,9 @@ import { PaymentComponent } from './payment/payment.component';
 import { MesReservationComponent } from './mes-reservation/mes-reservation.component';
 import { ReservationMesAnnoncesComponent } from './reservation-mes-annonces/reservation-mes-annonces.component';
 import { AuthGuard, AuthGuardR } from './service/auth.service';
+import { ProfilfemmeComponent } from './profilfemme/profilfemme.component';
+import { ModifierProfilFemmeComponent } from './modifier-profil-femme/modifier-profil-femme.component';
+import { ListeplanningComponent } from './listeplanning/listeplanning.component';
 
 const routes: Routes = [  
 {path:'',component:HomeComponent},
@@ -39,7 +42,9 @@ const routes: Routes = [
 {path:"paiment",component:PaymentComponent,canActivate:[AuthGuard]},
 {path:"mes_reservation",component:MesReservationComponent,canActivate:[AuthGuard]},
 {path:"reservation_mes_annonces",component:ReservationMesAnnoncesComponent,canActivate:[AuthGuardR]},
-
+{path:'profilfemme',component:ProfilfemmeComponent},
+{path:'modifier_profil_femme/:id',component:ModifierProfilFemmeComponent},
+{path:'listeplanning',component:ListeplanningComponent}
 
 
 
