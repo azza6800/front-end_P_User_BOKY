@@ -197,7 +197,7 @@ export class DetailAnnoncePublicComponent {
 }
 makePayment() {
   const paymentHandler = (<any>window).StripeCheckout.configure({
-    key: 'pk_test_51ORfw8CGCz5RXlZeoe3XDe37HmmqpZVdoHzeTdv6BwUbc2FN7TshEC3TQJeGrDQPE1oBRYJHeXUPDPqoUvwRZsAb00g0HXBiwp',
+    key: 'pk_test_51PFI24F29zVOYaoLNwA55lQnMETgMsgILXooIySTysEtaUYck09EzbfHklFnfQQm2zmmtZam1Ss796gimwKUNUv4006HgVUZXa',
     locale: 'auto',
     token: function (stripeToken: any) {
       console.log(stripeToken);
