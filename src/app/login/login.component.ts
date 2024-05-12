@@ -61,7 +61,13 @@ export class LoginComponent {
           let token = res.token;
           localStorage.setItem("myToken",res.token);
           localStorage.setItem("role",res.role);
-          this.router.navigate(['/']).then(()=>window.location.reload());
+          if (res.role == "Femme de menage"){
+            this.router.navigate(['/profilfemme']).then(()=>window.location.reload());
+          }else
+          {
+            this.router.navigate(['/']).then(()=>window.location.reload());
+
+          }
       },
        
         err=>{

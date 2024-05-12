@@ -6,6 +6,7 @@ import  {Observable} from 'rxjs';
 import { Annonce } from '../Entites/Annonce.Entites';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { NgIf } from '@angular/common';
+import { Planning } from '../Entites/Planning.Entites';
 
 
 
@@ -99,7 +100,7 @@ export class CrudService {
 
     let token = localStorage.getItem("role");
     
-    if (token=="reservateur") {
+    if (token=="Réservateur") {
       return true ;
     } else {
       return false;
@@ -111,6 +112,16 @@ export class CrudService {
     let token = localStorage.getItem("role");
     
     if (token=="Propriétaire") {
+      return true ;
+    } else {
+      return false;
+    }
+  }
+  isFDM(){
+
+    let token = localStorage.getItem("role");
+    
+    if (token=="Femme de menage") {
       return true ;
     } else {
       return false;
@@ -135,5 +146,26 @@ export class CrudService {
   reserverFromApi(rq:any){
     return this.http.post<any>( "http://localhost:8081/api/Reservation" ,rq );
  }
+ addPlanning(planning:Planning)
+   {
+    return this.http.post<any>(this.apiUrl+"/Planification",planning);
+   }
+   getPlanning(): Observable<Planning[]>{
+    return this.http.get<Planning[]>(this.apiUrl + "/Planification");
+  }
+  onDeletePlanning(id : number){
+    const url =`${this.apiUrl+"/Planification"}/${id}` 
+    return this.http.delete(url)
+  }
+  findPlanningById(id : number): Observable<Planning> {
+    const url =`${this.apiUrl+"/Planification"}/${id}`
+    return this.http.get<Planning>(url)
+  }
+  updatePlanning(id:number, planning: Planning) {
+    const url = `${this.apiUrl}/Planification/${id}`;
+    return this.http.put<any>(url, planning);
+  }
+  listePlanificationByFdm(id:number):Observable<Planning[]>{
+    return this.http.get<Planning[]>(this.apiUrl + "/Planification/get-all-by-id-FDM/"+id);}
   
 }

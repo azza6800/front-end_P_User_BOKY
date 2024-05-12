@@ -218,7 +218,7 @@ invokeStripe() {
     script.src = 'https://checkout.stripe.com/checkout.js';
     script.onload = () => {
       this.paymentHandler = (<any>window).StripeCheckout.configure({
-        key: 'pk_test_51Oji5gJWrsLJ8D1xQhzDTIUrYq3rsuU8KMuRYbFelv9NwU46WrvmcOQ16jzLfh08PMwdzsLcq8n9RuVasHPQUlRB00LmTRx2aE',
+        key: 'pk_test_51PFI24F29zVOYaoLNwA55lQnMETgMsgILXooIySTysEtaUYck09EzbfHklFnfQQm2zmmtZam1Ss796gimwKUNUv4006HgVUZXa',
         locale: 'auto',
         token: function (stripeToken: any) {
           console.log(stripeToken);

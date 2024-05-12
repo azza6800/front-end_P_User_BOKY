@@ -12,8 +12,14 @@
   <div class="mb-10">
     <span class="d-block clr-neutral-400 fs-12 mb-4"> Account </span>
     <ul class="list gap-3">
-      <li>
+      <li *ngIf="!isFDM">
         <a href="profil" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300 active-clr">
+          <span class="material-symbols-outlined mat-icon fs-20"> account_circle </span>
+          <span class="d-block fw-medium"> Profil </span>
+        </a>
+      </li>
+      <li *ngIf="isFDM">
+        <a href="profilfemme" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300 active-clr">
           <span class="material-symbols-outlined mat-icon fs-20"> account_circle </span>
           <span class="d-block fw-medium"> Profil </span>
         </a>
@@ -29,7 +35,7 @@
         </a>
       </li>
      
-      <li>
+      <li *ngIf="!isFDM">
         <a href="chat" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300">
           <span class="material-symbols-outlined mat-icon fs-20"> chat </span>
           <span class="d-block fw-medium"> Chat </span>
@@ -50,7 +56,7 @@
           <span class="d-block fw-medium"> <i class="bi bi-file-plus"></i>Mes annonces </span>
         </a>
       </li>
-      <li>
+      <li *ngIf="!isFDM">
         <a  href="mes_reservation" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300">
           <span class="material-symbols-outlined mat-icon fs-20"> favorite  </span>
           <span class="d-block fw-medium"> <i class="bi bi-file-plus"></i>Mes Reservation </span>
@@ -62,7 +68,25 @@
           <span class="d-block fw-medium"> <i class="bi bi-file-plus"></i>Reservation Mes Annonces </span>
         </a>
       </li>
+      <li>
+        <a *ngIf="isFDM" href="mes_reservation" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300">
+          <span class="material-symbols-outlined mat-icon fs-20"> favorite  </span>
+          <span class="d-block fw-medium"> <i class="bi bi-file-plus"></i>Programme des Réservations</span>
+        </a>
+      </li>
       
+      <li *ngIf="!IsUtilisateurIn && isFDM" >
+        <a href="listeplanning" class="link d-flex align-items-center gap-2 clr-neutral-500 :clr-primary-300">
+       <span class="material-symbols-outlined mat-icon fs-20">event</span>
+        <span class="d-block fw-medium">Mes Planning</span>
+        </a>
+        </li>
+         
+         
+           <!-- Button trigger modal -->
+<button *ngIf="!IsUtilisateurIn && isFDM" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+Ajouter Planning
+</button>
     </ul>
   </div>
   

@@ -17,6 +17,7 @@ export class Header3Component {
   isProprietaire:boolean
   IsUtilisateurIn:boolean
   userDetails1: any;
+  isFDM: boolean;
 
  
   constructor(private service:CrudService,private router:Router) { }
@@ -25,6 +26,8 @@ export class Header3Component {
     this.IsUtilisateurIn=this.service.isUtilisateurInIn();
     this.isProprietaire=this.service.isProprietaire();
     this.userDetails1 = this.service.getUserDetails();
+    this.isFDM=this.service.isFDM();
+
 
     console.log(this.userDetails);
     this.service.getUtilisateur().subscribe(utilisateurs => {

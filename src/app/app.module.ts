@@ -28,6 +28,9 @@ import { ModifierAnnonceComponent } from './modifier-annonce/modifier-annonce.co
 import { PaymentComponent } from './payment/payment.component';
 import { MesReservationComponent } from './mes-reservation/mes-reservation.component';
 import { ReservationMesAnnoncesComponent } from './reservation-mes-annonces/reservation-mes-annonces.component';
+import { ProfilfemmeComponent } from './profilfemme/profilfemme.component';
+import { ModifierProfilFemmeComponent } from './modifier-profil-femme/modifier-profil-femme.component';
+import { ListeplanningComponent } from './listeplanning/listeplanning.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,9 @@ import { ReservationMesAnnoncesComponent } from './reservation-mes-annonces/rese
     PaymentComponent,
     MesReservationComponent,
     ReservationMesAnnoncesComponent,
+    ProfilfemmeComponent,
+    ModifierProfilFemmeComponent,
+    ListeplanningComponent,
    
   ],
   imports: [

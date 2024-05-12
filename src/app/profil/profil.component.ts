@@ -17,22 +17,28 @@ export class ProfilComponent {
   p:number=1;
   collection:any[]
   utilisateur: any;
+  IsloggedIn: boolean;
+  IsUtilisateurIn: boolean;
+  isProprietaire: boolean;
 
   constructor(private router: Router, private service: CrudService) {
     this.userDetails = this.service.getUserInfo();
     console.log(this.userDetails); 
+    this.IsloggedIn=this.service.isLoggedIn();
+    this.IsUtilisateurIn=this.service.isUtilisateurInIn();
+    this.isProprietaire=this.service.isProprietaire();
   }
-  Deleteutilisateur(utilisateur: Utilisateur){
-    if(confirm("Voulez vous supprimer cet utilisateur avec l'ID " + utilisateur.id + " ?")) {
-     
-      this.service.onDeleteUtilisateur(utilisateur.id).subscribe(() => {
-        this.router.navigate(['/profil']).then(() => {
-          window.location.reload()
-        })
+  updateUtilisateuretat(utilisateur: Utilisateur){
+    if(confirm("Cette action ne vous permettra pas de vous reconnecter ultérieurement sans contacter notre service client. Souhaitez-vous toujours supprimer ce compte ? " )) {
+      let newUtilisateur=new Utilisateur(utilisateur.id,utilisateur.nom,utilisateur.prenom,utilisateur.email,utilisateur.date_de_naissance,utilisateur.telephone,utilisateur.adresse,utilisateur.mdp,utilisateur.role,false,utilisateur.photo)
+
+      this.service.updateUtilisateur(utilisateur.id,newUtilisateur).subscribe(() => {
+        this.logout();
       })
    
     }
   }
+  
 
   ngOnInit(): void {
     console.log(this.userDetails);
