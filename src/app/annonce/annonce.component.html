@@ -86,7 +86,7 @@
                                                           <div class="p-8">
                                                               <span class="material-symbols-outlined fs-60 clr-primary-300 lh-1 transition"> emoji_transportation </span>
                                                               
-                                                              <h5 ><input formControlName="type_d_hebergement" value="appartement" type="radio">Appartements </h5>
+                                                              <h5 ><input formControlName="type_d_hebergement" value="appartement" type="radio">Appartement </h5>
                                                           </div>
                                                           
                                                       </div>
@@ -95,7 +95,7 @@
                                                       <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
                                                           <div class="p-8">
                                                               <span class="material-symbols-outlined fs-60 clr-secondary-500 lh-1 transition"> home_work </span>
-                                                              <h5><input formControlName="type_d_hebergement" value="Maisond'hotes" type="radio"> Maison d'hotes </h5>
+                                                              <h5><input formControlName="type_d_hebergement" value="Maison d'hotes" type="radio"> Maison d'hotes </h5>
                                                           </div>
                                                           
                                                       </div>
@@ -118,6 +118,7 @@
                                                           
                                                       </div>
                                                   </div>
+                                                  
                                                   <div class="col-md-6 col-lg-4 col-xl-3">
                                                       <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
                                                           <div class="p-8">
@@ -213,15 +214,13 @@
                             </div>
                           </li>
                         </ul>
-                        <div class="d-flex justify-content-end mt-4">
-                          <button class="btn btn-primary" id="btnNext" type="submit">Suivant</button>
-                        </div>
+                        
                       </div>
-                    </form>
+                    
 
                      
                     
-                      <form *ngIf="enableForm" [formGroup]="Partie2Form">
+                      <form  [formGroup]="form">
                         <ul class="list gap-4">
                           <li>
                               <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
@@ -230,126 +229,30 @@
                                     <h3 class="accordion-header">
                                       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#amenities-facility" aria-expanded="true"> Détails de l'équipement </button>
                                     </h3>
-                                    <div id="amenities-facility" class="accordion-collapse collapse show">
-                                      <div class="accordion-body">
-                                        <div class="pt-6">
-                                          <div class="row g-4">
-                                            <div class="col-md-6 col-lg-3">
-                                              <ul class="list gap-4">
-                                                <li>
+                                    <div id="amenities-facility" class="accordion-collapse collapse show" formArrayName="equipments">
+                                      <div class="accordion-body" >
+                                        <div class="pt-6" >
+                                          <div class="row g-4" >
+                                            <div class="col-md-6 col-lg-4" [formGroupName]="i" *ngFor="let item of equipments; let i = index" >
+                                              <ul class="list gap-4"  >
+                                                <li >
                                                   <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="air-condition">
-                                                    <label class="clr-neutral-500" for="air-condition"> Air Conditioning </label>
+                                                    <input class="custom-checkbox" type="checkbox" id="air-condition" formControlName="checked">
+                                                    <label class="clr-neutral-500" for="air-condition">  {{  equipments[i].name  }}</label>
                                                   </div>
                                                 </li>
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="barbeque-check">
-                                                    <label class="clr-neutral-500" for="barbeque-check"> Barbeque </label>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="dryer-check">
-                                                    <label class="clr-neutral-500" for="dryer-check"> Dryer </label>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="gym-check">
-                                                    <label class="clr-neutral-500" for="gym-check"> Gym </label>
-                                                  </div>
-                                                </li>
+                                                
                                               </ul>
                                             </div>
-                                            <div class="col-md-6 col-lg-3">
-                                              <ul class="list gap-4">
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="laundry-check">
-                                                    <label class="clr-neutral-500" for="laundry-check"> Laundry </label>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="lawn-check">
-                                                    <label class="clr-neutral-500" for="lawn-check"> Lawn </label>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="microwave-check">
-                                                    <label class="clr-neutral-500" for="microwave-check"> Microwave </label>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="refrigerator-check">
-                                                    <label class="clr-neutral-500" for="refrigerator-check"> Refrigerator </label>
-                                                  </div>
-                                                </li>
-                                              </ul>
-                                            </div>
-                                            <div class="col-md-6 col-lg-3">
-                                              <ul class="list gap-4">
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="swimming-pool">
-                                                    <label class="clr-neutral-500" for="swimming-pool"> Swimming Pool </label>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="window-covering">
-                                                    <label class="clr-neutral-500" for="window-covering"> Window Coverings </label>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="outdoor-shower">
-                                                    <label class="clr-neutral-500" for="outdoor-shower"> Outdoor Shower </label>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="washer-check">
-                                                    <label class="clr-neutral-500" for="washer-check"> Washer </label>
-                                                  </div>
-                                                </li>
-                                              </ul>
-                                            </div>
-                                            <div class="col-md-6 col-lg-3">
-                                              <ul class="list gap-4">
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="wifi-check">
-                                                    <label class="clr-neutral-500" for="wifi-check"> WiFi </label>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="sauna-check">
-                                                    <label class="clr-neutral-500" for="sauna-check"> Sauna </label>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="tv-cable">
-                                                    <label class="clr-neutral-500" for="tv-cable"> TV Cable </label>
-                                                  </div>
-                                                </li>
-                                                <li>
-                                                  <div class="d-flex align-items-center gap-3">
-                                                    <input class="custom-checkbox" type="checkbox" id="internet-check">
-                                                    <label class="clr-neutral-500" for="internet-check"> Internet </label>
-                                                  </div>
-                                                </li>
-                                              </ul>
-                                            </div>
+                                            
+                                            
                                           </div>
+                                          
                                         </div>
+                                        
                                       </div>
                                     </div>
+                                    
                                   </div>
                                 </div>
                               </div>
@@ -361,97 +264,27 @@
                                   <h3 class="accordion-header">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#amenities-facility" aria-expanded="true"> Équipement spécial </button>
                                   </h3>
-                                  <div id="amenities-facility" class="accordion-collapse collapse show">
-                                    <div class="accordion-body">
-                                      <div class="pt-6">
-                                        <div class="row g-4">
-                                          <div class="col-md-6 col-lg-3">
-                                            <ul class="list gap-4">
-                                              <li>
+                                  <div id="amenities-facility" class="accordion-collapse collapse show" formArrayName="equipmentsSpecail">
+                                    <div class="accordion-body" >
+                                      <div class="pt-6" >
+                                        <div class="row g-4" >
+                                          <div class="col-md-6 col-lg-4" [formGroupName]="k" *ngFor="let item of equipmentsSpecail; let k = index" >
+                                            <ul class="list gap-4"  >
+                                              <li >
                                                 <div class="d-flex align-items-center gap-3">
-                                                  <input class="custom-checkbox" type="checkbox" id="air-condition">
-                                                  <label class="clr-neutral-500" for="air-condition"> Piscine </label>
+                                                  <input class="custom-checkbox" type="checkbox" id="air-condition" formControlName="checked">
+                                                  <label class="clr-neutral-500" for="air-condition">  {{  equipmentsSpecail[k].name  }}</label>
                                                 </div>
                                               </li>
-                                              <li>
-                                                <div class="d-flex align-items-center gap-3">
-                                                  <input class="custom-checkbox" type="checkbox" id="barbeque-check">
-                                                  <label class="clr-neutral-500" for="barbeque-check">Jacuzzi </label>
-                                                </div>
-                                              </li>
-                                              <li>
-                                                <div class="d-flex align-items-center gap-3">
-                                                  <input class="custom-checkbox" type="checkbox" id="dryer-check">
-                                                  <label class="clr-neutral-500" for="dryer-check"> Patio </label>
-                                                </div>
-                                              </li>
-                                              <li>
-                                                <div class="d-flex align-items-center gap-3">
-                                                  <input class="custom-checkbox" type="checkbox" id="gym-check">
-                                                  <label class="clr-neutral-500" for="gym-check">Barbecue </label>
-                                                </div>
-                                              </li>
+                                              
                                             </ul>
                                           </div>
-                                          <div class="col-md-6 col-lg-3">
-                                            <ul class="list gap-4">
-                                              <li>
-                                                <div class="d-flex align-items-center gap-3">
-                                                  <input class="custom-checkbox" type="checkbox" id="laundry-check">
-                                                  <label class="clr-neutral-500" for="laundry-check"> Espace repas en plein air </label>
-                                                </div>
-                                              </li>
-                                              <li>
-                                                <div class="d-flex align-items-center gap-3">
-                                                  <input class="custom-checkbox" type="checkbox" id="lawn-check">
-                                                  <label class="clr-neutral-500" for="lawn-check"> Billard </label>
-                                                </div>
-                                              </li>
-                                              <li>
-                                                <div class="d-flex align-items-center gap-3">
-                                                  <input class="custom-checkbox" type="checkbox" id="microwave-check">
-                                                  <label class="clr-neutral-500" for="microwave-check"> Piano </label>
-                                                </div>
-                                              </li>
-                                              <li>
-                                                <div class="d-flex align-items-center gap-3">
-                                                  <input class="custom-checkbox" type="checkbox" id="refrigerator-check">
-                                                  <label class="clr-neutral-500" for="refrigerator-check"> Appareils de fitness </label>
-                                                </div>
-                                              </li>
-                                            </ul>
-                                          </div>
-                                          <div class="col-md-6 col-lg-3">
-                                            <ul class="list gap-4">
-                                              <li>
-                                                <div class="d-flex align-items-center gap-3">
-                                                  <input class="custom-checkbox" type="checkbox" id="swimming-pool">
-                                                  <label class="clr-neutral-500" for="swimming-pool"> Accès au lac </label>
-                                                </div>
-                                              </li>
-                                              <li>
-                                                <div class="d-flex align-items-center gap-3">
-                                                  <input class="custom-checkbox" type="checkbox" id="window-covering">
-                                                  <label class="clr-neutral-500" for="window-covering"> Accès à la plage  </label>
-                                                </div>
-                                              </li>
-                                              <li>
-                                                <div class="d-flex align-items-center gap-3">
-                                                  <input class="custom-checkbox" type="checkbox" id="outdoor-shower">
-                                                  <label class="clr-neutral-500" for="outdoor-shower"> Accessible à skis </label>
-                                                </div>
-                                              </li>
-                                              <li>
-                                                <div class="d-flex align-items-center gap-3">
-                                                  <input class="custom-checkbox" type="checkbox" id="washer-check">
-                                                  <label class="clr-neutral-500" for="washer-check"> Douch extérieure </label>
-                                                </div>
-                                              </li>
-                                            </ul>
-                                          </div>
-                                         
+                                          
+                                          
                                         </div>
+                                        
                                       </div>
+                                      
                                     </div>
                                   </div>
                                 </div>
@@ -465,37 +298,27 @@
                                 <h3 class="accordion-header">
                                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#amenities-facility" aria-expanded="true"> Équipement de sécurité </button>
                                 </h3>
-                                <div id="amenities-facility" class="accordion-collapse collapse show">
-                                  <div class="accordion-body">
-                                    <div class="pt-6">
-                                      <div class="row g-4">
-                                        <div class="col-md-6 col-lg-3">
-                                          <ul class="list gap-4">
-                                            <li>
+                                <div id="amenities-facility" class="accordion-collapse collapse show" formArrayName="equipmentsSecurite">
+                                  <div class="accordion-body" >
+                                    <div class="pt-6" >
+                                      <div class="row g-4" >
+                                        <div class="col-md-6 col-lg-4" [formGroupName]="k" *ngFor="let item of equipmentsSecurite; let k = index" >
+                                          <ul class="list gap-4"  >
+                                            <li >
                                               <div class="d-flex align-items-center gap-3">
-                                                <input class="custom-checkbox" type="checkbox" id="air-condition">
-                                                <label class="clr-neutral-500" for="air-condition"> Détecteur de fumée </label>
-                                              </div>
-                                            </li>
-                                            <li>
-                                              <div class="d-flex align-items-center gap-3">
-                                                <input class="custom-checkbox" type="checkbox" id="barbeque-check">
-                                                <label class="clr-neutral-500" for="barbeque-check">kit de premiers secours </label>
-                                              </div>
-                                            </li>
-                                            <li>
-                                              <div class="d-flex align-items-center gap-3">
-                                                <input class="custom-checkbox" type="checkbox" id="dryer-check">
-                                                <label class="clr-neutral-500" for="dryer-check"> Extincteur</label>
+                                                <input class="custom-checkbox" type="checkbox" id="air-condition" formControlName="checked">
+                                                <label class="clr-neutral-500" for="air-condition">  {{  equipmentsSecurite[k].name  }}</label>
                                               </div>
                                             </li>
                                             
                                           </ul>
                                         </div>
-                                       
-                                       
+                                        
+                                        
                                       </div>
+                                      
                                     </div>
+                                    
                                   </div>
                                 </div>
                               </div>
@@ -507,20 +330,18 @@
                               <div class="accordion property-accordion">
                                 <div class="accordion-item">
                                   <h3 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#map-location" aria-expanded="true"  > Images </button>
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" for="image" data-bs-target="#map-location" aria-expanded="true"  > Images </button>
                                   </h3>
-                                  <label for="image" class="form-label ">Image</label>
-										<input class="form-control " type="file" id="image" name="dzImage" accept="image/*" (change)=" onSelectFile($event)" formControlName="image">
+                                  
+										
                                   <div id="map-location" class="accordion-collapse collapse show">
                                     <div class="accordion-body">
                                       <div class="pt-6">
                                         <div class="d-flex align-items-center justify-content-center border-dashed rounded-4 w-100">
                                           <label for="dropzone-file" class="d-flex flex-column align-items-center justify-content-center w-100 cursor-pointer bg-primary-3p rounded-4">
                                             <span class="d-flex flex-column align-items-center justify-content-center py-12">
-                                              <span class="material-symbols-outlined mat-icon fs-60 fw-200 clr-neutral-500"> cloud_upload </span>
-                                              <span class="h3 clr-neutral-500 text-center mt-4 mb-3"> Drag & Drop </span>
-                                              <span class="d-block text-center mb-6 clr-neutral-500"> OR </span>
-                                              <span class="d-inline-block py-3 px-6 rounded-pill bg-neutral-600 clr-neutral-0 mb-10"> Select une image </span>
+                                              
+                                              <input class="form-control " type="file" id="image" name="dzImage" accept="image/*" (change)=" onSelectFile($event)" formControlName="image">
                                               <span class="d-flex align-items-center justify-content-center flex-wrap gap-5">
                                                 <span class="d-flex align-items-center gap-2">
                                                   <span class="material-symbols-outlined mat-icon fw-200 clr-neutral-500 flex-shrink-0"> gpp_maybe </span>
@@ -532,7 +353,6 @@
                                                 </span>
                                               </span>
                                             </span>
-                                            <input type="file" id="dropzone-file" class="d-none">
                                           </label>
                                         </div>
                                       </div>
@@ -545,110 +365,98 @@
                             
                           </li>
                         </ul>
-                        <div class="d-flex justify-content-end mt-4">
-                          <button class="btn btn-primary" id="btnNext" type="submit">Suivant</button>
-                        </div>
+                        
                       </form>
+                      <div class="d-flex justify-content-end mt-4">
+                        <button class="btn btn-primary" id="btnNext" type="submit" >Suivant</button>
+                      </div>
+                    </form>
+                    <form *ngIf="!enableForm "  (ngSubmit)="addNewAnnonce()" [formGroup]="AnnonceForm">
                       
-                    
-                    <form *ngIf="!enableForm2">
-                      <div class="tab-pane fade" id="P3">
-                       
-                        <ul class="list gap-4">
-                          <li>
-                            <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
-                              <div class="accordion property-accordion">
-                                <div class="accordion-item">
-                                  <h3 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#addProperty" aria-expanded="true">Add Properties</button>
-                                  </h3>
-                                  <div id="addProperty" class="accordion-collapse collapse show">
-                                    <div class="accordion-body">
-                                      <div class="pt-6">
-                      
-                                        <div class="container mt-6">
-                                          <div class="row">
-                                            <div class="col-md-12">
-                                              <div class="mb-4">
-                                                <label for="titre" class="form-label fs-20 fw-medium">Titre :</label>
-                                                <textarea id="titre" rows="5" class="form-control" placeholder="Entrez le titre..."></textarea>
-                                              </div>
-                                        
-                                              <div class="mb-4">
-                                                <label class="form-label fs-20 fw-medium">Réduction mensuelle 20% :</label>
-                                                <div class="form-check">
-                                                  <input class="form-check-input" type="radio" name="reduction-mensuelle" id="oui-reduction">
-                                                  <label class="form-check-label fs-18 fw-medium" for="oui-reduction">Oui</label>
-                                                </div>
-                                                <div class="form-check">
-                                                  <input class="form-check-input" type="radio" name="reduction-mensuelle" id="non-reduction">
-                                                  <label class="form-check-label fs-18 fw-medium" for="non-reduction">Non</label>
-                                                </div>
-                                              </div>
-                                        
-                                              <div class="mb-4">
-                                                <label class="form-label fs-20 fw-medium">Réduction hebdomadaire 10% :</label>
-                                                <div class="form-check">
-                                                  <input class="form-check-input" type="radio" name="reduction-hebdomadaire" id="oui-reduction-hebdo">
-                                                  <label class="form-check-label fs-18 fw-medium" for="oui-reduction-hebdo">Oui</label>
-                                                </div>
-                                                <div class="form-check">
-                                                  <input class="form-check-input" type="radio" name="reduction-hebdomadaire" id="non-reduction-hebdo">
-                                                  <label class="form-check-label fs-18 fw-medium" for="non-reduction-hebdo">Non</label>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                              <div class="mb-4">
-                                                <label for="prix" class="form-label fs-20 fw-medium">Prix :</label>
-                                                <input type="number" id="prix" class="form-control" placeholder="Entrez le prix">
-                                              </div>
-                                              
-                                              <div class="mb-4">
-                                                <label for="pays" class="form-label fs-20 fw-medium">Pays :</label>
-                                                <input type="text" id="pays" class="form-control" placeholder="Entrez le pays">
-                                              </div>
-                                              
-                                              
-                                              
-                                              <div class="mb-4">
-                                                <label for="libelle-voie" class="form-label fs-20 fw-medium">Ville :</label>
-                                                <input type="text" id="libelle-voie" class="form-control" placeholder="Entrez le libellé de la voie">
-                                              </div>
-                                              
-                                              <div class="mb-4">
-                                                <label for="code-postal" class="form-label fs-20 fw-medium">Code postal :</label>
-                                                <input type="text" id="code-postal" class="form-control" placeholder="Entrez le code postal">
-                                              </div>
-                                              
-                                              
-                                            </div>
-                                            <div class="mb-4">
-                                              <label for="heure-depart" class="form-label fs-20 fw-medium">Heure de départ :</label>
-                                              <input type="datetime-local" id="heure-depart" class="form-control" placeholder="Entrez l'heure de départ">
-                                            </div>
-                                            
-                                            <div class="mb-4">
-                                              <label for="heure-arrivee" class="form-label fs-20 fw-medium">Heure d'arrivée :</label>
-                                              <input type="datetime-local" id="heure-arrivee" class="form-control" placeholder="Entrez l'heure d'arrivée">
-                                            </div>
-                                        
-                                            
-                                          </div>
-                                        </div>
-                                        
-                      
+                      <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+                        <div class="accordion property-accordion">
+                          <div class="accordion-item">
+                            <h3 class="accordion-header">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#property-details" aria-expanded="true"> Détails de la propriété </button>
+                            </h3>
+                            <div id="property-details" class="accordion-collapse collapse show">
+                              <div class="accordion-body">
+                                <div class="pt-6">
+                                  <div class="col-md-12">
+                                   
+                                      <div class="mb-4">
+                                        <label for="titre" class="form-label fs-20 fw-medium">Titre :</label>
+                                        <input type="text" id="titre" class="form-control" placeholder="Exp: Charmante maison de campagne avec jardin " formControlName="titre">
+                                      </div>
+                                    
+                              
+                                    <div class="mb-4">
+                                      <label class="form-label fs-20 fw-medium">Réduction de 7 % pour la semaine:</label>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="reduction_semaine" id="oui-reduction" formControlName="reduction_semaine" value=true>
+                                        <label class="form-check-label fs-18 fw-medium" for="oui-reduction">Oui</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="reduction_semaine" id="non-reduction"  formControlName="reduction_semaine" value=false>
+                                        <label class="form-check-label fs-18 fw-medium" for="non-reduction">Non</label>
+                                      </div>
+                                    </div>
+                              
+                                    <div class="mb-4">
+                                      <label class="form-label fs-20 fw-medium">Réduction de 15 % pour le mois :</label>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="reduction_mois" id="oui-reduction-hebdo" formControlName="reduction_mois" value=true>
+                                        <label class="form-check-label fs-18 fw-medium" for="oui-reduction-hebdo">Oui</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="reduction_mois" id="non-reduction-hebdo" formControlName="reduction_mois" value=false>
+                                        <label class="form-check-label fs-18 fw-medium" for="non-reduction-hebdo">Non</label>
                                       </div>
                                     </div>
                                   </div>
+                                  <div class="col-md-12">
+                                    <div class="mb-4">
+                                      <label for="prix" class="form-label fs-20 fw-medium">Prix en DNT:</label>
+                                      <input type="number" id="prix" class="form-control" placeholder="Entrez le prix" formControlName="prix">
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                      <label for="pays" class="form-label fs-20 fw-medium">Pays :</label>
+                                      <input type="text" id="pays" class="form-control" placeholder="Entrez le pays" formControlName="pays">
+                                    </div>
+                                    
+                                    
+                                    
+                                    <div class="mb-4">
+                                      <label for="ville" class="form-label fs-20 fw-medium">Ville :</label>
+                                      <input type="text" id="ville" class="form-control" placeholder=" Ville " formControlName="ville">
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                      <label for="code_postale" class="form-label fs-20 fw-medium">Code postal :</label>
+                                      <input type="text" id="code-postal" class="form-control" placeholder="Entrez le code postal" formControlName="code_postale">
+                                    </div>
+                                    
+                                    
+                                  </div>
+                                  <div class="mb-4">
+                                    <label for="heure-depart" class="form-label fs-20 fw-medium">Heure de départ :</label>
+                                    <input type="time" id="heure-depart" class="form-control" placeholder="Entrez l'heure de départ" formControlName="heure_depart">
+                                  </div>
+                                  
+                                  <div class="mb-4">
+                                    <label for="heure-arrivee" class="form-label fs-20 fw-medium">Heure d'arrivée :</label>
+                                    <input type="time" id="heure-arrivee" class="form-control" placeholder="Entrez l'heure d'arrivée" formControlName="heure_arriver">
+                                </div>
+                                  
                                 </div>
                               </div>
                             </div>
-                          </li>
-                        </ul>
-                        <div class="d-flex justify-content-end mt-4">
-                          <button class="btn btn-primary" id="btnNext" type="submit">Terminer</button>
+                          </div>
                         </div>
+                      </div>
+                      <div class="d-flex justify-content-end mt-4">
+                        <button class="btn btn-primary" id="btnNext" type="submit"  >Ajouter</button>
                       </div>
                     </form>
                     </div>

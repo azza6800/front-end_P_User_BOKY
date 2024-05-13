@@ -63,7 +63,7 @@ export class CrudService {
   }
   addAnnonce(annonce:Annonce)
    {
-    return this.http.post<any>(this.apiUrl+"/annonce",annonce);
+    return this.http.post<any>(this.apiUrl+"/Annonce",annonce);
    }
    getAnnonce(): Observable<Annonce[]>{
     return this.http.get<Annonce[]>(this.apiUrl + "/Annonce");

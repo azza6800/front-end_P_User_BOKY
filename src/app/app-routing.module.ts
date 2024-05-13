@@ -18,10 +18,11 @@ import { DetailAnnoncePublicComponent } from './detail-annonce-public/detail-ann
 import { PaymentComponent } from './payment/payment.component';
 import { MesReservationComponent } from './mes-reservation/mes-reservation.component';
 import { ReservationMesAnnoncesComponent } from './reservation-mes-annonces/reservation-mes-annonces.component';
-import { AuthGuard, AuthGuardR } from './service/auth.service';
+import { AuthGuard } from './service/auth.service';
 import { ProfilfemmeComponent } from './profilfemme/profilfemme.component';
 import { ModifierProfilFemmeComponent } from './modifier-profil-femme/modifier-profil-femme.component';
 import { ListeplanningComponent } from './listeplanning/listeplanning.component';
+import { AuthGuardR } from './service/authR.service';
 
 const routes: Routes = [  
 {path:'',component:HomeComponent},
