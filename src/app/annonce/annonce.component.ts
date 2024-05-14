@@ -340,7 +340,7 @@ private _patchValues(equipments: Equipementnterface[], formControlName: string):
       model.reduction_mois=data.reduction_mois;
       model.prix=data.prix;
       model.pays=data.pays;
- 
+    model.image=this.imgURL;
       model.ville=data.ville;
       model.code_postale=data.code_postale;
       model.heure_depart=data.heure_depart;

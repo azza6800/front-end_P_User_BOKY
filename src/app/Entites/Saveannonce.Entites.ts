@@ -21,6 +21,7 @@ export class Saveannonce{
         public code_postale?:string,
         public heure_depart?:string,
         public heure_arriver?:string,
+        public verification?:boolean,
         public date?:string,
         public id_annonceur?:number
     ){}

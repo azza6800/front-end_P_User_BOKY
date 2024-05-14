@@ -175,8 +175,8 @@
           <form (ngSubmit)="addNewPlanning()" [formGroup]="PlanningForm">
             <div class="mb-3">
               <label for="inputHeureDisponible" class="form-label">Heure disponible</label>
-              <input type="string" class="form-control" id="inputHeureDisponible" placeholder="Entrez l'heure disponible"formControlName="heureDisponible">
-            </div>
+              <input type="time" class="form-control" id="inputHeureDisponible" placeholder="Entrez l'heure disponible" formControlName="heureDisponible">
+          </div>
             <div class="mb-3">
               <label for="inputJour" class="form-label">Jour</label>
               <input type="date" class="form-control" id="inputJour" placeholder="Entrez le jour"formControlName="jour">

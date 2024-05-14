@@ -70,12 +70,14 @@ export class ProfilfemmeComponent {
       const planning = new Planning(undefined, data.heureDisponible, data.jour, data.adresse, data.prixParHeure,this.userDetails.id);
 
       this.service.addPlanning(planning).subscribe(
-        () => {
+        (res) => {
           this.toast.success({
             detail: 'Succes Message',
             summary: 'Le planning est ajouté avec succès',
           });
+          
           this.router.navigate(['/listeplanning']);
+          
         },
         (err) => {
           console.log(err);

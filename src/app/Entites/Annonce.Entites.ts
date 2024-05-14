@@ -21,6 +21,7 @@ export class Annonce{
         public code_postale?:string,
         public heure_depart?:string,
         public heure_arriver?:string,
+        public verification?:boolean,
         public date?:string,
     ){}
 }

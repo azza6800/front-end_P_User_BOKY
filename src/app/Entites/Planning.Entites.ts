@@ -5,6 +5,6 @@ export class Planning{
         public jour?:string,
         public adresse?:string,
         public prixParHeure?:string,
-        public id_FDM?:number,
+        public id_fdm?:number,
     ){}
 }
