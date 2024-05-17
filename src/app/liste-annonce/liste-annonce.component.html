@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from pix-placewise.vercel.app/user-wishlist.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:56:15 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,36 +8,118 @@
   <meta name="keywords" content="bootstrap 5, saas, landing page">
   <meta name="author" content="asaduzzaman">
   <title>Placewise - Online Booking HTML Template</title>
+  <style>
+    .card-img-top {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+    }
 
+    .card-img-top:hover {
+      transform: scale(1.05); /* Slight zoom on hover */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-text {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-footer {
+      background-color: #f8f9fa;
+      border-top: 1px solid #e9ecef;
+    }
+
+    .btn-danger {
+      background-color: #dc3545;
+      border-color: #dc3545;
+    }
+
+    .btn-info {
+      background-color: #17a2b8;
+      border-color: #17a2b8;
+    }
+
+    .property-card {
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .property-card__head {
+      position: relative;
+    }
+
+    .property-card__fav {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .hr-line {
+      border-top: 1px solid #e9ecef;
+      margin: 1rem 0;
+    }
+
+    .hr-dashed {
+      border-top: 1px dashed #e9ecef;
+      margin: 1rem 0;
+    }
+
+    .section-space--sm {
+      padding: 2rem 0; /* Increased padding for better spacing */
+    }
+
+   
+
+    .fixed-size-image {
+      width: 100%;
+      max-width: 400px; /* Max width to ensure images are not too large */
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+    }
+  </style>
 </head>
 
 <body class="bg-primary-3p">
- 
-  <!-- Header Top  -->
+
+  <!-- Header Top -->
   <app-header2></app-header2>
-  <!-- /Header Top  -->
+  <!-- /Header Top -->
   <!-- Header -->
-  
+
   <!-- /Header -->
   <!-- Banner -->
   <div class="section-space--sm bg-neutral-900">
     <div class="container">
       <div class="row g-4 align-items-center">
         <div class="col-md-6">
-          <h1 class="d4 clr-neutral-0 mb-3"> Mes annonces  </h1>
+          <h1 class="d4 clr-neutral-0 mb-3"> Mes annonces </h1>
           <ul class="list list-row list-arrow align-items-center">
             <li>
-              <a href="profil" class="link d-inline-block clr-neutral-0 :clr-tertiary-300"> Tableau de bord </a>
+              <a href="profil" class="link d-inline-block clr-neutral-0 clr-tertiary-300"> Tableau de bord </a>
             </li>
             <li>
-              <a href="liste-annonce.component.html" class="link d-inline-block clr-tertiary-300"> Mes annonces  </a>
+              <a href="liste-annonce.component.html" class="link d-inline-block clr-tertiary-300"> Mes annonces </a>
             </li>
           </ul>
         </div>
         <div class="col-md-6">
           <div class="text-md-end">
-            <a href="#" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-neutral-700 :bg-primary-300">
-              <span class="d-inline-block clr-neutral-0 fw-semibold">Déconnection </span>
+            <a href="#" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-neutral-700 bg-primary-300">
+              <span class="d-inline-block clr-neutral-0 fw-semibold">Déconnexion </span>
             </a>
           </div>
         </div>
@@ -54,98 +133,81 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-md-5 col-lg-4 col-xl-3">
-            <app-header3></app-header3>
-          </div>
+          <app-header3></app-header3>
+        </div>
         <div class="col-lg-8 col-xl-9">
-          <ul class="list gap-6">
-            <li>
-              <div class="p-6 p-xl-10 rounded-4 bg-neutral-0 shadow-3">
-                <h3 class="mb-0 flex-grow-1"> Mes annonces </h3>
-                <div class="hr-line my-6"></div>
-                
-                <h5 class="fw-medium"> Nombre d'annonces (4) </h5>
-                <div class="row g-4">
-                  <div class="col-12">
-                    <div class="property-card property-card--row">
-                      <div class="property-card__head">
-                        <div class="property-card__img">
-                          <img src="assets/img/featured-hotel-1.jpg" alt="image" class="img-fluid w-100">
-                        </div>
-                        <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
-                          <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
-                        </button>
-                      </div>
-                      <div class="property-card__content">
-                        <div class="property-card__body">
-                          <div class="d-flex justify-content-between mb-2">
-                            <a href="hotel-listing-details.html" class="link d-block flex-grow-1 clr-neutral-700 :clr-primary-300 fs-20 fw-medium"> Quality Inn & Suites </a>
-                            <div class="d-flex align-items-center flex-shrink-0">
-                              <span class="material-symbols-outlined mat-icon solid clr-tertiary-300"> star_rate </span>
-                              <span class="d-block clr-neutral-700"> 4.8 </span>
+          <ng-container *ngIf="listeAnnonce && listeAnnonce.length > 0">
+            <div class="col-xl-12">
+              <ul class="list gap-6">
+                <li *ngFor="let ann of listeAnnonce">
+                  <div class="p-6 p-xl-10 rounded-4 bg-neutral-0 shadow-3">
+                   
+                    <div class="hr-line my-6"></div>
+                    <div class="row g-4">
+                      <div class="col-12">
+                        <div class="property-card property-card--row">
+                          <div class="property-card__head">
+                            <div class="property-card__img">
+                              <img [src]="ann.image" alt="Image de l'annonce" class="fixed-size-image" *ngIf="ann.image">
                             </div>
+                            <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
+                              <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
+                            </button>
                           </div>
-                          <div class="d-flex justify-content-between mb-6">
-                            <div class="d-flex align-items-center gap-1">
-                              <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
-                              <span class="d-inline-block"> Córdoba </span>
+                          <div class="property-card__content">
+                            <div class="property-card__body">
+                              
+                              <div class="d-flex justify-content-between mb-6">
+                                <div class="d-flex align-items-center gap-1">
+                                  <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
+                                  <span class="d-inline-block">{{ann.code_postale}} {{ann.pays}} {{ann.ville}}</span>
+                                </div>
+                                <span class="d-inline-block fw-medium clr-secondary-400">{{ann.reduction_semaine}}</span>
+                              </div>
+                              <a href="property-details-1.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> {{ann.titre}} </a>
+
+                              <ul class="list list-row flex-wrap dotted-divider">
+                                <li>
+                                  <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
+                                  <span class="d-block fs-14"> {{ann.nb_chamber}} Chambres </span>
+                                </li>
+                                <li>
+                                  <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
+                                  <span class="d-block fs-14"> {{ann.nb_lits}} lits </span>
+                                </li>
+                                <li>
+                                  <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
+                                  <span class="d-block fs-14"> {{ann.nb_salles}} Salles de bain</span>
+                                </li>
+                                <li>
+                                  <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> group </span>
+                                  <span class="d-block fs-14"> {{ann.nb_voyageur}} Vacanciers</span>
+                                </li>
+                              </ul>
                             </div>
-                            <span class="d-inline-block fw-medium clr-secondary-400"> 20% OFF </span>
-                          </div>
-                          <ul class="list list-row align-items-center flex-wrap gap-3">
-                            <li>
-                              <div class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
-                                <img src="assets/img/icon-car-parking.png" alt="image" class="img-fluid w-7 h-7 object-fit-contain">
+                            <div class="property-card__body py-0">
+                              <div class="hr-dashed"></div>
+                            </div>
+                            <div class="property-card__body">
+                              <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                <span class="d-block fs-20 fw-medium clr-primary-300">{{ann.prix}}<span class="d-inline-block clr-neutral-500 fs-16 fw-normal"> /Dt</span></span>
+                                <button (click)="modifierAnnonce(ann.id)" class="btn btn-sm btn-outline-primary rounded-pill px-4 py-2">
+                                  Modifier
+                                </button>
                               </div>
-                            </li>
-                            <li>
-                              <div class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
-                                <img src="assets/img/icon-breakfast.png" alt="image" class="img-fluid w-7 h-7 object-fit-contain">
-                              </div>
-                            </li>
-                            <li>
-                              <div class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
-                                <img src="assets/img/icon-room-service.png" alt="image" class="img-fluid w-7 h-7 object-fit-contain">
-                              </div>
-                            </li>
-                            <li>
-                              <div class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
-                                <img src="assets/img/icon-fitness.png" alt="image" class="img-fluid w-7 h-7 object-fit-contain">
-                              </div>
-                            </li>
-                            <li>
-                              <div class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
-                                <img src="assets/img/icon-swimming-pool.png" alt="image" class="img-fluid w-7 h-7 object-fit-contain">
-                              </div>
-                            </li>
-                            <li>
-                              <div class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
-                                <img src="assets/img/icon-laundry.png" alt="image" class="img-fluid w-7 h-7 object-fit-contain">
-                              </div>
-                            </li>
-                            <li>
-                              <div class="d-grid place-content-center w-10 h-10 rounded-circle bg-primary-5p clr-primary-300">
-                                <img src="assets/img/icon-glob.png" alt="image" class="img-fluid w-7 h-7 object-fit-contain">
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="property-card__body py-0">
-                          <div class="hr-dashed"></div>
-                        </div>
-                        <div class="property-card__body">
-                          <div class="d-flex flex-wrap justify-content-between align-items-center">
-                            <span class="d-block fs-20 fw-medium clr-primary-300"> $256 <span class="d-inline-block clr-neutral-500 fs-16 fw-normal"> /per night </span>
-                            </span>
-                            <a href="hotel-listing-details.html" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Book Now </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </li>
-          </ul>
+                </li>
+              </ul>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="!listeAnnonce || listeAnnonce.length === 0">
+            <p>Aucune annonce trouvée.</p>
+          </ng-container>
         </div>
       </div>
     </div>
@@ -154,9 +216,7 @@
   <!-- Footer -->
   <app-footer></app-footer>
   <!-- /Footer -->
- 
+
 </body>
 
-
-<!-- Mirrored from pix-placewise.vercel.app/user-wishlist.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:56:15 GMT -->
 </html>

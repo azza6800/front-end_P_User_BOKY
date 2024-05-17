@@ -31,6 +31,7 @@ import { ReservationMesAnnoncesComponent } from './reservation-mes-annonces/rese
 import { ProfilfemmeComponent } from './profilfemme/profilfemme.component';
 import { ModifierProfilFemmeComponent } from './modifier-profil-femme/modifier-profil-femme.component';
 import { ListeplanningComponent } from './listeplanning/listeplanning.component';
+import { ServicenettoyageComponent } from './servicenettoyage/servicenettoyage.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { ListeplanningComponent } from './listeplanning/listeplanning.component'
     ProfilfemmeComponent,
     ModifierProfilFemmeComponent,
     ListeplanningComponent,
+    ServicenettoyageComponent,
    
   ],
   imports: [

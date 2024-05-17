@@ -16,6 +16,8 @@ import { Planning } from '../Entites/Planning.Entites';
 export class CrudService {
   loginUserUrl="http://localhost:8081/api/Utilisateur/Login"
   apiUrl="http://localhost:8081/api"
+  private readonly baseUrl = 'http://localhost:8081/api'; // Définissez l'URL de base ici
+
   constructor(private http:HttpClient) { }
   helper=new JwtHelperService()
   //UtilisateurCrud
@@ -167,5 +169,16 @@ export class CrudService {
   }
   listePlanificationByFdm(id:number):Observable<Planning[]>{
     return this.http.get<Planning[]>(this.apiUrl + "/Planification/get-all-by-id-FDM/"+id);}
+
+    getUtilisateursParRole(role: string): Observable<Utilisateur[]> {
+      return this.http.get<Utilisateur[]>(`${this.baseUrl}/Utilisateur/role`, { params: { role } });
+    }
+  
+  getPlanningById(id:number): Observable<Planning>{
+    return this.http.get<Annonce>(this.apiUrl + "/Planification/"+id);
+  }
+  getUtilisateurByPlanning(id:number):Observable<Utilisateur>{const url =`${this.apiUrl+"/Planification/get-utilisateur"}/${id}`
+  return this.http.get<any>(url);}
+
   
 }
