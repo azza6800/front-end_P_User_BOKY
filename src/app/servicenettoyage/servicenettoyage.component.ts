@@ -31,6 +31,7 @@ export class ServicenettoyageComponent implements OnInit {
         this.listeutilisateur = results;
         console.log("Liste des listeutilisateur après ajout :", this.listeutilisateur);
       });
+      
     });
   
 

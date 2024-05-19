@@ -78,128 +78,113 @@
     <div class="container-xl">
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="py-6 px-8 bg-neutral-0 rounded-4 box-shadow">
-            <h4 class="mb-0"> Rechercher </h4>
-            <div class="hr-dashed my-6 opacity-50"></div>
-            <ul class="list list-row flex-wrap align-items-center gap-6">
-                <div class="property-search__select property-search__col rounded-pill d-flex align-items-center gap-2 px-6 py-3">
-                    <span class="material-symbols-outlined mat-icon"> distance </span>
-                    <select class="form-select" aria-label="Default select example">
-                      <option selected>Location</option>
-                      <option value="1">New York</option>
-                      <option value="2">Chicago</option>
-                      <option value="3">Atlanta</option>
-                    </select>
-                  </div>
-            </ul>
-            
-           
-            
-            <div class="hr-dashed my-6 opacity-50"></div>
-
-            <a href="#" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 fw-semibold w-100 text-center">
-              <span class="material-symbols-outlined mat-icon clr-neutral-600"> search </span> Rechercher</a>
-              <div class="hr-dashed my-6 opacity-50"></div>
-              
-              <div *ngIf="user && user.length > 0">
-                <h5>Les femmes de ménage</h5>
-                                        
-                    <div *ngFor="let utilisateur of user">
-                        
-
-                        <div><img src="assets/img/user-3.jpg" alt="image" class="img-fluid w-12 h-12 rounded-circle objec-fit-cover"> {{ utilisateur.nom }} {{ utilisateur.prenom }}  
-                            <button  class="btn btn-outline-primary py-1 px-4 rounded-pill d-inline-flex align-items-center gap-2 fw-semibold"> Reserver</button>
-                        </div>
-                    </div>
-              
+          <div class="py-6 px-8 bg-neutral-0 rounded-4 shadow-sm">
+            <h4 class="mb-0">Rechercher</h4>
+            <div class="hr-dashed my-4 opacity-50"></div>
+            <div class="mb-4">
+              <div class="property-search__select property-search__col rounded-pill d-flex align-items-center gap-2 px-6 py-3">
+                <span class="material-symbols-outlined mat-icon">distance</span>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Location</option>
+                  <option value="1">New York</option>
+                  <option value="2">Chicago</option>
+                  <option value="3">Atlanta</option>
+                </select>
+              </div>
             </div>
-              
-
-
-
+            <div class="hr-dashed my-4 opacity-50"></div>
+            <a href="#" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 fw-semibold w-100 text-center">
+              <span class="material-symbols-outlined mat-icon clr-neutral-600">search</span> Rechercher
+            </a>
+            <div class="hr-dashed my-4 opacity-50"></div>
+            <div *ngIf="user && user.length > 0">
+              <h5>Les femmes de ménage</h5>
+              <div *ngFor="let utilisateur of user" class="d-flex align-items-center mb-3">
+                <img src="assets/img/user-3.jpg" alt="image" class="img-fluid w-8 h-8 rounded-circle object-fit-cover me-3">
+                <span>{{ utilisateur.nom }} {{ utilisateur.prenom }}</span>
+                <button class="btn btn-outline-primary py-1 px-4 rounded-pill ms-auto fw-semibold">Reserver</button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-8">
           <div class="row g-4">
-            
-            <div class="col-12" *ngFor="let planning of listeplanning; let i = index">
-              <div class="property-card property-card--row">
-                <div class="d-flex align-items-center mb-4">
-                  <div class="flex-shrink-0 d-none d-sm-block d-flex align-items-center">
-                    <img src="assets/img/user-3.jpg" alt="image" class="img-fluid w-12 h-12 rounded-circle custom-image-style shadow-lg border border-light">
-                  </div>
-                  <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 text-primary-300">
-                    <span class="material-symbols-outlined mat-icon fw-200 property-card__heart">favorite</span>
-                  </button>
-                </div>
-            
-                <div class="property-card__content" >
-                  <div class="card shadow-sm mb-4">
-                    <div class="card-body">
-                      <div *ngIf="listeutilisateur[i]">
-                        <p>
-                          <strong>Femme de ménage</strong>: {{ listeutilisateur[i]?.nom }} {{ listeutilisateur[i]?.prenom }}
-                        </p>
+            <div class="container-xl">
+              <div class="row g-4">
+                <div class="col-12" *ngFor="let planning of listeplanning; let i = index">
+                  <div class="property-card  shadow-sm mb-4 p-3">
+                    <div class="card shadow-sm mb-3">
+                      <div class="card-body p-8" *ngIf="listeutilisateur[i]">
+                        <div  class="row align-items-center ">
+                          <!-- Part for the image -->
+                          <div class="col-2 d-flex align-items-center justify-content-center">
+                            <img src="{{listeutilisateur[i]?.photo}}" alt="image" style="width: 100px; height: 100px;" class="img-fluid rounded-circle shadow-lg border border-light">
+                        </div>
+                          <!-- Part for the text elements -->
+                          <div class="col-8">
+                            <div >
+                              <p class="mb-2">
+                                <strong>Femme de ménage:</strong> {{ listeutilisateur[i]?.nom }} {{ listeutilisateur[i]?.prenom }}
+                              </p>
+                            </div>
+                            <ul class="list-unstyled mb-0">
+                              <li class="mb-2">
+                                <span class="d-block fs-6">
+                                  <strong>Heure Disponible:</strong> {{ planning.heureDisponible }}
+                                </span>
+                              </li>
+                              <li class="mb-2">
+                                <span class="d-block fs-6">
+                                  <strong>Jour:</strong> {{ planning.jour }}
+                                </span>
+                              </li>
+                              <li class="mb-2">
+                                <span class="d-block fs-6">
+                                  <strong>Adresse:</strong> {{ planning.adresse }}
+                                </span>
+                              </li>
+                              <li class="mb-2">
+                                <span class="d-block fs-6">
+                                  <strong>Prix Par Heure:</strong> {{ planning.prixParHeure }}
+                                </span>
+                              </li>
+                            </ul>
+                          </div>
+                          <!-- Part for the button -->
+                          <div class="col-2 d-flex justify-content-end">
+                            <button class="btn btn-outline-primary py-2 px-4 rounded-pill fw-semibold">Reserver</button>
+                          </div>
+                        </div>
                       </div>
-                      <ul class="list-unstyled mt-3 mb-0">
-                        
-                        <li class="mb-2">
-                          <span class="d-block fs-6">
-                            <strong>Heure Disponible:</strong> {{ planning.heureDisponible }}
-                          </span>
-                        </li>
-                        <li class="mb-2">
-                          <span class="d-block fs-6">
-                            <strong>Jour:</strong> {{ planning.jour }}
-                          </span>
-                        </li>
-                        <li class="mb-2">
-                          <span class="d-block fs-6">
-                            <strong>Adresse:</strong> {{ planning.adresse }}
-                          </span>
-                        </li>
-                        <li class="mb-2">
-                          <span class="d-block fs-6">
-                            <strong>Prix Par Heure:</strong> {{ planning.prixParHeure }}
-                          </span>
-                        </li>
-                      </ul>
                     </div>
-                  </div>
-                </div>
-                
-            
-                <div class="property-card__body">
-                  <div class="d-flex flex-wrap justify-content-between align-items-center">
-                    <span class="d-block fs-20 fw-medium text-primary-300">
-                      <span class="d-inline-block text-neutral-500 fs-14 fw-normal"></span>
-                    </span>
-                    <button class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
-                      Reserver
-                    </button>
                   </div>
                 </div>
               </div>
             </div>
             
             
-              
+            
+            
             <div class="col-12">
-
               <nav>
                 <ul class="pagination gap-3 justify-content-center">
-                  
                   <li class="page-item">
                     <a class="page-link p-0 w-10 h-10 d-grid place-content-center lh-1 rounded-circle border border-primary-300 clr-primary-300" href="#">
-                      <span class="material-symbols-outlined mat-icon fs-16"> arrow_back_ios </span>
+                      <span class="material-symbols-outlined mat-icon fs-16">arrow_back_ios</span>
                     </a>
                   </li>
-                  <li class="page-item"><a class="page-link p-0 w-10 h-10 d-grid place-content-center lh-1 rounded-circle border border-primary-300 clr-neutral-0 :clr-neutral-0 active-bg" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link p-0 w-10 h-10 d-grid place-content-center lh-1 rounded-circle border border-primary-300 clr-primary-300" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link p-0 w-10 h-10 d-grid place-content-center lh-1 rounded-circle border border-primary-300 clr-primary-300" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link p-0 w-10 h-10 d-grid place-content-center lh-1 rounded-circle border border-primary-300 clr-neutral-0 bg-primary-300 active" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link p-0 w-10 h-10 d-grid place-content-center lh-1 rounded-circle border border-primary-300 clr-primary-300" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link p-0 w-10 h-10 d-grid place-content-center lh-1 rounded-circle border border-primary-300 clr-primary-300" href="#">3</a>
+                  </li>
                   <li class="page-item">
                     <a class="page-link p-0 w-10 h-10 d-grid place-content-center lh-1 rounded-circle border border-primary-300 clr-primary-300" href="#">
-                      <span class="material-symbols-outlined mat-icon fs-16"> arrow_forward_ios </span>
+                      <span class="material-symbols-outlined mat-icon fs-16">arrow_forward_ios</span>
                     </a>
                   </li>
                 </ul>
@@ -210,6 +195,7 @@
       </div>
     </div>
   </div>
+  
   <!-- /Property List -->
   <!-- Footer -->
   <app-footer></app-footer>
