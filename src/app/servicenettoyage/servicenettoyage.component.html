@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from pix-placewise.vercel.app/property-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:55:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="landing page starter kit">
+  <meta name="keywords" content="bootstrap 5, saas, landing page">
+  <meta name="author" content="asaduzzaman">
+  <title>Placewise - Online Booking HTML Template</title>
+ 
+</head>
+
+<body>
+  <!-- preloader -->
+  
+  <!-- preloader End -->
+  <!-- Header Top  -->
+  <app-header2></app-header2>
+  <style>
+    .custom-image-style {
+      border: 2px solid #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .custom-image-style:hover {
+      transform: scale(1.05);
+    }
+    .custom-image-style {
+    width: 150px; /* Largeur désirée */
+    height: 150px; /* Hauteur désirée */
+    object-fit: cover; /* Assurer que l'image est correctement ajustée */
+}
+
+.custom-image-style:hover {
+    transform: scale(1.1); /* Zoom de 10% lors du survol */
+}
+  </style>
+  <style>
+    /* Styles pour agrandir la zone de recherche de localisation */
+    .property-search__col {
+      width: 300px; /* Largeur désirée de la zone de recherche */
+      height: 40px; /* Hauteur désirée de la zone de recherche */
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 5px 10px;
+      border-radius: 20px; /* Pour arrondir les coins de la zone de recherche */
+      background-color: #f0f0f0; /* Couleur de fond de la zone de recherche */
+      transition: width 0.3s ease-in-out; /* Animation de transition */
+    }
+
+    .property-search__col:hover {
+      width: 350px; /* Largeur agrandie de la zone de recherche au survol */
+    }
+
+    .form-select {
+      width: 100%; /* Largeur à 100% pour remplir la zone de recherche */
+      height: 100%; /* Hauteur à 100% pour remplir la zone de recherche */
+      border: none; /* Suppression de la bordure de la zone de recherche */
+      background-color: transparent; /* Fond transparent pour la zone de recherche */
+      outline: none; /* Suppression du contour de la zone de recherche */
+      font-size: 16px; /* Taille de police de la zone de recherche */
+    }
+
+    .material-symbols-outlined {
+      font-size: 20px; /* Taille de police de l'icône */
+    }
+  </style>
+  <!-- /Header -->
+  <!-- Property List -->
+  
+  <div class="section-space--sm bg-primary-5p">
+    <div class="container-xl">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="py-6 px-8 bg-neutral-0 rounded-4 box-shadow">
+            <h4 class="mb-0"> Rechercher </h4>
+            <div class="hr-dashed my-6 opacity-50"></div>
+            <ul class="list list-row flex-wrap align-items-center gap-6">
+                <div class="property-search__select property-search__col rounded-pill d-flex align-items-center gap-2 px-6 py-3">
+                    <span class="material-symbols-outlined mat-icon"> distance </span>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Location</option>
+                      <option value="1">New York</option>
+                      <option value="2">Chicago</option>
+                      <option value="3">Atlanta</option>
+                    </select>
+                  </div>
+            </ul>
+            
+           
+            
+            <div class="hr-dashed my-6 opacity-50"></div>
+
+            <a href="#" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center justify-content-center gap-2 fw-semibold w-100 text-center">
+              <span class="material-symbols-outlined mat-icon clr-neutral-600"> search </span> Rechercher</a>
+              <div class="hr-dashed my-6 opacity-50"></div>
+              
+              <div *ngIf="user && user.length > 0">
+                <h5>Les femmes de ménage</h5>
+                                        
+                    <div *ngFor="let utilisateur of user">
+                        
+
+                        <div><img src="assets/img/user-3.jpg" alt="image" class="img-fluid w-12 h-12 rounded-circle objec-fit-cover"> {{ utilisateur.nom }} {{ utilisateur.prenom }}  
+                            <button  class="btn btn-outline-primary py-1 px-4 rounded-pill d-inline-flex align-items-center gap-2 fw-semibold"> Reserver</button>
+                        </div>
+                    </div>
+              
+            </div>
+              
+
+
+
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="row g-4">
+            
+            <div class="col-12" *ngFor="let planning of listeplanning; let i = index">
+              <div class="property-card property-card--row">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="flex-shrink-0 d-none d-sm-block d-flex align-items-center">
+                    <img src="assets/img/user-3.jpg" alt="image" class="img-fluid w-12 h-12 rounded-circle custom-image-style shadow-lg border border-light">
+                  </div>
+                  <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 text-primary-300">
+                    <span class="material-symbols-outlined mat-icon fw-200 property-card__heart">favorite</span>
+                  </button>
+                </div>
+            
+                <div class="property-card__content" >
+                  <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                      <div *ngIf="listeutilisateur[i]">
+                        <p>
+                          <strong>Femme de ménage</strong>: {{ listeutilisateur[i]?.nom }} {{ listeutilisateur[i]?.prenom }}
+                        </p>
+                      </div>
+                      <ul class="list-unstyled mt-3 mb-0">
+                        
+                        <li class="mb-2">
+                          <span class="d-block fs-6">
+                            <strong>Heure Disponible:</strong> {{ planning.heureDisponible }}
+                          </span>
+                        </li>
+                        <li class="mb-2">
+                          <span class="d-block fs-6">
+                            <strong>Jour:</strong> {{ planning.jour }}
+                          </span>
+                        </li>
+                        <li class="mb-2">
+                          <span class="d-block fs-6">
+                            <strong>Adresse:</strong> {{ planning.adresse }}
+                          </span>
+                        </li>
+                        <li class="mb-2">
+                          <span class="d-block fs-6">
+                            <strong>Prix Par Heure:</strong> {{ planning.prixParHeure }}
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+            
+                <div class="property-card__body">
+                  <div class="d-flex flex-wrap justify-content-between align-items-center">
+                    <span class="d-block fs-20 fw-medium text-primary-300">
+                      <span class="d-inline-block text-neutral-500 fs-14 fw-normal"></span>
+                    </span>
+                    <button class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold">
+                      Reserver
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+              
+            <div class="col-12">
+
+              <nav>
+                <ul class="pagination gap-3 justify-content-center">
+                  
+                  <li class="page-item">
+                    <a class="page-link p-0 w-10 h-10 d-grid place-content-center lh-1 rounded-circle border border-primary-300 clr-primary-300" href="#">
+                      <span class="material-symbols-outlined mat-icon fs-16"> arrow_back_ios </span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link p-0 w-10 h-10 d-grid place-content-center lh-1 rounded-circle border border-primary-300 clr-neutral-0 :clr-neutral-0 active-bg" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link p-0 w-10 h-10 d-grid place-content-center lh-1 rounded-circle border border-primary-300 clr-primary-300" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link p-0 w-10 h-10 d-grid place-content-center lh-1 rounded-circle border border-primary-300 clr-primary-300" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link p-0 w-10 h-10 d-grid place-content-center lh-1 rounded-circle border border-primary-300 clr-primary-300" href="#">
+                      <span class="material-symbols-outlined mat-icon fs-16"> arrow_forward_ios </span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Property List -->
+  <!-- Footer -->
+  <app-footer></app-footer>
+  <!-- /Footer -->
+  <!-- scrpts -->
+ 
+</body>
+
+
+<!-- Mirrored from pix-placewise.vercel.app/property-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:55:33 GMT -->
+</html>
