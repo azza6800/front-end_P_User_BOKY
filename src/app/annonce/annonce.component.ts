@@ -219,6 +219,7 @@ export class AnnonceComponent {
 }
 
 
+
 private _patchValues(equipments: Equipementnterface[], formControlName: string): void {
   // get array control
   const formArray = this.form.get(formControlName) as FormArray;

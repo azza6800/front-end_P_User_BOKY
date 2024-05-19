@@ -180,5 +180,12 @@ export class CrudService {
   getUtilisateurByPlanning(id:number):Observable<Utilisateur>{const url =`${this.apiUrl+"/Planification/get-utilisateur"}/${id}`
   return this.http.get<any>(url);}
 
-  
+  findAnnonceById(id : number): Observable<Annonce> {
+    const url =`${this.apiUrl+"/Annonce"}/${id}`
+    return this.http.get<Annonce>(url)
+  }
+  updateAnnonce(id:number,annonce: Annonce) {
+    const url = `${this.apiUrl+"/Annonce"}/${id}`
+    return this.http.put<any>(url, annonce);
+  }
 }
