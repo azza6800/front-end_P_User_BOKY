@@ -7,6 +7,7 @@ import { Annonce } from '../Entites/Annonce.Entites';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { NgIf } from '@angular/common';
 import { Planning } from '../Entites/Planning.Entites';
+import { ReservationRq } from '../Entites/ReservationRq.Entites';
 
 
 
@@ -143,7 +144,7 @@ export class CrudService {
     const url =`${this.apiUrl+"/Utilisateur"}/${id}`
     return this.http.delete(url)
   }
-  reserverFromApi(rq:any){
+  reserverFromApi(rq:ReservationRq){
     return this.http.post<any>( "http://localhost:8081/api/Reservation" ,rq );
  }
  addPlanning(planning:Planning)

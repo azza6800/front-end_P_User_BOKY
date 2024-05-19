@@ -98,45 +98,23 @@ export class DetailAnnoncePublicComponent {
             summary: 'Remplir votre champs',
           });
        }else {
-        const dateArrivee = this.date_arrivee?.value;
-        const dateDepart = this.date_depart?.value;
-        const nbVacancier = this.nb_vacancier?.value;
-        // Passer les valeurs extraites au constructeur de ReservationRq
-        this.reservation = new ReservationRq(null, this.annonceur.id, this.annonce.id, dateArrivee, dateDepart, this.numberOfNights, nbVacancier);
-        console.log("nchlh temchy : ",this.reservation);
+        this.reservation = new ReservationRq();
+        this.reservation.id_annonce = this.annonce.id;
+        this.reservation.date_arrivee = data.date_arrivee;
+        this.reservation.date_depart = data.date_depart;
+        this.reservation.nb_nuit=this.numberOfNights;
+        this.reservation.nb_vacancier = data.nb_vacancier;
+        this.reservation.date;
+        if (this.numberOfNights<7){this.reservation.montant_paye=this.prix}
+        else if (this.numberOfNights>=30){this.reservation.montant_paye=this.prixmois}
+        else {this.reservation.montant_paye=this.prixsemaine}
+        console.log("nchlh temchy : ", this.reservation);
         this.enableForm = false;
       }
       
     }
     }
-  reserver(event:any)
-  {
-    this.messageCommande=`<div class="alert alert-primary" role="alert">
-    Veuillez patienter ...
-  </div>`
-    console.log(event)
-    let datas=this.service.getUserInfo()
-    let rq:any={}
-    rq.id_client=datas?.id 
-    rq.id_annonce=event.id
    
-    console.log(rq,"what we senddddd")
-    this.service.reserverFromApi(rq).subscribe((data:any)=>{
-      this.route.navigate(['mes-reservations'])
-    
-      this.messageCommande=`<div class="alert alert-success" role="alert">
-    Réservé avec succès
-  </div>`
-    }, err=>{
-      this.messageCommande=`<div class="alert alert-warning" role="alert">
-     Erreur, Veuillez réssayer !! 
-    </div>`
-
-    })
-    setTimeout(() => {
-      this.messageCommande=""
-    }, 3000);
-  }
 
     connexion()
     {
@@ -190,23 +168,57 @@ export class DetailAnnoncePublicComponent {
       
     })
     this.invokeStripe();
+    
 
     
     
   
 }
-makePayment() {
+reserver(rq:ReservationRq)
+  {
+    this.messageCommande=`<div class="alert alert-primary" role="alert">
+    Veuillez patienter ...
+  </div>`
+    console.log(event)
+    let datas=this.service.getUserInfo()
+    
+    rq.id_client=datas?.id 
+    
+   
+    console.log(rq,"what we senddddd")
+    this.service.reserverFromApi(rq).subscribe((data:any)=>{
+      this.route.navigate(['mes_reservation'])
+    
+      this.messageCommande=`<div class="alert alert-success" role="alert">
+    Réservé avec succès
+  </div>`
+    }, err=>{
+      this.messageCommande=`<div class="alert alert-warning" role="alert">
+     Erreur, Veuillez réssayer !! 
+    </div>`
+
+    })
+    setTimeout(() => {
+      this.messageCommande=""
+    }, 3000);
+  }
+makePayment(amount : any) {
   const paymentHandler = (<any>window).StripeCheckout.configure({
     key: 'pk_test_51PFI24F29zVOYaoLNwA55lQnMETgMsgILXooIySTysEtaUYck09EzbfHklFnfQQm2zmmtZam1Ss796gimwKUNUv4006HgVUZXa',
     locale: 'auto',
-    token: function (stripeToken: any) {
+    token: (stripeToken: any) => { // Utilisation d'une fonction fléchée pour conserver le contexte de 'this'
       console.log(stripeToken);
-      alert('Stripe token generated!');
+      alert('Paiement effectué avec succès!');
+      this.reserver(this.reservation); // Appel à la fonction reserver() une fois le paiement réussi
     },
+    
+   
   });
   paymentHandler.open({
     name: '',
     description: '',
+    amount:amount*100,
+    currency: 'TND',
  
   });
 }
@@ -222,8 +234,11 @@ invokeStripe() {
         locale: 'auto',
         token: function (stripeToken: any) {
           console.log(stripeToken);
+          
+          console.log("hathy this.annonce",this.annonce),
           alert('Payment effectuée avec success!');
-          this.reserver(this.reservation);
+          
+    
         },
       });
     };

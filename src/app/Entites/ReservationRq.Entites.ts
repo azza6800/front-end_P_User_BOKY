@@ -7,6 +7,8 @@ export class ReservationRq{
         public date_depart?:string,
         public nb_nuit?:number,
         public nb_vacancier?:number,
+        public date?:string,
+        public montant_paye?:number,
         
     ){}
 }
