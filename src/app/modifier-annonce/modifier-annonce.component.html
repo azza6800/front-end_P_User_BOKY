@@ -1,1 +1,480 @@
-<p>modifier-annonce works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="landing page starter kit">
+  <meta name="keywords" content="bootstrap 5, saas, landing page">
+  <meta name="author" content="asaduzzaman">
+  <title>Boky</title>
+  
+</head>
+
+<body >
+ 
+  
+  <!-- Header -->
+  <app-header2></app-header2>
+  <!-- /Header -->
+  <!-- Banner -->
+  
+  <div class="section-space--sm bg-neutral-900">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6">
+          <h1 class="d4 clr-neutral-0 mb-3"> Ajouter Annonce  </h1>
+          <ul class="list list-row list-arrow align-items-center">
+            <li>
+              <a href="profil" class="link d-inline-block clr-neutral-0 :clr-tertiary-300"> Tableau de bord </a>
+            </li>
+            <li>
+              <a href="annonce" class="link d-inline-block clr-tertiary-300"> Ajouter Annonce </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="text-md-end">
+            <a href="#" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-neutral-700 :bg-primary-300">
+              <span class="d-inline-block clr-neutral-0 fw-semibold">Déconnection </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div class="section-space--sm pt-0 position-relative z-1">
+    <span class="w-100 h-30 position-absolute start-0 end-0 top-0 z-n1 bg-neutral-900"></span>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5 col-lg-4 col-xl-3">
+          <app-header3></app-header3>
+        </div>
+        <div class="col-md-7 col-lg-8 col-xl-9">
+          <ul class="list gap-6">
+            <li>
+              <div class="p-6 p-xl-10 rounded-4 bg-neutral-0 shadow-3">
+                <h3 class="mb-0 flex-grow-1"> Ma propriété </h3>
+                <div class="hr-line my-6"></div>
+                <div class="row g-4">
+                  
+                  <div class="col-12">
+                    <div class="tab-content">
+                        <form *ngIf="enableForm" (ngSubmit)="done()" [formGroup]="Partie1Form">
+                            <div class="tab-pane fade show active" id="P1">
+                        <ul class="list gap-4">
+                          <li>
+                            <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+                              <div class="accordion property-accordion">
+                                <div class="accordion-item">
+                                  <h3 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#addProperty" aria-expanded="true"> Type de hébergement </button>
+                                  </h3>
+                                  <div id="addProperty" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                      <div class="pt-6">
+                                        <section class="section-space position-relative z-1" >
+                                          
+                                          <div class="container">
+                                              <div class="row g-4">
+                                                  <div class="col-md-0 col-lg-0 col-xl-3">
+                                                      <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
+                                                          <div class="p-8">
+                                                              <span class="material-symbols-outlined fs-60 clr-primary-300 lh-1 transition"> emoji_transportation </span>
+                                                              
+                                                              <h5 ><input formControlName="type_d_hebergement" value="appartement" type="radio">Appartement </h5>
+                                                          </div>
+                                                          
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-6 col-lg-4 col-xl-3">
+                                                      <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
+                                                          <div class="p-8">
+                                                              <span class="material-symbols-outlined fs-60 clr-secondary-500 lh-1 transition"> home_work </span>
+                                                              <h5><input formControlName="type_d_hebergement" value="Maison d'hotes" type="radio"> Maison d'hotes </h5>
+                                                          </div>
+                                                          
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-6 col-lg-4 col-xl-3">
+                                                      <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
+                                                          <div class="p-8">
+                                                              <span class="material-symbols-outlined fs-60 clr-tertiary-500 lh-1 transition"> add_business </span>
+                                                              <h5><input formControlName="type_d_hebergement" value="Camping car" type="radio"> Camping car </h5>
+                                                          </div>
+                                                          
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-6 col-lg-4 col-xl-3">
+                                                      <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
+                                                          <div class="p-8">
+                                                              <span class="material-symbols-outlined fs-60 clr-primary-300 lh-1 transition"> apartment </span>
+                                                              <h5 ><input formControlName="type_d_hebergement" value="Chamber d'hotes" type="radio"> Chamber d'hotes </h5>
+                                                          </div>
+                                                          
+                                                      </div>
+                                                  </div>
+                                                  
+                                                  <div class="col-md-6 col-lg-4 col-xl-3">
+                                                      <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
+                                                          <div class="p-8">
+                                                              <span class="material-symbols-outlined fs-60 clr-primary-300 lh-1 transition"> moving_ministry </span>
+                                                              <h5><input formControlName="type_d_hebergement" value="Cabane" type="radio"> Cabane </h5>
+                                                          </div>
+                                                          
+                                                      </div>
+                                                  </div>
+                                                  
+                                                  
+                                                  
+                                              </div>
+                                          </div>
+                                      </section>
+                                        <div class="row">
+                                          <div class="row">
+                                            <div class="col-lg-6">
+                                          
+                                          <p class="mt-6 mb-4 fs-20 fw-medium">Nombre de voyageurs </p>
+                                          
+                                          <div class="d-flex align-items-center bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+                                            <div class="flex-grow-1">
+                                              
+                                            </div>
+                                           
+                                              <div class="quantity"  >
+                                                <button type="button" class="quantity__button quantity__button-down material-symbols-outlined mat-icon clr-primary-300"> do_not_disturb_on </button>
+                                                <input #quantityInput type="text" class="quantity__value"  value="0" >
+                                                <button type="button" class="quantity__button quantity__button-up material-symbols-outlined mat-icon clr-primary-300"> add_circle </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-lg-6">
+                                        
+                                          <p class="mt-6 mb-4 fs-20 fw-medium">Nombre de chambres :</p>
+                                        
+                                          <div class="d-flex align-items-center bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+                                            <div class="flex-grow-1">
+                                              
+                                            </div>
+                                           
+                                              <div class="quantity" >
+                                                <button type="button" class="quantity__button quantity__button-down material-symbols-outlined mat-icon clr-primary-300"> do_not_disturb_on </button>
+                                                <input  #quantityInput1 type="text" class="quantity__value" value="0" >
+                                                <button type="button" class="quantity__button quantity__button-up material-symbols-outlined mat-icon clr-primary-300"> add_circle </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-lg-6">
+
+                                          <p class="mt-6 mb-4 fs-20 fw-medium">Nombre de lits :</p>
+                                          <div class="d-flex align-items-center bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+                                            <div class="flex-grow-1">
+                                              
+                                            </div>
+                                           
+                                              <div class="quantity" >
+                                                <button type="button" class="quantity__button quantity__button-down material-symbols-outlined mat-icon clr-primary-300"> do_not_disturb_on </button>
+                                                <input  #quantityInput2 type="text" class="quantity__value" value="0" >
+                                                <button type="button" class="quantity__button quantity__button-up material-symbols-outlined mat-icon clr-primary-300"> add_circle </button>
+                                              </div>
+                                            </div>
+                                          
+                                        </div>
+                                        <div class="col-lg-6">
+                                          <p class="mt-6 mb-4 fs-20 fw-medium">Nombre de salles :</p>
+                                          <div class="d-flex align-items-center bg-primary-3p gap-3 py-4 px-8 rounded-pill border border-neutral-40 mb-4">
+                                            <div class="flex-grow-1">
+                                              
+                                            </div>
+                                           
+                                              <div class="quantity" >
+                                                <button type="button" class="quantity__button quantity__button-down material-symbols-outlined mat-icon clr-primary-300"> do_not_disturb_on </button>
+                                                <input #quantityInput3 type="text" class="quantity__value" value="0" >
+                                                <button type="button" class="quantity__button quantity__button-up material-symbols-outlined mat-icon clr-primary-300"> add_circle </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                      
+                                        <p class="mt-6 mb-4 fs-20 fw-medium">Créez votre description</p>
+                                        <textarea rows="5" class="form-control" placeholder="Description.." formControlName="description"></textarea>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        
+                      </div>
+                    
+
+                     
+                    
+                      <form  [formGroup]="form">
+                        <ul class="list gap-4">
+                          <li>
+                              <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+                                <div class="accordion property-accordion">
+                                  <div class="accordion-item">
+                                    <h3 class="accordion-header">
+                                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#amenities-facility" aria-expanded="true"> Détails de l'équipement </button>
+                                    </h3>
+                                    <div id="amenities-facility" class="accordion-collapse collapse show" formArrayName="equipments">
+                                      <div class="accordion-body" >
+                                        <div class="pt-6" >
+                                          <div class="row g-4" >
+                                            <div class="col-md-6 col-lg-4" [formGroupName]="i" *ngFor="let item of equipments; let i = index" >
+                                              <ul class="list gap-4"  >
+                                                <li >
+                                                  <div class="d-flex align-items-center gap-3">
+                                                    <input class="custom-checkbox" type="checkbox" id="air-condition" formControlName="checked">
+                                                    <label class="clr-neutral-500" for="air-condition">  {{  equipments[i].name  }}</label>
+                                                  </div>
+                                                </li>
+                                                
+                                              </ul>
+                                            </div>
+                                            
+                                            
+                                          </div>
+                                          
+                                        </div>
+                                        
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                          </li>
+                          <li>
+                            <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+                              <div class="accordion property-accordion">
+                                <div class="accordion-item">
+                                  <h3 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#amenities-facility" aria-expanded="true"> Équipement spécial </button>
+                                  </h3>
+                                  <div id="amenities-facility" class="accordion-collapse collapse show" formArrayName="equipmentsSpecail">
+                                    <div class="accordion-body" >
+                                      <div class="pt-6" >
+                                        <div class="row g-4" >
+                                          <div class="col-md-6 col-lg-4" [formGroupName]="k" *ngFor="let item of equipmentsSpecail; let k = index" >
+                                            <ul class="list gap-4"  >
+                                              <li >
+                                                <div class="d-flex align-items-center gap-3">
+                                                  <input class="custom-checkbox" type="checkbox" id="air-condition" formControlName="checked">
+                                                  <label class="clr-neutral-500" for="air-condition">  {{  equipmentsSpecail[k].name  }}</label>
+                                                </div>
+                                              </li>
+                                              
+                                            </ul>
+                                          </div>
+                                          
+                                          
+                                        </div>
+                                        
+                                      </div>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+                        <li>
+                          <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+                            <div class="accordion property-accordion">
+                              <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#amenities-facility" aria-expanded="true"> Équipement de sécurité </button>
+                                </h3>
+                                <div id="amenities-facility" class="accordion-collapse collapse show" formArrayName="equipmentsSecurite">
+                                  <div class="accordion-body" >
+                                    <div class="pt-6" >
+                                      <div class="row g-4" >
+                                        <div class="col-md-6 col-lg-4" [formGroupName]="k" *ngFor="let item of equipmentsSecurite; let k = index" >
+                                          <ul class="list gap-4"  >
+                                            <li >
+                                              <div class="d-flex align-items-center gap-3">
+                                                <input class="custom-checkbox" type="checkbox" id="air-condition" formControlName="checked">
+                                                <label class="clr-neutral-500" for="air-condition">  {{  equipmentsSecurite[k].name  }}</label>
+                                              </div>
+                                            </li>
+                                            
+                                          </ul>
+                                        </div>
+                                        
+                                        
+                                      </div>
+                                      
+                                    </div>
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </li>
+                          <li>
+                            <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+                              <div class="accordion property-accordion">
+                                <div class="accordion-item">
+                                  <h3 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" for="image" data-bs-target="#map-location" aria-expanded="true"  > Images </button>
+                                  </h3>
+                                  
+										
+                                  <div id="map-location" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                      <div class="pt-6">
+                                        <div class="d-flex align-items-center justify-content-center border-dashed rounded-4 w-100">
+                                          <label for="dropzone-file" class="d-flex flex-column align-items-center justify-content-center w-100 cursor-pointer bg-primary-3p rounded-4">
+                                            <span class="d-flex flex-column align-items-center justify-content-center py-12">
+                                              
+                                              <input class="form-control " type="file" id="image" name="dzImage" accept="image/*" (change)=" onSelectFile($event)" formControlName="image">
+                                              <span class="d-flex align-items-center justify-content-center flex-wrap gap-5">
+                                                <span class="d-flex align-items-center gap-2">
+                                                  <span class="material-symbols-outlined mat-icon fw-200 clr-neutral-500 flex-shrink-0"> gpp_maybe </span>
+                                                  <span class="d-block mb-0 clr-neutral-500"> Maximum allowed file size is 9.00 MB </span>
+                                                </span>
+                                                <span class="d-flex align-items-center gap-2">
+                                                  <span class="material-symbols-outlined mat-icon fw-200 clr-neutral-500 flex-shrink-0"> gpp_maybe </span>
+                                                  <span class="d-block mb-0 clr-neutral-500"> Maximum 10 files are allowed </span>
+                                                </span>
+                                              </span>
+                                            </span>
+                                          </label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            
+                          </li>
+                        </ul>
+                        
+                      </form>
+                      <div class="d-flex justify-content-end mt-4">
+                        <button class="btn btn-primary" id="btnNext" type="submit" >Suivant</button>
+                      </div>
+                    </form>
+                    <form *ngIf="!enableForm "  (ngSubmit)=" updateAnnonce()" [formGroup]="AnnonceForm">
+                      
+                      <div class="p-4 p-sm-6 p-md-10 bg-neutral-0 rounded-4">
+                        <div class="accordion property-accordion">
+                          <div class="accordion-item">
+                            <h3 class="accordion-header">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#property-details" aria-expanded="true"> Détails de la propriété </button>
+                            </h3>
+                            <div id="property-details" class="accordion-collapse collapse show">
+                              <div class="accordion-body">
+                                <div class="pt-6">
+                                  <div class="col-md-12">
+                                   
+                                      <div class="mb-4">
+                                        <label for="titre" class="form-label fs-20 fw-medium">Titre :</label>
+                                        <input type="text" id="titre" class="form-control" placeholder="Exp: Charmante maison de campagne avec jardin " formControlName="titre">
+                                      </div>
+                                    
+                              
+                                    <div class="mb-4">
+                                      <label class="form-label fs-20 fw-medium">Réduction de 7 % pour la semaine:</label>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="reduction_semaine" id="oui-reduction" formControlName="reduction_semaine" value=true>
+                                        <label class="form-check-label fs-18 fw-medium" for="oui-reduction">Oui</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="reduction_semaine" id="non-reduction"  formControlName="reduction_semaine" value=false>
+                                        <label class="form-check-label fs-18 fw-medium" for="non-reduction">Non</label>
+                                      </div>
+                                    </div>
+                              
+                                    <div class="mb-4">
+                                      <label class="form-label fs-20 fw-medium">Réduction de 15 % pour le mois :</label>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="reduction_mois" id="oui-reduction-hebdo" formControlName="reduction_mois" value=true>
+                                        <label class="form-check-label fs-18 fw-medium" for="oui-reduction-hebdo">Oui</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="reduction_mois" id="non-reduction-hebdo" formControlName="reduction_mois" value=false>
+                                        <label class="form-check-label fs-18 fw-medium" for="non-reduction-hebdo">Non</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12">
+                                    <div class="mb-4">
+                                      <label for="prix" class="form-label fs-20 fw-medium">Prix en DNT:</label>
+                                      <input type="number" id="prix" class="form-control" placeholder="Entrez le prix" formControlName="prix">
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                      <label for="pays" class="form-label fs-20 fw-medium">Pays :</label>
+                                      <input type="text" id="pays" class="form-control" placeholder="Entrez le pays" formControlName="pays">
+                                    </div>
+                                    
+                                    
+                                    
+                                    <div class="mb-4">
+                                      <label for="ville" class="form-label fs-20 fw-medium">Ville :</label>
+                                      <input type="text" id="ville" class="form-control" placeholder=" Ville " formControlName="ville">
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                      <label for="code_postale" class="form-label fs-20 fw-medium">Code postal :</label>
+                                      <input type="text" id="code-postal" class="form-control" placeholder="Entrez le code postal" formControlName="code_postale">
+                                    </div>
+                                    
+                                    
+                                  </div>
+                                  <div class="mb-4">
+                                    <label for="heure-depart" class="form-label fs-20 fw-medium">Heure de départ :</label>
+                                    <input type="time" id="heure-depart" class="form-control" placeholder="Entrez l'heure de départ" formControlName="heure_depart">
+                                  </div>
+                                  
+                                  <div class="mb-4">
+                                    <label for="heure-arrivee" class="form-label fs-20 fw-medium">Heure d'arrivée :</label>
+                                    <input type="time" id="heure-arrivee" class="form-control" placeholder="Entrez l'heure d'arrivée" formControlName="heure_arriver">
+                                </div>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-end mt-4">
+                        <button class="btn btn-primary" id="btnNext" type="submit"  >Ajouter</button>
+                      </div>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Dashboard -->
+  <!-- Footer -->
+  <app-footer></app-footer>
+ 
+</body>
+
+
+<!-- Mirrored from pix-placewise.vercel.app/user-booking.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 18:56:15 GMT -->
+</html>

@@ -32,6 +32,7 @@ import { ProfilfemmeComponent } from './profilfemme/profilfemme.component';
 import { ModifierProfilFemmeComponent } from './modifier-profil-femme/modifier-profil-femme.component';
 import { ListeplanningComponent } from './listeplanning/listeplanning.component';
 import { ServicenettoyageComponent } from './servicenettoyage/servicenettoyage.component';
+import { ReservationMesPlanningComponent } from './reservation-mes-planning/reservation-mes-planning.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { ServicenettoyageComponent } from './servicenettoyage/servicenettoyage.c
     ModifierProfilFemmeComponent,
     ListeplanningComponent,
     ServicenettoyageComponent,
+    ReservationMesPlanningComponent,
    
   ],
   imports: [

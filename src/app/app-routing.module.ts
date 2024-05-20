@@ -24,6 +24,7 @@ import { ModifierProfilFemmeComponent } from './modifier-profil-femme/modifier-p
 import { ListeplanningComponent } from './listeplanning/listeplanning.component';
 import { AuthGuardR } from './service/authR.service';
 import { ServicenettoyageComponent } from './servicenettoyage/servicenettoyage.component';
+import { ReservationMesPlanningComponent } from './reservation-mes-planning/reservation-mes-planning.component';
 
 const routes: Routes = [  
 {path:'',component:HomeComponent},
@@ -47,7 +48,8 @@ const routes: Routes = [
 {path:'profilfemme',component:ProfilfemmeComponent},
 {path:'modifier_profil_femme/:id',component:ModifierProfilFemmeComponent},
 {path:'listeplanning',component:ListeplanningComponent},
-{path:'servicenettoyage',component:ServicenettoyageComponent}
+{path:'servicenettoyage',component:ServicenettoyageComponent},
+{path:'reserver_mes_planning',component:ReservationMesPlanningComponent}
 
 
 
