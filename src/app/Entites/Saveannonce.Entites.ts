@@ -23,6 +23,7 @@ export class Saveannonce{
         public heure_arriver?:string,
         public verification?:boolean,
         public date?:string,
+        public accorde_user?:boolean,
         public id_annonceur?:number
     ){}
 }

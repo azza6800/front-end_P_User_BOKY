@@ -64,4 +64,50 @@ export class ListeAnnonceComponent implements OnInit {
   modifierAnnonce(id: number): void {
     this.router.navigate(['/modifierannonce', id]);
   }
+  updateAnnoncetat(annonce:Annonce)
+  {
+    console.log(annonce);
+    let index=this.listeAnnonce.indexOf(annonce);
+    if(annonce.accorde_user==true)
+      { if(confirm("Voulez vous disactiver annonce : " + annonce.titre + " ?")) 
+        {let newannonce =new Annonce(annonce.id,annonce.type_d_hebergement,annonce.nb_voyageur,
+          annonce.nb_chamber,annonce.nb_lits,annonce.nb_salles,annonce.equipement,annonce.equipement_specail,annonce.equipement_securite,
+          annonce.image,annonce.titre,annonce.description,  annonce.reduction_semaine,annonce.reduction_mois,annonce.prix,annonce.pays,
+          annonce.etat,annonce.ville,annonce.code_postale,annonce.heure_depart,annonce.heure_arriver,annonce.verification,
+          false,annonce.date)
+  
+      this.service.updateAnnonce(annonce.id,newannonce).subscribe
+  (
+    res=>{console.log(res)
+    this.listeAnnonce[index]=newannonce
+    this.router.navigate(['/liste_annonce']).then(() => {
+      window.location.reload();
+    });
+    },
+    err=>console.log(err)
+  )}
+
+    
+  }else 
+  {
+    if(confirm("Voulez vous activer annonce :" + annonce.titre + " ?")) {
+      let newannonce =new Annonce(annonce.id,annonce.type_d_hebergement,annonce.nb_voyageur,
+        annonce.nb_chamber,annonce.nb_lits,annonce.nb_salles,annonce.equipement,annonce.equipement_specail,annonce.equipement_securite,
+        annonce.image,annonce.titre,annonce.description,  annonce.reduction_semaine,annonce.reduction_mois,annonce.prix,annonce.pays,
+        annonce.etat,annonce.ville,annonce.code_postale,annonce.heure_depart,annonce.heure_arriver,annonce.verification,
+        true,annonce.date)
+        console.log("***************",newannonce)
+      this.service.updateAnnonce(annonce.id,newannonce).subscribe
+    (
+      res=>{console.log(res)
+        console.log("***************",newannonce)
+        this.listeAnnonce[index]=newannonce
+        this.router.navigate(['//liste_annonce']).then(() => {
+          window.location.reload();
+        });
+      },
+      err=>console.log(err)
+    )}
+  }
+  }
 }

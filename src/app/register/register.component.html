@@ -46,13 +46,21 @@
                         <input type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="Entrez votre numéro de téléphone" id="Tel" formControlName="telephone">
                     </div>
                     <div class="col-12">
-                        <label for="enter-email" class="fs-20 fw-medium d-block mb-3">Entrez votre adresse e-mail</label>
-                        <input type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="Entrez votre e-mail" id="email" formControlName="email">
-                    </div>
-                    <div class="col-12">
-                        <label for="enter-password" class="fs-20 fw-medium d-block mb-3">Entrez votre mot de passe</label>
-                        <input type="password" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="***********" id="password" formControlName="mdp">
-                    </div>
+                      <label for="enter-email" class="fs-20 fw-medium d-block mb-3">Entrez votre adresse e-mail</label>
+                      <input type="text" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="Entrez votre e-mail" id="email" formControlName="email">
+                      <!-- Afficher le message d'erreur si l'e-mail est invalide -->
+                      <small *ngIf="UtilisateurForm.get('email').invalid && UtilisateurForm.get('email').touched" class="text-danger">
+                          L'adresse e-mail est invalide.
+                      </small>
+                  </div>
+                  <div class="col-12">
+                      <label for="enter-password" class="fs-20 fw-medium d-block mb-3">Entrez votre mot de passe</label>
+                      <input type="password" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="***********" id="password" formControlName="mdp">
+                      <!-- Afficher le message d'erreur si le mot de passe est invalide -->
+                      <small *ngIf="UtilisateurForm.get('mdp').invalid && UtilisateurForm.get('mdp').touched" class="text-danger">
+                          Le mot de passe doit contenir au moins 8 caractères, dont une minuscule, une majuscule, un chiffre et un caractère spécial.
+                      </small>
+                  </div>
                     <div class="col-12">
                         <label for="confirmPassword" class="fs-20 fw-medium d-block mb-3">Confirmez votre mot de passe</label>
                         <input type="password" class="form-control bg-primary-3p border border-neutral-40 rounded-pill py-3 px-5" placeholder="***********" id="confirmPassword" formControlName="confirmPassword">

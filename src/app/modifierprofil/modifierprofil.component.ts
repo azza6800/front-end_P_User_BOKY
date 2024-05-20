@@ -108,6 +108,7 @@ get photo (){return this.updateForm.get('photo');}
         adresse: event.adresse,
         mdp: event.mdp,
         role: event.role,
+      
          });}); }
   updateUtilisateur() {
     let data = this.updateForm.value;
@@ -121,9 +122,10 @@ get photo (){return this.updateForm.get('photo');}
       data.adresse,
       data.mdp, 
       data.role,
+      true,
       this.imgURL);
-    console.log(utilisateur);
-    console.log(data);
+    console.log("hatha utilisateu",utilisateur);
+    console.log("hathy data ",data);
     this.service.updateUtilisateur(this.id,utilisateur).subscribe((res) => {
       
       console.log(res);

@@ -21,7 +21,11 @@ export class RegisterComponent implements OnInit {
       prenom: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       adresse: ['', Validators.required],
-      mdp: ['', Validators.required],
+      mdp: ['', [
+        Validators.required,
+        Validators.minLength(8), // Au moins 8 caractères
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/) // Au moins une minuscule, une majuscule, un chiffre et un caractère spécial
+      ]],
       confirmPassword: ['', Validators.required], // Ajouter le champ confirmPassword
       role: ['', Validators.required],
   
@@ -73,7 +77,18 @@ export class RegisterComponent implements OnInit {
         },
         err => {
           console.log(err);
-          this.router.navigate(['/verification_email']);
+          if (err.error.message === "Email is already in use!") 
+            {
+              this.toast.error({
+                detail: 'Email déja existe',
+                summary: 'Erreur',
+              });
+            } 
+          else 
+          { 
+            this.router.navigate(['/verification_email']);
+          }
+          
         }
       );
     }
