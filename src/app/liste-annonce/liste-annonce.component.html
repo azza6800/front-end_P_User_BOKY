@@ -150,9 +150,10 @@
                             <div class="property-card__img">
                               <img [src]="ann.image" alt="Image de l'annonce" class="fixed-size-image" *ngIf="ann.image">
                             </div>
-                            <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
-                              <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
-                            </button>
+                            <a href="property-grid.html" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> {{ann.type_d_hebergement}} </a>
+                  <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
+                    <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
+                  </button>
                           </div>
                           <div class="property-card__content">
                             <div class="property-card__body">
@@ -162,7 +163,18 @@
                                   <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
                                   <span class="d-inline-block">{{ann.code_postale}} {{ann.pays}} {{ann.ville}}</span>
                                 </div>
-                                <span class="d-inline-block fw-medium clr-secondary-400">{{ann.reduction_semaine}}</span>
+                                <button class="btn btn-sm" *ngIf="ann.accorde_user" (click)="updateAnnoncetat(ann)">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+                                  </svg>
+                                </button>
+                                <button class="btn btn-sm" *ngIf="!ann.accorde_user" (click)="updateAnnoncetat(ann)">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
+                                    <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7 7 0 0 0 2.79-.588M5.21 3.088A7 7 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474z"/>
+                                    <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12z"/>
+                                  </svg>
+                                </button>
                               </div>
                               <a href="property-details-1.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> {{ann.titre}} </a>
 

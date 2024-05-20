@@ -22,6 +22,7 @@ export class Annonce{
         public heure_depart?:string,
         public heure_arriver?:string,
         public verification?:boolean,
+        public accorde_user?:boolean,
         public date?:string,
     ){}
 }

@@ -14,7 +14,7 @@ export class ListeplanningComponent {
 
   listeplanning: Planning[];
   p: number = 1;
-  planning: any;
+  planning: Planning;
   PlanningForm: FormGroup;
   updateForm: FormGroup;
   id: number;
@@ -59,7 +59,7 @@ export class ListeplanningComponent {
     this.userDetails = this.service.getUserInfo();
     let idEvent = this.activatedRoute.snapshot.params['id'];
     this.id = idEvent;
-    this.service.findPlanningById(idEvent).subscribe((result) => {
+    this.service.findPlanningById(this.id).subscribe((result) => {
       let event = result;
       console.log(event);
       this.updateForm.patchValue({
@@ -81,26 +81,39 @@ export class ListeplanningComponent {
     
 
   }
+  enselecte(id: number, planning: Planning)
+  {
+// Mettez à jour les valeurs dans votre formulaire
+this.updateForm.patchValue({
+  heureDisponible: planning.heureDisponible,
+  jour: planning.jour,
+  adresse: planning.adresse,
+  prixParHeure: planning.prixParHeure,
+});
+this.planning=planning;
+  }
   
   updateplanning(id: number, planning: Planning) {
-    if (planning && planning.heureDisponible && planning.jour && planning.adresse && parseInt(planning.prixParHeure) > 0) {
-        // Mettez à jour les valeurs dans votre formulaire
-        this.updateForm.patchValue({
-            heureDisponible: planning.heureDisponible,
-            jour: planning.jour,
-            adresse: planning.adresse,
-            prixParHeure: planning.prixParHeure,
-        });
+    let data = this.updateForm.value;
+    let model = new Planning(planning.id, data.heureDisponible, data.jour, data.adresse, data.prixParHeure, planning.id_fdm);
 
-        console.log("Planning avant modification :", planning); // Ajoutez cette ligne
-        this.service.updatePlanning(id, planning).subscribe((res) => {
-            console.log(res);
-            this.router.navigate(['/listeplanning']);
-        });
-    } else {
-        console.error("L'objet planning ou certaines propriétés nécessaires sont undefined ou invalides.");
-    }
+    console.log("Planning avant modification :", planning); // Affiche le planning avant modification
+    console.log("Modèle après modification :", model); // Affiche le modèle avec les nouvelles données
+    console.log("Données du formulaire :", data); // Affiche les données du formulaire
+
+    this.service.updatePlanning(planning.id, model).subscribe(
+        (res) => {
+            console.log("Réponse du serveur :", res); // Affiche la réponse du serveur
+            this.router.navigate(['/listeplanning']).then(() => {
+                window.location.reload(); // Recharge la page après la navigation
+            });
+        },
+        (err) => {
+            console.error("Erreur lors de la mise à jour du planning :", err); // Affiche les erreurs éventuelles
+        }
+    );
 }
+
 
   
   

@@ -174,6 +174,10 @@ export class CrudService {
     getUtilisateursParRole(role: string): Observable<Utilisateur[]> {
       return this.http.get<Utilisateur[]>(`${this.baseUrl}/Utilisateur/role`, { params: { role } });
     }
+    listReservationByUtilisateur(id:number):Observable<ReservationRq[]>
+    {
+      return this.http.get<Planning[]>(this.apiUrl + "/Planification/get-all-by-id-utilisateur/"+id);
+    }
   
   getPlanningById(id:number): Observable<Planning>{
     return this.http.get<Annonce>(this.apiUrl + "/Planification/"+id);

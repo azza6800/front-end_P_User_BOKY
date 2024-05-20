@@ -32,7 +32,7 @@
         </div>
         <div class="col-md-6">
           <div class="text-md-end">
-            <a href="#" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-neutral-700 :bg-primary-300">
+            <a (click)="logout()" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-neutral-700 :bg-primary-300">
               <span class="d-inline-block clr-neutral-0 fw-semibold"> Déconnection </span>
             </a>
           </div>
@@ -76,7 +76,7 @@
                                             <p class="card-text">Prix Par Heure: {{ planning.prixParHeure }}</p>
                                             <span><i class="mdi mdi-clock-outline"></i> </span>
                                             <div class="d-flex justify-content-end mt-2">
-                                              <button (click)="updateplanning(planning.id, planning)" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                                              <button (click)="enselecte(planning.id, planning)" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#exampleModal1">
                                                 Modifier
                                               </button>
                                                 <button type="button"  (click)="DeletePlanning(planning)"class="btn btn-sm btn-danger">Supprimer <i class="ri-delete-bin-6-fill"></i></button>
@@ -167,7 +167,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-              <button (click)="updateplanning(planning?.id, planning)" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#exampleModal1">Enregistrer</button>
+              <button (click)="updateplanning(planning.id, planning)" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#exampleModal1">Enregistrer</button>
             </div>
           </form>
         </div>
