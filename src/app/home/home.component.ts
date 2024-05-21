@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { Annonce } from '../Entites/Annonce.Entites';
-<<<<<<< HEAD
-=======
+
 import { Router } from '@angular/router';
->>>>>>> e98b909737e66eaa044fef6551c41cf5d91fdb7b
 import { CrudService } from '../service/crud.service';
 
 @Component({
@@ -12,8 +10,8 @@ import { CrudService } from '../service/crud.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-<<<<<<< HEAD
-=======
+
+  
   listAnnonce: Annonce[];
   p:number=1;
   collection:any[]
@@ -32,5 +30,4 @@ export class HomeComponent {
     })
   }
 
->>>>>>> e98b909737e66eaa044fef6551c41cf5d91fdb7b
 }
