@@ -4,12 +4,11 @@ import { Utilisateur } from '../Entites/Utilisateur.Entites';
 import { Contact } from '../Entites/Contact.Entites';
 import  {Observable} from 'rxjs';
 import { Annonce } from '../Entites/Annonce.Entites';
-import { JwtHelperService } from '@auth0/angular-jwt';
 import { NgIf } from '@angular/common';
 import { Planning } from '../Entites/Planning.Entites';
 import { ReservationRq } from '../Entites/ReservationRq.Entites';
 import { Evaluation } from '../Entites/Evaluation.Entites';
-
+import { JwtHelperService } from '@auth0/angular-jwt'
 
 
 @Injectable({

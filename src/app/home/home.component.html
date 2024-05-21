@@ -100,11 +100,12 @@
               <p class="mb-0"> Un appartement est une unité de logement autonome qui </p>
             </div>
             <div class="category-card__footer transition">
-              <a href="property-list.html" class="link d-flex gap-1 align-items-center fw-semibold clr-primary-400 transition p-8"> Read More <span class="material-symbols-outlined mat-icon fw-200"> arrow_right_alt </span>
+              <a href="property-list.html" class="link d-flex gap-1 align-items-center fw-semibold clr-primary-400 transition p-8"> En savoir plus <span class="material-symbols-outlined mat-icon fw-200"> arrow_right_alt </span>
               </a>
             </div>
           </div>
         </div>
+        
         <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="category-card border rounded-4 transition bg-neutral-0 :bg-primary-300 :clr-neutral-0">
             <div class="p-8">
@@ -113,7 +114,7 @@
               <p class="mb-0"> Une maison est une unité de logement autonome qui </p>
             </div>
             <div class="category-card__footer transition">
-              <a href="property-list.html" class="link d-flex gap-1 align-items-center fw-semibold clr-primary-400 transition p-8"> Read More <span class="material-symbols-outlined mat-icon fw-200"> arrow_right_alt </span>
+              <a href="property-list.html" class="link d-flex gap-1 align-items-center fw-semibold clr-primary-400 transition p-8"> En savoir plus <span class="material-symbols-outlined mat-icon fw-200"> arrow_right_alt </span>
               </a>
             </div>
           </div>
@@ -126,7 +127,7 @@
               <p class="mb-0"> Une maison familiale est un type de bâtiment résidentiel qui est  </p>
             </div>
             <div class="category-card__footer transition">
-              <a href="property-list.html" class="link d-flex gap-1 align-items-center fw-semibold clr-primary-400 transition p-8"> Read More <span class="material-symbols-outlined mat-icon fw-200"> arrow_right_alt </span>
+              <a href="property-list.html" class="link d-flex gap-1 align-items-center fw-semibold clr-primary-400 transition p-8"> En savoir plus <span class="material-symbols-outlined mat-icon fw-200"> arrow_right_alt </span>
               </a>
             </div>
           </div>
@@ -139,7 +140,7 @@
               <p class="mb-0"> Résidentiel se réfère aux bâtiments ou aux zones qui sont conçus </p>
             </div>
             <div class="category-card__footer transition">
-              <a href="property-list.html" class="link d-flex gap-1 align-items-center fw-semibold clr-primary-400 transition p-8"> Read More <span class="material-symbols-outlined mat-icon fw-200"> arrow_right_alt </span>
+              <a href="property-list.html" class="link d-flex gap-1 align-items-center fw-semibold clr-primary-400 transition p-8"> En savoir plus <span class="material-symbols-outlined mat-icon fw-200"> arrow_right_alt </span>
               </a>
             </div>
           </div>
@@ -154,7 +155,7 @@
               <p class="mb-0"> Une villa est un type de grande maison luxueuse qui est typiquement  </p>
             </div>
             <div class="category-card__footer transition">
-              <a href="property-list.html" class="link d-flex gap-1 align-items-center fw-semibold clr-primary-400 transition p-8"> Read More <span class="material-symbols-outlined mat-icon fw-200"> arrow_right_alt </span>
+              <a href="property-list.html" class="link d-flex gap-1 align-items-center fw-semibold clr-primary-400 transition p-8"> En savoir plus <span class="material-symbols-outlined mat-icon fw-200"> arrow_right_alt </span>
               </a>
             </div>
           </div>
@@ -200,53 +201,53 @@
           <div class="d-flex justify-content-md-between align-items-center flex-wrap gap-5 mb-10">
             <a href="detailannonce" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> View All <span class="material-symbols-outlined mat-icon lh-1"> trending_flat </span> </a>
           </div>
-          <div class="row g-12">
-            <!-- Boucle sur les annonces limitée à 4 éléments -->
-            <div class="col-md-8 col-lg-6" *ngFor="let annonce of listAnnonce">
-              <div class="property-card property-card--row">
-                <div class="property-card__head">
-                  <div class="property-card__img">
-                    <img src="{{annonce.image}}" alt="image" class="img-fluid w-100">
-                  </div>
-                  <a href="detailannonce" class="link property-card__tag d-inline-block bg-neutral-0 :bg-primary-300 clr-primary-300 :clr-neutral-0 py-2 px-4 rounded-pill fw-medium"> {{annonce.type_d_hebergement}} </a>
-                  <button class="property-card__fav w-10 h-10 rounded-circle bg-neutral-0 d-grid place-content-center border-0 clr-primary-300">
-                    <span class="material-symbols-outlined mat-icon fw-200 property-card__heart"> favorite </span>
-                  </button>
-                </div>
-                <div class="property-card__content">
-                  <div class="property-card__body">
-                    <div class="d-flex align-items-center gap-1 mb-4">
-                      <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
-                      <span class="d-inline-block"> {{annonce.code_postale}} {{annonce.pays}} {{annonce.ville}} </span>
+          <div class="tab-content">
+            <!-- Boucle sur les annonces -->
+            <div class="row g-4">
+              <div class="col-md-6" *ngFor="let annonce of listAnnonce |slice:0:4">
+                <div class="property-card property-card--row h-100">
+                  <div class="property-card">
+                    <div class="property-card__img">
+                      <img src="{{annonce.image}}" alt="Image de l'annonce" class="img-fluid">
                     </div>
-                    <a href="property-details-1.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> {{annonce.titre}} </a>
-                    <ul class="list list-row flex-wrap dotted-divider">
-                      <li>
-                        <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
-                        <span class="d-block fs-14"> {{annonce.nb_chamber}} Chambres </span>
-                      </li>
-                      <li>
-                        <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
-                        <span class="d-block fs-14"> {{annonce.nb_lits}} lits </span>
-                      </li>
-                      <li>
-                        <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
-                        <span class="d-block fs-14"> {{annonce.nb_salles}} Salles de bain </span>
-                      </li>
-                      <li>
-                        <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> group </span>
-                        <span class="d-block fs-14"> {{annonce.nb_voyageur}} Vacanciers</span>
-                      </li>
-                    </ul>
+                    
                   </div>
-                  <div class="property-card__body py-0">
-                    <div class="hr-dashed"></div>
-                  </div>
-                  <div class="property-card__body">
-                    <div class="d-flex flex-wrap justify-content-between align-items-center">
-                      <span class="d-block fs-20 fw-medium clr-primary-300"> $5,256 <span class="d-inline-block clr-neutral-500 fs-14 fw-normal"> /month </span>
-                      </span>
-                      <a href="detailannonce" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> Read More </a>
+                  
+                  <div class="property-card__content">
+                    <div class="property-card__body">
+                      <div class="d-flex align-items-center gap-1 mb-4">
+                        <span class="material-symbols-outlined mat-icon clr-tertiary-400"> distance </span>
+                        <span class="d-inline-block"> {{annonce.code_postale}} {{annonce.pays}} {{annonce.ville}} </span>
+                      </div>
+                      <a href="property-details-1.html" class="link d-block clr-neutral-700 :clr-primary-300 fs-20 fw-medium mb-7"> {{annonce.titre}} </a>
+                      <ul class="list list-row flex-wrap dotted-divider">
+                        <li>
+                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> home_work </span>
+                          <span class="d-block fs-14"> {{annonce.nb_chamber}} Chambres </span>
+                        </li>
+                        <li>
+                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bed </span>
+                          <span class="d-block fs-14"> {{annonce.nb_lits}} lits </span>
+                        </li>
+                        <li>
+                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> bathtub </span>
+                          <span class="d-block fs-14"> {{annonce.nb_salles}} Salles de bain </span>
+                        </li>
+                        <li>
+                          <span class="material-symbols-outlined mat-icon clr-neutral-600 d-inline-block mb-1"> group </span>
+                          <span class="d-block fs-14"> {{annonce.nb_voyageur}} Vacanciers</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="property-card__body py-0">
+                      <div class="hr-dashed"></div>
+                    </div>
+                    <div class="property-card__body">
+                      <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <span class="d-block fs-20 fw-medium clr-primary-300"> {{annonce.prix}} <span class="d-inline-block clr-neutral-500 fs-14 fw-normal"> /DT </span>
+                        </span>
+                        <a href="detailannonce" class="btn btn-outline-primary py-3 px-6 rounded-pill d-inline-flex align-items-center gap-1 fw-semibold"> En savoir plus </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -256,13 +257,28 @@
           </div>
           <div class="text-center">
             <a href="detailannonce" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0 fw-medium mt-10">
-              <span class="material-symbols-outlined"> hourglass_top </span>
-              <span class="d-inline-block"> Show More </span>
+              <span class="material-symbols-outlined">hourglass_top</span>
+              <span class="d-inline-block">Afficher plus</span>
             </a>
+            
           </div>
         </div>
       </div>
     </div>
+    
+    <style>
+      .property-card__img img {
+        width: 100%; /* assure que l'image prend toute la largeur du conteneur */
+        height: 450px; /* hauteur fixe pour toutes les images */
+        object-fit: cover; /* assure que l'image couvre le cadre sans déformer l'aspect ratio */
+      }
+      .property-card {
+        display: flex;
+        flex-direction: column;
+        height: 1000%;
+         /* Assure que toutes les cartes aient la même hauteur */
+      }
+    </style>
   </section>
   <!-- /Featured Property  -->
   <!-- Working Process -->
@@ -276,10 +292,10 @@
                 <span class="w-9 h-9 rounded-circle d-grid place-content-center bg-primary-300 clr-neutral-0 flex-shrink-0">
                   <span class="material-symbols-outlined mat-icon fw-200"> arrow_right_alt </span>
                 </span>
-                <span class="h5 lh-1 m-0 clr-primary-400 fw-semibold"> Working Process </span>
+                <span class="h5 lh-1 m-0 clr-primary-400 fw-semibold"> Processus de travail </span>
               </span>
-              <h2 class="mt-4 mb-6"> How Its Work </h2>
-              <p class="mb-0"> Real estate can be bought, sold, leased, or rented, and can be a valuable investment opportunity. The value of real estate can be... </p>
+              <h2 class="mt-4 mb-6"> Comment ça fonctionne </h2>
+              <p class="mb-0"> L'immobilier peut être acheté, vendu, loué ou loué, et peut représenter une opportunité d'investissement précieuse. La valeur de l'immobilier peut être... </p>
             </div>
           </div>
         </div>
@@ -295,8 +311,8 @@
                 <span class="h4 m-0"> 1 </span>
               </span>
             </div>
-            <h3 class="mt-8 mb-6"> Smart search </h3>
-            <p class="mb-0"> Determine the type of real estate you want to specialize in, such as residential </p>
+            <h3 class="mt-8 mb-6"> Recherche intelligente </h3>
+            <p class="mb-0"> Déterminez le type de bien immobilier dans lequel vous souhaitez vous spécialiser, tel que résidentiel </p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4">
@@ -307,8 +323,8 @@
                 <span class="h4 m-0"> 2 </span>
               </span>
             </div>
-            <h3 class="mt-8 mb-6"> Choose property </h3>
-            <p class="mb-0"> Determine the type of real estate you want to specialize in, such as residential </p>
+            <h3 class="mt-8 mb-6"> Choisissez votre bien immobilier </h3>
+            <p class="mb-0"> Déterminez le type de bien immobilier dans lequel vous souhaitez vous spécialiser, tel que résidentiel </p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4">
@@ -319,12 +335,13 @@
                 <span class="h4 m-0"> 3 </span>
               </span>
             </div>
-            <h3 class="mt-8 mb-6"> Book you property </h3>
-            <p class="mb-0"> Determine the type of real estate you want to specialize in, such as residential </p>
+            <h3 class="mt-8 mb-6"> Réservez votre bien immobilier </h3>
+            <p class="mb-0"> Déterminez le type de bien immobilier dans lequel vous souhaitez vous spécialiser, tel que résidentiel </p>
           </div>
         </div>
       </div>
     </div>
+    
   </section>
   <!-- /Working Process -->
   <!-- Discover Location -->
@@ -338,15 +355,16 @@
                 <span class="w-9 h-9 rounded-circle d-grid place-content-center bg-primary-300 clr-neutral-0 flex-shrink-0">
                   <span class="material-symbols-outlined mat-icon fw-200"> arrow_right_alt </span>
                 </span>
-                <span class="h5 lh-1 m-0 clr-primary-400 fw-semibold"> Discover Our Location </span>
+                <span class="h5 lh-1 m-0 clr-primary-400 fw-semibold"> Découvrir notre emplacement </span>
               </span>
-              <h2 class="mt-4 mb-6"> Best Property Location </h2>
-              <p class="mb-0"> Real estate can be bought, sold, leased, or rented, and can be a valuable investment opportunity. The value of real estate can be... </p>
+              <h2 class="mt-4 mb-6"> Meilleur emplacement immobilier </h2>
+              <p class="mb-0"> L'immobilier peut être acheté, vendu, loué, ou loué, et peut être une opportunité d'investissement précieuse. La valeur de l'immobilier peut être... </p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
     <div class="container-fluid p-md-0">
       <div class="row g-md-0">
         <div class="col-12">
@@ -522,11 +540,11 @@
                   <span class="w-9 h-9 rounded-circle d-grid place-content-center bg-primary-300 clr-neutral-0 flex-shrink-0">
                     <span class="material-symbols-outlined mat-icon fw-200"> arrow_right_alt </span>
                   </span>
-                  <span class="h5 lh-1 m-0 clr-primary-400 fw-semibold"> Call To Action </span>
+                  <span class="h5 lh-1 m-0 clr-primary-400 fw-semibold"> Appel à l'action </span>
                 </span>
-                <h2 class="mt-4 mb-10"> Find your dream property with our expert help </h2>
-                <a href="contact.html" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0 fw-semibold">
-                  <span class="d-inline-block"> Contact Us </span>
+                <h2 class="mt-4 mb-10"> Trouvez votre propriété de rêve avec notre aide experte </h2>
+                <a href="Contact" class="link d-inline-flex align-items-center gap-2 py-3 px-6 rounded-pill bg-primary-300 clr-neutral-0 :bg-primary-400 :clr-neutral-0 fw-semibold">
+                  <span class="d-inline-block"> Contactez-nous </span>
                   <span class="material-symbols-outlined mat-icon fw-200"> trending_flat </span>
                 </a>
               </div>
@@ -535,6 +553,7 @@
         </div>
       </div>
     </div>
+    
   </section>
  
   
