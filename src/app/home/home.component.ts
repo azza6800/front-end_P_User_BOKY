@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Annonce } from '../Entites/Annonce.Entites';
+import { CrudService } from '../service/crud.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
 }

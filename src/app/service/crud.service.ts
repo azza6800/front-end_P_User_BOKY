@@ -8,6 +8,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { NgIf } from '@angular/common';
 import { Planning } from '../Entites/Planning.Entites';
 import { ReservationRq } from '../Entites/ReservationRq.Entites';
+import { Evaluation } from '../Entites/Evaluation.Entites';
 
 
 
@@ -193,4 +194,18 @@ export class CrudService {
     const url = `${this.apiUrl+"/Annonce"}/${id}`
     return this.http.put<any>(url, annonce);
   }
+  listEvaluationByAnnonce(id:number):Observable<Evaluation[]>{const url =`${this.apiUrl+"/Evaluation/get-all-by-id-annonce"}/${id}`
+  return this.http.get<Evaluation[]>(url);}
+  SupprimerEvaluation(id : number){
+    const url =`${this.apiUrl+"/Evaluation"}/${id}`
+    return this.http.delete(url)
+  }
+  getClientByEvaluation(id:number): Observable<Utilisateur>{
+    const url =`${this.apiUrl+"/Evaluation/get-client"}/${id}`
+    return this.http.get<Utilisateur>(url);
+  }
+  addEvaluation(evaluation:Evaluation)
+   {
+    return this.http.post<any>(this.apiUrl+"/Evaluation",evaluation);
+   }
 }

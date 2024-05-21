@@ -86,12 +86,7 @@ get role() { return this.updateForm.get('role'); }
 get date_de_naissance() { return this.updateForm.get('date_de_naissance'); }
 get photo (){return this.updateForm.get('photo');}
   
-
-
-
-
-
-
+ 
   
   ngOnInit(): void {
     let idEvent = this.router.snapshot.params['id'];

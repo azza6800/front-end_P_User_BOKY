@@ -6,6 +6,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { NgToastService } from 'ng-angular-popup';
 import { Utilisateur } from '../Entites/Utilisateur.Entites';
 import { ReservationRq } from '../Entites/ReservationRq.Entites';
+import { Evaluation } from '../Entites/Evaluation.Entites';
+import { forkJoin } from 'rxjs';
 
 
 @Component({
@@ -33,6 +35,11 @@ export class DetailAnnoncePublicComponent {
   reservation:ReservationRq;
   paymentHandler: any = null;
   IsloggedIn:boolean
+  listEvaluation: Evaluation[]= [];;
+  listClientAvis: Utilisateur[];
+  nbAvis: number;
+  updateForm: FormGroup;
+  AvisForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -56,6 +63,10 @@ export class DetailAnnoncePublicComponent {
         
       ])
     }
+    
+    this.AvisForm = this.fb.group({
+      commentaire: ['', Validators.required]
+    });
     this.checkoutParentGroup = this.fb.group(formControls)
     this.checkoutParentGroup.controls['date_arrivee'].valueChanges.subscribe((value) => {
       this.currentDateArrivee = value;
@@ -72,6 +83,9 @@ export class DetailAnnoncePublicComponent {
    get date_depart() { return this.checkoutParentGroup.get('date_depart') }
    get nb_vacancier(){
     return this.checkoutParentGroup.get('nb_vacancier')
+  }
+  get commentaire() {
+    return this.updateForm.get('commentaire');
   }
   done() {
     let data = this.checkoutParentGroup.value;
@@ -168,6 +182,22 @@ export class DetailAnnoncePublicComponent {
       
     })
     this.invokeStripe();
+    // Récupérer les evaluation
+    this.service.listEvaluationByAnnonce(this.id).subscribe(evaluation => {
+      this.nbAvis=evaluation.length;
+      this.listEvaluation = evaluation;
+
+      // Créer un tableau d'observables pour récupérer les utilisateurs associés aux avis
+      const observables = this.listEvaluation.map(i => this.service.getClientByEvaluation(i.id));
+
+      // Utiliser forkJoin pour attendre que toutes les requêtes soient terminées
+      forkJoin(observables).subscribe(results => {
+          this.listClientAvis = results;
+          console.log("hatha list annonceur après ajout:", this.listClientAvis);
+      });
+  });
+
+  console.log("hatha list annonce après chargement:", this.listAnnonce);
     
 
     
@@ -245,4 +275,52 @@ invokeStripe() {
     window.document.body.appendChild(script);
   }
 }
+addNewAvis() {
+  if (
+    !this.IsloggedIn
+    
+  )
+  {
+    this.toast.info({
+      detail: 'Error Message',
+      summary: 'Authentifiez-vous avant.',
+    });
+    this.connexion();
+    
+  } else
+  {if (this.AvisForm.valid) {
+    const data = this.AvisForm.value;
+    let datas = this.service.getUserInfo();
+
+    const avis = new Evaluation(undefined, data.commentaire, undefined, this.id, datas?.id);
+
+    this.service.addEvaluation(avis).subscribe(
+      (response: any) => {
+        // Ajoutez l'avis à la liste existante
+        this.listEvaluation.unshift(response); // Supposons que response contient l'avis ajouté avec un identifiant généré par le serveur
+        // Réinitialisez le formulaire si nécessaire
+        this.AvisForm.reset();
+        // Affichez un message de succès
+        this.toast.success({
+          detail: 'Succès Message',
+          summary: 'L\'avis est ajouté avec succès',
+        });
+      },
+      (err) => {
+        console.log(err);
+        this.toast.error({
+          detail: 'Message d\'erreur',
+          summary: 'Problème de serveur',
+        });
+      }
+    );
+  } else {
+    this.toast.info({
+      detail: 'Message d\'erreur',
+      summary: 'Veuillez remplir tous les champs obligatoires.',
+    });
+  }}
+}
+
+
 }
