@@ -79,23 +79,35 @@
               <div class="p-6 bg-primary-3p rounded-4 border border-neutral-40 mb-10">
                 <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
                   <h5 class="clr-primary-300 d-inline-block mb-0">  {{annonce.type_d_hebergement}} </h5>
+                  <p class="mb-0">
+                    <span class="clr-neutral-900">Publié :</span> {{ annonce.date | date: 'yyyy/MM/dd' }}
+                  </p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-4 mb-8">
+                  <h2 class="mb-0"> {{ annonce.titre }} </h2>
                   
                 </div>
-                <h2 class="mt-4 mb-8"> {{annonce.titre}}</h2>
-                <ul class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
-                  <li>
-                    <div class="d-flex align-items-center gap-2">
-                      <span class="material-symbols-outlined mat-icon clr-secondary-400"> distance </span>
-                      <p class="mb-0"> {{annonce.code_postale}} {{annonce.pays}} {{annonce.ville}} </p>
-                    </div>
+                
+                <ul class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0 d-flex">
+                  <li class="d-flex align-items-center gap-2">
+                    <span class="material-symbols-outlined mat-icon clr-secondary-400"> distance </span>
+                    <p class="mb-0"> {{ annonce.code_postale }} {{ annonce.pays }} {{ annonce.ville }} </p>
                   </li>
                   
+                
                   <li>
                     <p class="mb-0">
-                      <span class="clr-neutral-500">Publié :</span> {{annonce.date  | date: 'yyyy/MM/dd' }}
+                      <span class="clr-neutral-500">Heure d'arriver:</span> {{ annonce.heure_arriver  }}
+                    </p>
+                  </li>
+                
+                  <li>
+                    <p class="mb-0">
+                      <span class="clr-neutral-500">Heure départ:</span> {{ annonce.heure_depart }}
                     </p>
                   </li>
                 </ul>
+                
                 <div class="hr-dashed my-8"></div>
                 <ul class="list list-row flex-wrap align-items-center list-divider-dot gap-4 gap-md-0">
                   <li>

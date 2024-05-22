@@ -139,11 +139,13 @@
           <ng-container *ngIf="listeAnnonce && listeAnnonce.length > 0">
             <div class="col-xl-12">
               <ul class="list gap-6">
-                <li *ngFor="let ann of listeAnnonce">
+                <li >
                   <div class="p-6 p-xl-10 rounded-4 bg-neutral-0 shadow-3">
-                   
+                    <h3 class="mb-0 flex-grow-1"> Mes annonces </h3>
+                   <div *ngFor="let ann of listeAnnonce">
                     <div class="hr-line my-6"></div>
                     <div class="row g-4">
+
                       <div class="col-12">
                         <div class="property-card property-card--row">
                           <div class="property-card__head">
@@ -212,6 +214,7 @@
                         </div>
                       </div>
                     </div>
+                   </div>
                   </div>
                 </li>
               </ul>

@@ -299,6 +299,13 @@ addNewAvis() {
         // Ajoutez l'avis à la liste existante
         this.listEvaluation.unshift(response); // Supposons que response contient l'avis ajouté avec un identifiant généré par le serveur
         // Réinitialisez le formulaire si nécessaire
+        const observables = this.listEvaluation.map(i => this.service.getClientByEvaluation(i.id));
+
+      // Utiliser forkJoin pour attendre que toutes les requêtes soient terminées
+      forkJoin(observables).subscribe(results => {
+          this.listClientAvis = results;
+          console.log("hatha list annonceur après ajout:", this.listClientAvis);
+      });
         this.AvisForm.reset();
         // Affichez un message de succès
         this.toast.success({
